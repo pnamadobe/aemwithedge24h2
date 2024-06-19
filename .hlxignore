@@ -5,3 +5,7 @@ LICENSE
 package.json
 package-lock.json
 test/*
+universal-editor/*
+blocks/*/*-definition.json
+blocks/*/*-filter.json
+blocks/*/*-model.json
