@@ -1692,7 +1692,7 @@
     "id": "accordion",
     "fields": [
       {
-        "component": "text",
+        "component": "richtext",
         "valueType": "string",
         "name": "heading",
         "value": "",
