@@ -871,10 +871,14 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
       top: -6px;
   }
 
-  .header-wrapper .nav-wrapper .nav-hamburger .hambuger-menu .hamburger-image-custom img,
+  .header-wrapper .nav-wrapper .nav-hamburger .hambuger-menu .hamburger-image-custom img {
+    width: 20px;
+    height: 20px;
+  }
+
   .header-wrapper .nav-wrapper .nav-hamburger .hambuger-menu .cross-image-custom img {
-    width: 18px;
-    height: 18px;
+    width: 22px;
+    height: 22px;
   }
 
   .header-wrapper .nav-wrapper .nav-hamburger .hambuger-menu[aria-label="Open navigation"] .cross-image-custom img {
@@ -951,10 +955,14 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
     top: 26px;
   }
   
-  .header-wrapper .nav-wrapper .nav-hamburger .hambuger-menu .hamburger-image-custom img,
+  .header-wrapper .nav-wrapper .nav-hamburger .hambuger-menu .hamburger-image-custom img {
+    width: 20px;
+    height: 20px;
+  }
+
   .header-wrapper .nav-wrapper .nav-hamburger .hambuger-menu .cross-image-custom img {
-    width: 18px;
-    height: 18px;
+    width: 22px;
+    height: 22px;
   }
 
   .header-wrapper .nav-wrapper .nav-hamburger .hambuger-menu[aria-label="Open navigation"] .cross-image-custom img {
