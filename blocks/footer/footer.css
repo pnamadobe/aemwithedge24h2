@@ -294,7 +294,7 @@ footer.footer-wrapper .footer {
   }
   .footer-section-third {
     /* display: block; */
-    grid-template-columns: 15% 14% 31% 1fr;
+    grid-template-columns: 15% 14% 30% 1fr;
   }
   /* .header-wrapper .nav-wrapper .nav-hamburger button .nav-hamburger-icon::before, 
   .header-wrapper .nav-wrapper .nav-hamburger button .nav-hamburger-icon::after {
@@ -527,9 +527,15 @@ footer.footer-wrapper .footer {
     column-gap: 32px;
   }
 
-  .section.footer-follow-us-wrapper .wrappercreation-wrapper .imgwithlink-wrapper .image-href-desktop a>picture img,
-  .section.footer-follow-us-wrapper .wrappercreation-wrapper .imgwithlink-wrapper .image-href-mobile a>picture img {
+  .section.footer-follow-us-wrapper .wrappercreation-wrapper .wrapper-creation-container .imgwithlink-wrapper .image-href-desktop a>picture img,
+  .section.footer-follow-us-wrapper .wrappercreation-wrapper .wrapper-creation-container .imgwithlink-wrapper .image-href-mobile a>picture img {
     width: 22px;
+    height: 24px;
+  }
+
+  .section.footer-follow-us-wrapper .wrappercreation-wrapper .wrapper-creation-container .imgwithlink-wrapper:last-child .image-href-desktop a>picture img,
+  .section.footer-follow-us-wrapper .wrappercreation-wrapper .wrapper-creation-container .imgwithlink-wrapper:last-child .image-href-mobile a>picture img {
+    width: 30px;
     height: 24px;
   }
 
@@ -642,9 +648,15 @@ footer.footer-wrapper .footer {
     margin-left: 16px;
   }
 
-  .section.footer-follow-us-wrapper .wrappercreation-wrapper .imgwithlink-wrapper .image-href-desktop a>picture img,
-  .section.footer-follow-us-wrapper .wrappercreation-wrapper .imgwithlink-wrapper .image-href-mobile a>picture img {
+  .section.footer-follow-us-wrapper .wrappercreation-wrapper .wrapper-creation-container .imgwithlink-wrapper .image-href-desktop a>picture img,
+  .section.footer-follow-us-wrapper .wrappercreation-wrapper .wrapper-creation-container .imgwithlink-wrapper .image-href-mobile a>picture img {
     width: 25px;
+    height: 40px;
+  }
+
+  .section.footer-follow-us-wrapper .wrappercreation-wrapper .wrapper-creation-container .imgwithlink-wrapper:last-child .image-href-desktop a>picture img,
+  .section.footer-follow-us-wrapper .wrappercreation-wrapper .wrapper-creation-container .imgwithlink-wrapper:last-child .image-href-mobile a>picture img {
+    width: 35px;
     height: 40px;
   }
 
