@@ -1,3 +1,4 @@
+import { toggleAllNavSections } from "../blocks/header/header.js";
 import { sampleRUM, loadHeader, loadFooter, decorateButtons, decorateIcons, decorateSections, decorateBlocks, decorateTemplateAndTheme, waitForLCP, loadBlocks, loadCSS } from "./aem.js";
 const LCP_BLOCKS = []; // add your LCP blocks to the list
 
@@ -449,6 +450,7 @@ async function loadingCustomCss() {
     `${window.hlx.codeBasePath}/styles/rupee-cards/rupee-card.css`,
     `${window.hlx.codeBasePath}/styles/interest-rates-disclosure/interest-rates-disclosure.css`,
     `${window.hlx.codeBasePath}/styles/awards-recognition/awards-recognition.css`,
+    `${window.hlx.codeBasePath}/styles/career-social-cards/career-social-cards.css`,
     `${window.hlx.codeBasePath}/styles/available-facilities/available-facilities.css`,
     `${window.hlx.codeBasePath}/styles/nearest-branches/nearest-branches.css`,
     `${window.hlx.codeBasePath}/styles/steps-for-apply/steps-for-apply.css`,
@@ -462,12 +464,21 @@ async function loadingCustomCss() {
 let body = document.querySelector("body");
 body?.addEventListener("click", function (e) {
   // e.stopImmediatePropagation();
-  let loaninnerform=document.querySelector(".loan-form-sub-parent") || "";
+  let loaninnerform = document.querySelector(".loan-form-sub-parent") || "";
   if (!e.target.closest(".show") && targetObject.model && loaninnerform?.style.visibility != "visible") {
     targetObject.model?.querySelector(".overlayDiv").classList.remove("show");
     document.body.style.overflow = "scroll";
     document.querySelector(".modal-overlay").classList.remove("overlay");
     document.querySelector(".modal-overlay").classList.add("dp-none");
+  } else if (!e.target.closest('.nav-drop')) {
+    console.log("don't close nav");
+
+    const navSections = nav.querySelector('.nav-sections');
+    navSections.children[0].classList.remove("active");
+    navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
+      toggleAllNavSections(navSections);
+      navSection.setAttribute('aria-expanded', 'false');
+    });
   } else if (!e.target.closest(".stake-pop-up")) {
     document.querySelectorAll(".stake-pop-up").forEach((ele) => {
       ele.classList.remove("dp-block");
