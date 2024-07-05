@@ -452,6 +452,8 @@ async function loadingCustomCss() {
     `${window.hlx.codeBasePath}/styles/awards-recognition/awards-recognition.css`,
     `${window.hlx.codeBasePath}/styles/career-social-cards/career-social-cards.css`,
     `${window.hlx.codeBasePath}/styles/available-facilities/available-facilities.css`,
+    `${window.hlx.codeBasePath}/styles/nearest-branches/nearest-branches.css`,
+    `${window.hlx.codeBasePath}/styles/steps-for-apply/steps-for-apply.css`,
   ]
 
   loadCssArray.forEach(async (eachCss) => {
