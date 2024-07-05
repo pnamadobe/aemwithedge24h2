@@ -321,8 +321,8 @@ header nav .nav-sections .nav-drop::after{
   max-width: 108px;
   display: inline-block;
   margin-right: 16px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 0;
+  padding-bottom: 20px;
 }
 
 .header-wrapper .nav-wrapper nav .nav-sections .default-content-wrapper {
@@ -1026,6 +1026,9 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
   }
   header nav[aria-expanded='false'] .nav-hamburger-icon::after {
     top: 5px;
+  }
+  .header-wrapper .nav-wrapper nav .nav-sections .default-content-wrapper {
+    margin-left: 28px;
   }
 }
 
