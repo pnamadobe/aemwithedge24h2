@@ -24,10 +24,14 @@
 }
 
 .section.piramal-since-wrapper .columns-wrapper .columns>div {
-  display: grid;
+  /* display: grid;
   grid-template-columns: auto auto auto auto;
   gap: 44px 86px;
-  text-align: center;
+  text-align: center; */
+  column-gap: 86px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  row-gap: 44px;
 }
 
 .section.piramal-since-wrapper .columns-wrapper .columns>div>div {
@@ -64,7 +68,9 @@
 }
 @media screen and (max-width:1024px) {
   .section.piramal-since-wrapper .columns-wrapper .columns>div{
-    grid-template-columns: 1fr 1fr;
+    column-gap: 90px;
+    grid-template-columns: auto auto;
+    padding: 0 24px;
   }
 }
 @media screen and (max-width:767px) {
@@ -81,7 +87,8 @@
   }
 
   .section.piramal-since-wrapper .columns-wrapper .columns>div>div{
-    width: 100%;
+    min-width: 100%;
+    text-align: center;
     justify-content: unset;
   }
   .section.piramal-since-wrapper .columns-wrapper .columns div div>p:nth-child(1) picture img{

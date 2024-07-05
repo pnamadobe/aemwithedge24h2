@@ -422,6 +422,10 @@ header nav .nav-sections .nav-drop::after{
   line-height: normal;
 }
 
+.header-wrapper .nav-wrapper nav .nav-sections .default-content-wrapper>ul>li>ul>li>ul>li>a:hover {
+  text-decoration: none;
+}
+
 .header-wrapper .nav-wrapper nav .nav-sections .default-content-wrapper>ul>li[aria-expanded="true"]>ul {
   /* display: flex;
   flex-wrap: wrap;
