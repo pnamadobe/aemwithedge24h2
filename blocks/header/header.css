@@ -1235,9 +1235,8 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
   color: #fff;
   font-family: Nunito-Bold, sans-serif;
   font-size: 12px;
-  font-weight: 700;
   line-height: 16px;
-  margin-left: 8px;
+  margin-left: 10px;
   padding:4px 10px;
 }
 .section.mobile-view-header .code-wrapper .code div > div > ul:nth-child(6) > li:nth-child(4) > span > img,

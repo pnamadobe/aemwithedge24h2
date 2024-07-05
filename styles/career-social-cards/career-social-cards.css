@@ -12,7 +12,7 @@
     width: 100%;
     column-gap: 24px;
 }
-.section.career-social-cards .teaser-wrapper,.wrappercreation-wrapper{
+.section.career-social-cards .teaser-wrapper,.section.career-social-cards .wrappercreation-wrapper{
     background-color: #fff4e7;
     border-radius: 24px;
     width: 50%;
@@ -64,12 +64,12 @@
     line-height: 24px;
 }
 
-@media screen (min-width:767px) and (max-width:1024px) {
+@media screen and (max-width:767px) {
     .section.career-social-cards{
         flex-direction: column;
         padding: 0 16px;
     }
-    .section.career-social-cards .teaser-wrapper, .wrappercreation-wrapper{
+    .section.career-social-cards .teaser-wrapper, .section.career-social-cards .wrappercreation-wrapper{
         width: 100%;
     }
     .section.career-social-cards .teaser-wrapper{
@@ -93,8 +93,8 @@
     }
 }
 
-/* @media screen and (max-width:1024px) {
+@media screen and (max-width:1024px) {
     .section.career-social-cards{
         padding: 0 16px;
     }
-} */
+}
