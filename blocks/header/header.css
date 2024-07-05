@@ -560,10 +560,16 @@ header nav .nav-sections .nav-drop::after{
 .default-content-wrapper ul li:last-child.navigation-level-active img{
   opacity: 1;
 }
-.default-content-wrapper.active > ul li p {
+/* .default-content-wrapper.active > ul li p {
   color: #ccc !important;
 }
 .default-content-wrapper.active > ul li.navigation-level-active p {
+  color: #333 !important;
+} */
+.default-content-wrapper.active > ul li p, .default-content-wrapper.active > ul li p a {
+  color: #ccc !important;
+}
+.default-content-wrapper.active > ul li.navigation-level-active p,.default-content-wrapper.active > ul li.navigation-level-active a {
   color: #333 !important;
 }
 
