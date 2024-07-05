@@ -20,7 +20,7 @@ export function appplyLoanTemplate() {
     statePlaceholder: "Enter State",
     branch: "Branch",
     branchPlaceholder: "Enter Branch",
-    checkboxText: "I accept to the ",
+    checkboxText: "I accept the ",
     checkboxAnchorText: "terms and conditions",
     checkboxAnchorTextLink: "http://example.com",
     verifyHead: "Verify Your Mobile Number",
