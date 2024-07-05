@@ -159,10 +159,6 @@
     color: #20374e;
 } 
 
-/* .section.media-acc-wrapper .accordion-group-wrapper .accordion-group .accordion>details>summary h3{
-    width: 83%;
-}  */
-
 .section.media-acc-wrapper .accordion-group-wrapper .accordion-group .accordion>details >div {
     padding: 16px;
     border: 1px solid #ccc;
@@ -218,6 +214,10 @@
     left: 0;
     position: absolute;
     width: 9px;
+ }
+
+ .section.media-acc-wrapper .accordion-group-wrapper .accordion-group .accordion>details >div>ul >li::after{
+    content: none;
  }
 
  .section.media-acc-wrapper .accordion-group-wrapper .accordion-group .accordion>details >div>ul >li>a{
