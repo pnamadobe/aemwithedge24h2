@@ -349,7 +349,22 @@ header nav .nav-sections .nav-drop::after{
   line-height: 24px;
   text-decoration: none;
 }
-.header-wrapper .nav-wrapper nav .nav-sections .default-content-wrapper>ul>li>p sup{
+.header-wrapper .nav-wrapper nav .nav-sections .default-content-wrapper>ul>li>p a {
+  margin-right: 1rem;
+  padding: 8px 8px 8px 8px;
+  position: relative;
+  color: var(--darkcharcoal);
+  cursor: pointer;
+  font-family: 'Nunito-Bold',sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  text-decoration: none;
+  background: transparent;
+  margin: unset;
+  display: block;
+  padding: unset;
+}
+.header-wrapper .nav-wrapper nav .nav-sections .default-content-wrapper>ul>li>p>a>sup{
   background-color: #41c672;
   color: #fff;
   font-size: 10px;
@@ -362,10 +377,14 @@ header nav .nav-sections .nav-drop::after{
   align-items: center;
   border-radius: 4px;
   position: absolute;
-  bottom: 32px;
+  bottom: 0;
 }
 .header-wrapper .nav-wrapper nav .nav-sections .default-content-wrapper>ul>li.nav-drop {
   position: unset;
+}
+
+.header-wrapper .nav-wrapper nav .nav-sections .default-content-wrapper>ul li:first-child {
+  position: relative;
 }
 
 .header-wrapper .nav-wrapper nav .nav-sections .default-content-wrapper>ul>li.nav-drop {
