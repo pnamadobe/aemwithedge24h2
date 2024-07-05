@@ -871,10 +871,14 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
       top: -6px;
   }
 
-  .header-wrapper .nav-wrapper .nav-hamburger .hambuger-menu .hamburger-image-custom img,
+  .header-wrapper .nav-wrapper .nav-hamburger .hambuger-menu .hamburger-image-custom img {
+    width: 20px;
+    height: 20px;
+  }
+
   .header-wrapper .nav-wrapper .nav-hamburger .hambuger-menu .cross-image-custom img {
-    width: 18px;
-    height: 18px;
+    width: 22px;
+    height: 22px;
   }
 
   .header-wrapper .nav-wrapper .nav-hamburger .hambuger-menu[aria-label="Open navigation"] .cross-image-custom img {
@@ -951,10 +955,14 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
     top: 26px;
   }
   
-  .header-wrapper .nav-wrapper .nav-hamburger .hambuger-menu .hamburger-image-custom img,
+  .header-wrapper .nav-wrapper .nav-hamburger .hambuger-menu .hamburger-image-custom img {
+    width: 20px;
+    height: 20px;
+  }
+
   .header-wrapper .nav-wrapper .nav-hamburger .hambuger-menu .cross-image-custom img {
-    width: 18px;
-    height: 18px;
+    width: 22px;
+    height: 22px;
   }
 
   .header-wrapper .nav-wrapper .nav-hamburger .hambuger-menu[aria-label="Open navigation"] .cross-image-custom img {
@@ -1194,7 +1202,7 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
   position: relative;
   gap: 19%;
 }
-.section.mobile-view-header .code-wrapper .code div > div > ul:nth-child(4) > li:nth-child(1) > span::before{
+.section.mobile-view-header .code-wrapper .code div > div > ul:nth-child(4) > li:nth-child(1) > a > span::before{
   position: absolute;
   content: 'FREE';
   line-height: 24px;
@@ -1208,12 +1216,29 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
   font-size: 12px;
   height: 16px;
   width: 32px;
-  padding: 1px 7px 1px 7px;
+  padding: 1px 6px 0px 8px;
   text-decoration: none;
-  left: 8%;
-  bottom: 32%;
+  left: 26px;
+  top: 18px;
 }
-
+.section.mobile-view-header .code-wrapper .code div > div > ul:nth-child(4) > li:nth-child(1) > a > span{
+  gap: 62px;
+  position: relative;
+ }
+.section.mobile-view-header .code-wrapper .code div > div > ul:nth-child(6) > li.active > ul > li:nth-child(5){
+  position: relative;
+}
+.section.mobile-view-header .code-wrapper .code div > div > ul:nth-child(6) > li.active > ul > li:nth-child(5)::after{
+  content: 'New';
+  background-color: #41c66e;
+  border-radius: 4px;
+  color: #fff;
+  font-family: Nunito-Bold, sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  margin-left: 10px;
+  padding:4px 10px;
+}
 .section.mobile-view-header .code-wrapper .code div > div > ul:nth-child(6) > li:nth-child(4) > span > img,
 .section.mobile-view-header .code-wrapper .code div > div > ul:nth-child(6) > li:nth-child(3) > span > img,
 .section.mobile-view-header .code-wrapper .code div > div > ul:nth-child(6) > li:nth-child(2) > span > img,
