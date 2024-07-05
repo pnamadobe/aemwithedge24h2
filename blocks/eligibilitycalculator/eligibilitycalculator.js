@@ -79,8 +79,8 @@ export default async function decorate(block) {
             },
             {
               label: "Interest Rate (% p.a)",
-              labelyearsvalue: "",
-              rupeesign: "₹",
+              labelyearsvalue: "%",
+              rupeesign: "",
               dataslider: "m4",
               dataattr: "roi",
               rangeminvalue: "10.5",
@@ -92,8 +92,8 @@ export default async function decorate(block) {
             },
             {
               label: "Loan Tenure (Years)",
-              labelyearsvalue: "",
-              rupeesign: "₹",
+              labelyearsvalue: "years",
+              rupeesign: "",
               dataslider: "m6",
               dataattr: "tenure",
               rangeminvalue: "5",
@@ -149,8 +149,8 @@ export default async function decorate(block) {
             },
             {
               label: "Loan Tenure (Years)",
-              labelyearsvalue: "",
-              rupeesign: "₹",
+              labelyearsvalue: "years",
+              rupeesign: "",
               dataslider: "n5",
               dataattr: "tenure",
               rangeminvalue: "1",
