@@ -9,9 +9,12 @@ import Popper from "../datepickerlib/popper.js";
 import { buttonCLick } from "./loanformapi.js";
 
 export default async function decorate(block) {
-  let cfURL = block.querySelector("a")?.textContent.trim();
-  // const cfRepsonse = await CFApiCall(cfURL);
+  let cfURL = block.textContent.trim();
 
+  const cfRepsonse = await CFApiCall(cfURL);
+  const repsonseData = cfRepsonse.data[0].data;
+  const jsonResponseData = JSON.parse(repsonseData)
+  debugger;
   block.innerHTML = appplyLoanTemplate();
   try {
     applyLoanFormClick();
@@ -26,8 +29,7 @@ export default async function decorate(block) {
 }
 
 export async function CFApiCall(cfurl) {
-  const cfModification = cfurl?.replace("/content/dam/", "/api/assets/");
-  const response = await fetchAPI(cfModification);
+  const response = await fetchAPI("GET", cfurl);
   const responseJson = await response.json();
   return responseJson;
 }

@@ -3,170 +3,20 @@ import { firstTabActive } from "./commonfile.js"; */
 import { homeloanCalHTML } from "./templatehtmlv2.js";
 import { homeLoanCalcFunc } from "./homeloancalculators.js";
 import { calculatorTypeTabClick, mainTabClick, renderEmiEligibility } from "./combineemieligibility.js";
+import { fetchAPI } from "../../scripts/scripts.js";
 
  
 let calculatorType, emiCalDiv, emiOverlay;
 
 export default async function decorate(block) {
-  let cfURL = block.querySelector("a")?.textContent.trim();
-  // const cfRepsonse = await CFApiCall(cfURL);
+  let cfURL = block.textContent.trim();
+  
+  const cfRepsonse = await CFApiCall(cfURL);
+  const repsonseData = cfRepsonse.data[0].data;
+  const jsonResponseData = JSON.parse(repsonseData)
 
-  const callJson = {
-    total: 1,
-    offset: 0,
-    limit: 1,
-    data: [
-      {
-        maindivbackground: "emi",
-        mainheadingclass: "",
-        title: "",
-        salaried: {
-          salariedcheck: true,
-          salariedtabid: "salariedTab",
-          salariedtabname: "employementStatus",
-          salariedtabvalue: "65",
-          salariedtabtext: "I'm Salaried",
-          calculatorsalariedimg: "https://publish-p133703-e1305981.adobeaemcloud.com/content/dam/piramalfinance/product-page/home-loan/calculator-salaried.svg",
-          calculatorsalariedimgalt: "salaried",
-        },
-        business: {
-          businesscheck: true,
-          businesstabid: "businessTab",
-          businesstabname: "employementStatus",
-          businesstabvalue: "80",
-          businesstabtext: "I'm doing Business",
-          calculatorbusinessimg: "https://publish-p133703-e1305981.adobeaemcloud.com/content/dam/piramalfinance/product-page/home-loan/calculator-business.svg",
-          calculatorbusinessimgalt: "business",
-        },
-        selectloantype: {
-          checboxemitab: true,
-          subheading: "Calculate EMI & Check eligibility",
-          subheadingtow: "",
-        },
-        tabname: {
-          firsttabbname: "EMI Calculator",
-          secondtabbname: "Eligibility Calculator",
-          thridtabname: "",
-        },
-        chechboxemiobj: {
-          chechboxemi: true,
-          loanamout: [
-            {
-              label: "Loan amount (Rs.)",
-              labelyearsvalue: "",
-              rupeesign: "₹",
-              dataslider: "em1",
-              dataattr: "loanamt",
-              rangeminvalue: "500000",
-              rangemaxvalue: "100000000",
-              rangestep: "10000",
-              displayvalue: "2500000",
-              minvaluetext: "5L",
-              maxvaluetext: "10Cr",
-            },
-            {
-              label: "Loan Tenure (Years)",
-              labelyearsvalue: "Years",
-              rupeesign: "",
-              dataslider: "em2",
-              dataattr: "tenure",
-              rangeminvalue: "5",
-              rangemaxvalue: "30",
-              rangestep: "1",
-              displayvalue: "10",
-              minvaluetext: "5Y",
-              maxvaluetext: "30Y",
-            },
-            {
-              label: "Interest Rate (% p.a)",
-              labelyearsvalue: "%",
-              rupeesign: "",
-              dataslider: "em3",
-              dataattr: "roi",
-              rangeminvalue: "7",
-              rangemaxvalue: "30",
-              rangestep: "0.1",
-              displayvalue: "11",
-              minvaluetext: "7%",
-              maxvaluetext: "30%",
-            },
-          ],
-        },
-        chechboxelibilityobj: {
-          chechboxemi: true,
-          loanamout: [
-            {
-              label: "Gross Monthly Income (Rs.)",
-              labelyearsvalue: "",
-              rupeesign: "₹",
-              dataslider: "el1",
-              dataattr: "income",
-              rangeminvalue: "20000",
-              rangemaxvalue: "1000000",
-              rangestep: "10000",
-              displayvalue: "100000",
-              minvaluetext: "20k",
-              maxvaluetext: "10L",
-            },
-            {
-              label: "Other Loan EMIs (Rs.)",
-              labelyearsvalue: "",
-              rupeesign: "₹",
-              dataslider: "el2",
-              dataattr: "otherloan",
-              rangeminvalue: "0",
-              rangemaxvalue: "500000",
-              rangestep: "5000",
-              displayvalue: "0",
-              minvaluetext: "0",
-              maxvaluetext: "5L",
-            },
-            {
-              label: "Interest Rate (% p.a)",
-              labelyearsvalue: "%",
-              rupeesign: "",
-              dataslider: "el3",
-              dataattr: "roi",
-              rangeminvalue: "10.5",
-              rangemaxvalue: "20",
-              rangestep: "0.1",
-              displayvalue: "10.5",
-              minvaluetext: "10.50%",
-              maxvaluetext: "20%",
-            },
-            {
-              label: "Loan Tenure (Years)",
-              labelyearsvalue: "Years",
-              rupeesign: "",
-              dataslider: "el4",
-              dataattr: "tenure",
-              rangeminvalue: "5",
-              rangemaxvalue: "30",
-              rangestep: "1",
-              displayvalue: "10",
-              minvaluetext: "5Y",
-              maxvaluetext: "30Y",
-            }
-          ],
-        },
-        calendarboxemi: "https://publish-p133703-e1305981.adobeaemcloud.com/content/dam/piramalfinance/homepage/images/calc-calendar-mobile.webp",
-        calendarmobileelg: "https://publish-p133703-e1305981.adobeaemcloud.com/content/dam/piramalfinance/product-page/home-loan/calculator-tick.png",
-        outputtext1: "Your home loan EMI is",
-        outputtext2: "Your home loan eligibility is",
-        principaltext: "Principal amount",
-        interesttext: "Interest amount",
-        button1text: "Talk to loan expert",
-        button2text: "Apply loan now",
-        button1link: "",
-        button2link: "",
-        pageproperties: "hl",
-      },
-    ],
-    ":type": "sheet",
-  };
+  block.innerHTML = homeloanCalHTML(jsonResponseData);
 
-  block.innerHTML = homeloanCalHTML(callJson);
-  debugger;
   try {
     let currentSection = document.querySelector(".home-page-calculator-call-xf");
     let calculatorType = currentSection.querySelector('.tab-emi-calc.active');
@@ -214,8 +64,8 @@ export default async function decorate(block) {
 }
 
 export async function CFApiCall(cfurl) {
-  const cfModification = cfurl?.replace("/content/dam/", "/api/assets/");
-  const response = await fetchAPI(cfModification);
+  // const cfModification = cfurl?.replace("/content/dam/", "/api/assets/");
+  const response = await fetchAPI("GET", cfurl);
   const responseJson = await response.json();
   return responseJson;
 }
