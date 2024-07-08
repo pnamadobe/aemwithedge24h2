@@ -1,6 +1,6 @@
 {
   "mappings": [
-    "/content/piramalfinance-eds/:/", 
+    "/content/piramalfinance-eds/:/",
     "/content/piramalfinance-eds/redirects:/redirects.json",
     "/content/piramalfinance-eds/cust-testimonial:/cust-testimonial.json",
     "/content/piramalfinance-eds/home-emi-calc:/home-emi-calc.json",
@@ -9,6 +9,9 @@
     "/content/piramalfinance-eds/home-loan-cities:/home-loan-cities.json",
     "/content/piramalfinance-eds/personal-loan-city:/personal-loan-city.json",
     "/content/piramalfinance-eds/bussiness-loan-city:/bussiness-loan-city.json",
+    "/content/piramalfinance-eds/document-required:/document-required.json",
+    "/content/piramalfinance-eds/combined-calculator:/combined-calculator.json",
+    "/content/piramalfinance-eds/apply-form-loan:/apply-form-loan.json",
     "/content/piramalfinance-eds/placeholder:/placeholder.json",
     "/content/piramalfinance-eds/ph:/ph.json",
     "/content/piramalfinance-eds/test:/test.json"

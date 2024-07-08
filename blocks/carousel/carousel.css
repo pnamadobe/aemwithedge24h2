@@ -195,6 +195,7 @@
   width: fit-content;
   position: unset;
   margin: 0;
+  cursor: pointer;
 }
 
 .section.banner-carousel-wrapper .carousel-wrapper .carousel.block .button-container {

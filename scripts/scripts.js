@@ -85,6 +85,7 @@ export function fetchAPI(method, url, data) {
         resolve({ responseJson: json });
       }
     } catch (error) {
+      console.warn(error);
       reject(error);
     }
   });
@@ -449,7 +450,9 @@ async function loadingCustomCss() {
     `${window.hlx.codeBasePath}/styles/partnership/partnership.css`,
     `${window.hlx.codeBasePath}/styles/rupee-cards/rupee-card.css`,
     `${window.hlx.codeBasePath}/styles/interest-rates-disclosure/interest-rates-disclosure.css`,
+    `${window.hlx.codeBasePath}/styles/annualreports/annualreports.css`,
     `${window.hlx.codeBasePath}/styles/awards-recognition/awards-recognition.css`,
+    `${window.hlx.codeBasePath}/styles/multi-calculator/multi-calculator.css`,
     `${window.hlx.codeBasePath}/styles/career-social-cards/career-social-cards.css`,
     `${window.hlx.codeBasePath}/styles/available-facilities/available-facilities.css`,
     `${window.hlx.codeBasePath}/styles/nearest-branches/nearest-branches.css`,

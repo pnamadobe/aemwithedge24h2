@@ -29,16 +29,16 @@ export function createOverlay(el) {
     },
     show: function () {
       el.append(overlay);
-    }
-  }
+    },
+  };
 }
 
-let formOverlay = {};
+export let formOverlay = {};
 
 export function applyLoanFormClick() {
   loaninnerform = document.querySelector(".loan-form-sub-parent");
   loaninnerform = document.querySelector(".loan-form-sub-parent");
-  const homeloancalcontainer = document.querySelector(".homeloancalculator.block");
+  const homeloancalcontainer = document.querySelector(".homeloancalculator.block") || document.createElement("div");
   formOverlay = createOverlay(homeloancalcontainer);
   if (loaninnerform) {
     // checkbox logic
@@ -146,7 +146,7 @@ export function applyLoanFormClick() {
 
     crossIcon.forEach(function (e) {
       e.addEventListener("click", function () {
-        formOverlay.hide()
+        // formOverlay.hide()
         if (emiOverlay || elgOverlay) {
           if (emiOverlay.classList.contains("show") || elgOverlay.classList.contains("show")) {
             loaninnerform.style.visibility = "hidden";
@@ -465,7 +465,7 @@ export function applyLoanFormClick() {
 }
 
 export function formOpen() {
-  formOverlay.show();
+  // formOverlay.show();
   if (window.matchMedia("(max-width: 1024px)").matches) {
     // overlay.classList.add("show");
     document.querySelector(".modal-overlay").classList.add("overlay");

@@ -8,7 +8,7 @@ export default function decorate(block) {
 }
 
 function createImageWithLink(block) {
-  const isMobile = window.matchMedia("(max-width: 768px)").matches;
+  const isMobile = window.matchMedia("(max-width: 767px)").matches;
   const blockDiv = document.createElement("div");
   blockDiv.innerHTML = block.innerHTML.trim();
 
