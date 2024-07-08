@@ -1,4 +1,6 @@
+import { headerInteraction } from '../../dl.js';
 import { getMetadata } from '../../scripts/aem.js';
+import { targetObject } from '../../scripts/scripts.js';
 import { loadFragment } from '../fragment/fragment.js';
 
 // media query match that indicates mobile/tablet width
@@ -123,10 +125,20 @@ export default async function decorate(block) {
       navSection.addEventListener('click', (e) => {
         // if (isDesktop.matches ) {
         if (isDesktop.matches && !e.target.children.length) {
-        // if (isDesktop.matches && !e.target.children.length) {
+          // if (isDesktop.matches && !e.target.children.length) {
           const expanded = navSection.getAttribute('aria-expanded') === 'true';
           toggleAllNavSections(navSections);
           navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+
+
+          const click_text = e.target.innerText;
+          const menu_category = e.target.closest("ul").closest("li")?.querySelector("p")?.innerText;
+          // console.log("click_text :: ", e.target.innerText);
+          // console.log("menu_category :: ", e.target.closest("ul").closest("li")?.querySelector("p")?.innerText);
+          // console.log("menu_category :: ", e.target.closest(".navigation-level-active")?.querySelector("p")?.innerText);
+          console.log(targetObject.ctaPosition);
+          console.log(targetObject.pageName);
+          headerInteraction(click_text, menu_category, targetObject.ctaPosition, targetObject.pageName);
         } else if (isMobile.matches) {
           // Custom Event Function 
           const expanded = navSection.getAttribute('aria-expanded') === 'true';
@@ -161,8 +173,10 @@ export default async function decorate(block) {
   nav.prepend(hamburger);
   nav.querySelector('.hambuger-menu').addEventListener('click', function () {
     if (this.closest('.hambuger-menu').getAttribute('aria-label') == "Open navigation") {
+      targetObject.ctaPosition = "Hamburger"
       this.closest('.hambuger-menu').setAttribute('aria-label', "Close navigation");
     } else {
+      targetObject.ctaPosition = "Top Menu Bar"
       this.closest('.hambuger-menu').setAttribute('aria-label', "Open navigation");
     }
     hamburgerHandler();
