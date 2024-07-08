@@ -7,15 +7,16 @@ import { validationJSFunc } from "./validation.js";
 import AirDatepicker from "../datepickerlib/datepickerlib.js";
 import Popper from "../datepickerlib/popper.js";
 import { buttonCLick } from "./loanformapi.js";
+import { fetchAPI } from "../../scripts/scripts.js";
 
 export default async function decorate(block) {
   let cfURL = block.textContent.trim();
 
   const cfRepsonse = await CFApiCall(cfURL);
   const repsonseData = cfRepsonse.data[0].data;
-  const jsonResponseData = JSON.parse(repsonseData)
-  debugger;
-  block.innerHTML = appplyLoanTemplate();
+  const jsonResponseData = JSON.parse(repsonseData);
+
+  block.innerHTML = appplyLoanTemplate(jsonResponseData);
   try {
     applyLoanFormClick();
     applyLoanPopper();
