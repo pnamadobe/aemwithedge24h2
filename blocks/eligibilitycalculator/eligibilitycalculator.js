@@ -2,13 +2,13 @@ import { renderCalculatorData } from "../emiandeligiblitycalc/renderhpcal.js";
 import { homeLoanCalcFunc } from "../emiandeligiblitycalc/homeloancalculators.js";
 import { CalcHTM } from "../emiandeligiblitycalc/templatehtml1.js";
 import { firstTabActive } from "../emiandeligiblitycalc/commonfile.js";
-import { targetObject } from "../../scripts/scripts.js";
+import { fetchAPI, targetObject } from "../../scripts/scripts.js";
 
 let calculatorType, elgCalDiv, elgOverlay, overlay;
 
 
 export default async function decorate(block) {
-  
+
   let cfURL = block.textContent.trim();
 
   const cfRepsonse = await CFApiCall(cfURL);
@@ -192,7 +192,7 @@ export default async function decorate(block) {
 }
 
 export async function CFApiCall(cfurl) {
-  const response = await fetchAPI(cfurl);
+  const response = await fetchAPI("GET", cfurl);
   const responseJson = await response.json();
   return responseJson;
 }
