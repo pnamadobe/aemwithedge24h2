@@ -1,5 +1,6 @@
-export function appplyLoanTemplate() {
-  const properties = {
+export function appplyLoanTemplate(properties) {
+    
+  /* const properties = {
     rupeeIcon: "https://publish-p133703-e1305981.adobeaemcloud.com/content/dam/piramalfinance/product-page/home-loan/rupee-icon.svg",
     mainFormHeading: "Apply Loan In A Minute",
     crossOne: "https://publish-p133703-e1305981.adobeaemcloud.com/content/dam/piramalfinance/product-page/home-loan/close-icon.svg",
@@ -65,7 +66,7 @@ export function appplyLoanTemplate() {
         "Other Loans": [{ litext: "Pre-owned Car Loan", loantype: "ucl" }],
       },
     ],
-  };
+  }; */
 
   function createLoanTypeDropDown() {
     let container = document.createElement("div");
