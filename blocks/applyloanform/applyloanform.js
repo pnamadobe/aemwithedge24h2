@@ -7,12 +7,16 @@ import { validationJSFunc } from "./validation.js";
 import AirDatepicker from "../datepickerlib/datepickerlib.js";
 import Popper from "../datepickerlib/popper.js";
 import { buttonCLick } from "./loanformapi.js";
+import { fetchAPI } from "../../scripts/scripts.js";
 
 export default async function decorate(block) {
-  let cfURL = block.querySelector("a")?.textContent.trim();
-  // const cfRepsonse = await CFApiCall(cfURL);
+  let cfURL = block.textContent.trim();
 
-  block.innerHTML = appplyLoanTemplate();
+  const cfRepsonse = await CFApiCall(cfURL);
+  const repsonseData = cfRepsonse.data[0].data;
+  const jsonResponseData = JSON.parse(repsonseData);
+
+  block.innerHTML = appplyLoanTemplate(jsonResponseData);
   try {
     applyLoanFormClick();
     applyLoanPopper();
@@ -26,8 +30,7 @@ export default async function decorate(block) {
 }
 
 export async function CFApiCall(cfurl) {
-  const cfModification = cfurl?.replace("/content/dam/", "/api/assets/");
-  const response = await fetchAPI(cfModification);
+  const response = await fetchAPI("GET", cfurl);
   const responseJson = await response.json();
   return responseJson;
 }

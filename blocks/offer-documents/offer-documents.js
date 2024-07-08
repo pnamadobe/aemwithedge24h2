@@ -60,6 +60,7 @@ export default function decorate(block) {
             const targetModal = e.target.closest('.popup-rich-text').querySelector('.stake-pop-up');
             if (targetModal.classList.contains('dp-none')) {
                 targetModal.classList.add("dp-block");
+                document.body.style.overflow = "hidden";
                 targetModal.classList.remove("dp-none");
                 document.querySelector(".modal-overlay").classList.add("overlay")
                 document.querySelector(".modal-overlay").classList.remove("dp-none")

@@ -29,8 +29,8 @@ export function createOverlay(el) {
     },
     show: function () {
       el.append(overlay);
-    }
-  }
+    },
+  };
 }
 
 export let formOverlay = {};
@@ -38,7 +38,7 @@ export let formOverlay = {};
 export function applyLoanFormClick() {
   loaninnerform = document.querySelector(".loan-form-sub-parent");
   loaninnerform = document.querySelector(".loan-form-sub-parent");
-  const homeloancalcontainer = document.querySelector(".homeloancalculator.block");
+  const homeloancalcontainer = document.querySelector(".homeloancalculator.block") || document.createElement("div");
   formOverlay = createOverlay(homeloancalcontainer);
   if (loaninnerform) {
     // checkbox logic
@@ -145,12 +145,16 @@ export function applyLoanFormClick() {
     loanTypeDropdownSelect();
 
     crossIcon.forEach(function (e) {
-      e.addEventListener("click", function () {
+      e.addEventListener("click", function (e) {
+        e.stopImmediatePropagation();
         // formOverlay.hide()
-        if (emiOverlay || elgOverlay) {
-          if (emiOverlay.classList.contains("show") || elgOverlay.classList.contains("show")) {
+        const checkingFormopen = document.querySelector(".home-page-calculator-call-xf");
+        /* if (emiOverlay || elgOverlay) {
+          if (emiOverlay.classList.contains("show") || elgOverlay.classList.contains("show")) { */
+        if (checkingFormopen) {
+          if (checkingFormopen.querySelector(".homeloancalculator-wrapper .show") || checkingFormopen.querySelector(".eligibilitycalculator-wrapper .show")) {
             loaninnerform.style.visibility = "hidden";
-            overlay.style.zIndex = "1000";
+            // overlay.style.zIndex = "1000";
 
             if (loaninnerform.classList.contains("loan-form-success")) {
               loaninnerform.classList.remove("loan-form-success");
@@ -159,8 +163,10 @@ export function applyLoanFormClick() {
           } else {
             loaninnerform.classList.remove("loan-form--open");
             //overlay.classList.remove("show");
+
             document.querySelector(".modal-overlay").classList.remove("overlay");
             document.querySelector(".modal-overlay").classList.add("dp-none");
+
             bodyElement.style.overflowY = "auto";
             loaninnerform.style.visibility = "hidden";
             resetLoanForm();
@@ -173,8 +179,10 @@ export function applyLoanFormClick() {
         } else {
           loaninnerform.classList.remove("loan-form--open");
           //overlay.classList.remove("show");
+
           document.querySelector(".modal-overlay").classList.remove("overlay");
           document.querySelector(".modal-overlay").classList.add("dp-none");
+
           bodyElement.style.overflowY = "auto";
           loaninnerform.style.visibility = "hidden";
           // resetLoanForm();
@@ -468,6 +476,7 @@ export function formOpen() {
   // formOverlay.show();
   if (window.matchMedia("(max-width: 1024px)").matches) {
     // overlay.classList.add("show");
+
     document.querySelector(".modal-overlay").classList.add("overlay");
     document.querySelector(".modal-overlay").classList.remove("dp-none");
 
@@ -477,6 +486,7 @@ export function formOpen() {
     bodyElement.style.overflowY = "hidden";
   } else {
     // overlay.classList.add("show");
+
     document.querySelector(".modal-overlay").classList.add("overlay");
     document.querySelector(".modal-overlay").classList.remove("dp-none");
 
@@ -485,6 +495,7 @@ export function formOpen() {
         overlay.style.zIndex = "1205";
       }
     }
+
     loaninnerform.style.visibility = "visible";
     bodyElement.style.overflowY = "hidden";
   }

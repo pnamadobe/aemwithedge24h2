@@ -10,7 +10,10 @@
     "/content/piramalfinance-eds/personal-loan-city:/personal-loan-city.json",
     "/content/piramalfinance-eds/bussiness-loan-city:/bussiness-loan-city.json",
     "/content/piramalfinance-eds/document-required:/document-required.json",
-    "/content/piramalfinance-eds/combined-calculator:/combined-calculator.json",
+    "/content/piramalfinance-eds/home-loan-combined-calculator:/home-loan-combined-calculator.json",
+    "/content/piramalfinance-eds/apply-form-loan:/apply-form-loan.json",
+    "/content/piramalfinance-eds/homepage-eligibility-calculator:/homepage-eligibility-calculator.json",
+    "/content/piramalfinance-eds/homepage-emi-calculator:/homepage-emi-calculator.json",
     "/content/piramalfinance-eds/placeholder:/placeholder.json",
     "/content/piramalfinance-eds/ph:/ph.json",
     "/content/piramalfinance-eds/test:/test.json"

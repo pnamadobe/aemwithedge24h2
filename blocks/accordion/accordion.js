@@ -13,14 +13,14 @@ export function generateAccordionDOM(block) {
     } else {
       const url = element.innerText.trim();
       const isurl = url.includes(".json");
-      if (isurl) {
-        const data = await renderDataFromAPI(url);
-        details += data;
-        return
-      }
-      const elementText = element.innerHTML;
+      const elementText = element.innerHTML.replace(/&lt;/g, "<").replace(/&gt;/g, ">")
       var elementDiv = document.createElement("div");
-      elementDiv.innerHTML = elementText;
+      if (isurl) {
+        let data = await renderDataFromAPI(url);
+        elementDiv.innerHTML += JSON.stringify(data);
+      } else {
+        elementDiv.innerHTML = elementText;
+      }
       details.append(elementDiv);
     }
   });
