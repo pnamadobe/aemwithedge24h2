@@ -152,7 +152,7 @@ export function applyLoanFormClick() {
         /* if (emiOverlay || elgOverlay) {
           if (emiOverlay.classList.contains("show") || elgOverlay.classList.contains("show")) { */
         if (checkingFormopen) {
-          if (checkingFormopen.querySelector(".show")) {
+          if (checkingFormopen.querySelector(".homeloancalculator-wrapper .show") || checkingFormopen.querySelector(".eligibilitycalculator-wrapper .show")) {
             loaninnerform.style.visibility = "hidden";
             // overlay.style.zIndex = "1000";
 
