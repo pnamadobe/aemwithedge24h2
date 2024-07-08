@@ -440,25 +440,32 @@ main img {
 .teaser.block.--skyblue>.background {
   background-color: var(--skyblue);
 }
-.gradient-blue-gray {
+.gradient-blue-gray .background .foreground {
+  border-radius: 10px;
   background-image: linear-gradient(to right, #2B4054, #2B405400);
 }
-.gradient-blue {
+.gradient-blue .background .foreground{
+  border-radius: 10px;
   background-image: linear-gradient(to right, #587990, #58799000);
 }
-.gradient-brown {
+.gradient-brown .background .foreground{
+  border-radius: 10px;
   background-image: linear-gradient(to right, #755930, #75593000);
 }
-.gradient-dark-blue {
+.gradient-dark-blue .background .foreground{
+  border-radius: 10px;
   background-image: linear-gradient(to right, #2C3C4D, #2C3C4D00);
 }
-.gradient-gray {
+.gradient-gray .background .foreground {
+  border-radius: 10px;
   background-image: linear-gradient(to right, #8F8F8F, #8F8F8F00);
 }
-.gradient-teal {
+.gradient-teal .background .foreground{
+  border-radius: 10px;
   background-image: linear-gradient(to right, #69888D, #69888D00);
 }
-.gradient-blue-green {
+.gradient-blue-green .background .foreground{
+  border-radius: 10px;
   background-image: linear-gradient(to right, #016084, #01608400);
 }
 

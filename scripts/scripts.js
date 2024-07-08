@@ -457,6 +457,7 @@ async function loadingCustomCss() {
     `${window.hlx.codeBasePath}/styles/available-facilities/available-facilities.css`,
     `${window.hlx.codeBasePath}/styles/nearest-branches/nearest-branches.css`,
     `${window.hlx.codeBasePath}/styles/steps-for-apply/steps-for-apply.css`,
+    `${window.hlx.codeBasePath}/styles/grievance-redressal/grievance-redressal.css`,
   ]
 
   loadCssArray.forEach(async (eachCss) => {
@@ -482,7 +483,8 @@ body?.addEventListener("click", function (e) {
       toggleAllNavSections(navSections);
       navSection.setAttribute('aria-expanded', 'false');
     });
-  } else if (!e.target.closest(".stake-pop-up")) {
+  }
+   if (!e.target.closest(".stake-pop-up")) {
     document.querySelectorAll(".stake-pop-up").forEach((ele) => {
       ele.classList.remove("dp-block");
       ele.classList.add("dp-none");
@@ -490,6 +492,7 @@ body?.addEventListener("click", function (e) {
       document.querySelector(".modal-overlay").classList.remove("overlay")
       document.querySelector(".modal-overlay").classList.add("dp-none")
     });
+
 
     e.currentTarget.querySelector(".stake-pop-up.dp-block")?.classList.remove("dp-block");
   }
