@@ -1,4 +1,4 @@
-import { workflowHomeLoanCalculation } from "./calhelpers.js";
+/* import { workflowHomeLoanCalculation } from "./calhelpers.js";
 
 window.addEventListener("DOMContentLoaded", function(){
     let calculators = document.querySelectorAll(".homeloancalculator");
@@ -27,4 +27,4 @@ function renderCalculatorData(calculator) {
 
 function getCalType(calculator) {
     return calculator.querySelector(".home-loan-calculator-parent.emi") ? "emi" : "eligibility"
-}
+} */

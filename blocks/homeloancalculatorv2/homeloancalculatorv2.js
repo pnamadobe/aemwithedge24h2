@@ -1,15 +1,16 @@
-import { renderCalculatorData } from "./renderhpcal.js";
+/* import { renderCalculatorData } from "./renderhpcal.js";
+import { firstTabActive } from "./commonfile.js"; */
+import { homeloanCalHTML } from "./templatehtmlv2.js";
 import { homeLoanCalcFunc } from "./homeloancalculators.js";
-import {firstTabActive } from "./commonfile.js";
-import { targetObject } from "../../scripts/scripts.js";
-import { calcHtmlv2 } from "./templatehtmlv2.js";
+import { calculatorTypeTabClick, mainTabClick, renderEmiEligibility } from "./combineemieligibility.js";
+
  
 let calculatorType, emiCalDiv, emiOverlay;
 
 export default async function decorate(block) {
   let cfURL = block.querySelector("a")?.textContent.trim();
   // const cfRepsonse = await CFApiCall(cfURL);
-  
+
   const callJson = {
     total: 1,
     offset: 0,
@@ -17,13 +18,13 @@ export default async function decorate(block) {
     data: [
       {
         maindivbackground: "emi",
-        title: "",
         mainheadingclass: "",
+        title: "",
         salaried: {
           salariedcheck: true,
           salariedtabid: "salariedTab",
           salariedtabname: "employementStatus",
-          salariedtabvalue: "80",
+          salariedtabvalue: "65",
           salariedtabtext: "I'm Salaried",
           calculatorsalariedimg: "https://publish-p133703-e1305981.adobeaemcloud.com/content/dam/piramalfinance/product-page/home-loan/calculator-salaried.svg",
           calculatorsalariedimgalt: "salaried",
@@ -32,19 +33,19 @@ export default async function decorate(block) {
           businesscheck: true,
           businesstabid: "businessTab",
           businesstabname: "employementStatus",
-          businesstabvalue: "60",
+          businesstabvalue: "80",
           businesstabtext: "I'm doing Business",
           calculatorbusinessimg: "https://publish-p133703-e1305981.adobeaemcloud.com/content/dam/piramalfinance/product-page/home-loan/calculator-business.svg",
           calculatorbusinessimgalt: "business",
         },
         selectloantype: {
           checboxemitab: true,
-          subheading: "Select loan type",
+          subheading: "Calculate EMI & Check eligibility",
           subheadingtow: "",
         },
         tabname: {
-          firsttabbname: "Home Loan",
-          secondtabbname: "Business Loan",
+          firsttabbname: "EMI Calculator",
+          secondtabbname: "Eligibility Calculator",
           thridtabname: "",
         },
         chechboxemiobj: {
@@ -57,11 +58,11 @@ export default async function decorate(block) {
               dataslider: "em1",
               dataattr: "loanamt",
               rangeminvalue: "500000",
-              rangemaxvalue: "50000000",
+              rangemaxvalue: "100000000",
               rangestep: "10000",
               displayvalue: "2500000",
               minvaluetext: "5L",
-              maxvaluetext: "5Cr",
+              maxvaluetext: "10Cr",
             },
             {
               label: "Loan Tenure (Years)",
@@ -82,12 +83,12 @@ export default async function decorate(block) {
               rupeesign: "",
               dataslider: "em3",
               dataattr: "roi",
-              rangeminvalue: "10.5",
-              rangemaxvalue: "20",
+              rangeminvalue: "7",
+              rangemaxvalue: "30",
               rangestep: "0.1",
-              displayvalue: "10",
-              minvaluetext: "10.50%",
-              maxvaluetext: "20%",
+              displayvalue: "11",
+              minvaluetext: "7%",
+              maxvaluetext: "30%",
             },
           ],
         },
@@ -95,30 +96,30 @@ export default async function decorate(block) {
           chechboxemi: true,
           loanamout: [
             {
-              label: "Loan amount (Rs.)",
+              label: "Gross Monthly Income (Rs.)",
               labelyearsvalue: "",
               rupeesign: "₹",
               dataslider: "el1",
-              dataattr: "loanamt",
-              rangeminvalue: "100000",
-              rangemaxvalue: "20000000",
-              rangestep: "100000",
-              displayvalue: "800000",
-              minvaluetext: "1L",
-              maxvaluetext: "2Cr",
+              dataattr: "income",
+              rangeminvalue: "20000",
+              rangemaxvalue: "1000000",
+              rangestep: "10000",
+              displayvalue: "100000",
+              minvaluetext: "20k",
+              maxvaluetext: "10L",
             },
             {
-              label: "Loan Tenure (Years)",
-              labelyearsvalue: "Years",
-              rupeesign: "",
-              dataslider: "el4",
-              dataattr: "tenure",
-              rangeminvalue: "1",
-              rangemaxvalue: "4",
-              rangestep: "1",
-              displayvalue: "10",
-              minvaluetext: "1Y",
-              maxvaluetext: "4Y",
+              label: "Other Loan EMIs (Rs.)",
+              labelyearsvalue: "",
+              rupeesign: "₹",
+              dataslider: "el2",
+              dataattr: "otherloan",
+              rangeminvalue: "0",
+              rangemaxvalue: "500000",
+              rangestep: "5000",
+              displayvalue: "0",
+              minvaluetext: "0",
+              maxvaluetext: "5L",
             },
             {
               label: "Interest Rate (% p.a)",
@@ -126,23 +127,37 @@ export default async function decorate(block) {
               rupeesign: "",
               dataslider: "el3",
               dataattr: "roi",
-              rangeminvalue: "17",
-              rangemaxvalue: "24",
+              rangeminvalue: "10.5",
+              rangemaxvalue: "20",
               rangestep: "0.1",
-              displayvalue: "20",
-              minvaluetext: "17%",
-              maxvaluetext: "24%",
+              displayvalue: "10.5",
+              minvaluetext: "10.50%",
+              maxvaluetext: "20%",
             },
+            {
+              label: "Loan Tenure (Years)",
+              labelyearsvalue: "Years",
+              rupeesign: "",
+              dataslider: "el4",
+              dataattr: "tenure",
+              rangeminvalue: "5",
+              rangemaxvalue: "30",
+              rangestep: "1",
+              displayvalue: "10",
+              minvaluetext: "5Y",
+              maxvaluetext: "30Y",
+            }
           ],
         },
-        calendarbox: "https://publish-p133703-e1305981.adobeaemcloud.com/content/dam/piramalfinance/homepage/images/calc-tick-mobile.webp",
-        calendarmobile: "https://publish-p133703-e1305981.adobeaemcloud.com/content/dam/piramalfinance/homepage/images/calc-tick-mobile.webp",
-        outputtext: "Your home loan EMI is",
+        calendarboxemi: "https://publish-p133703-e1305981.adobeaemcloud.com/content/dam/piramalfinance/homepage/images/calc-calendar-mobile.webp",
+        calendarmobileelg: "https://publish-p133703-e1305981.adobeaemcloud.com/content/dam/piramalfinance/product-page/home-loan/calculator-tick.png",
+        outputtext1: "Your home loan EMI is",
+        outputtext2: "Your home loan eligibility is",
         principaltext: "Principal amount",
         interesttext: "Interest amount",
         button1text: "Talk to loan expert",
-        button1link: "",
         button2text: "Apply loan now",
+        button1link: "",
         button2link: "",
         pageproperties: "hl",
       },
@@ -150,17 +165,49 @@ export default async function decorate(block) {
     ":type": "sheet",
   };
 
-  block.innerHTML = calcHtmlv2(callJson);
+  block.innerHTML = homeloanCalHTML(callJson);
+  debugger;
   try {
     let currentSection = document.querySelector(".home-page-calculator-call-xf");
-    // emiCalDiv = document.querySelector(".home-page-calculator-call-xf");
-    // emiOverlay = emiCalDiv.querySelector(".cmp-container--caloverlay");
-    // overlay = emiCalDiv.querySelector(".modal-overlay");
-    debugger;
-    homeLoanCalcFunc(currentSection);
-    renderCalculatorData(currentSection,calculatorType);
-    firstTabActive(currentSection);
-    // homeLoancalculatorCallXf();
+    let calculatorType = currentSection.querySelector('.tab-emi-calc.active');
+
+    if(calculatorType.classList.contains('tab-emi-calc')){
+      calculatorType = 'emi';
+    }else if(calculatorType.classList.contains('tab-eligibility-calc')){
+      calculatorType = 'eligibility';
+    }
+
+    let calDefaultValueObj = {};
+
+    let calculators = document.querySelectorAll(".homeloancalculator .calctabs .commoncalculator");
+    
+    calculators.forEach((cal, index) => {
+        const resetId = "calid-" + index;
+        cal.dataset.resetId = resetId;
+        calDefaultValueObj[resetId] = Object.fromEntries([...cal.querySelectorAll("input[type=range]")].map(input => [input.id, input.value]));
+    });
+
+    sessionStorage.setItem("calDefaultValueObj", JSON.stringify(calDefaultValueObj));
+
+  homeLoanCalcFunc(currentSection);
+
+    let isCombinedEmiEligibility = document.querySelector(".combined-emi-eligibility");
+    if(isCombinedEmiEligibility) {
+        let parentElement = isCombinedEmiEligibility.closest(".homeloancalculator");
+        renderEmiEligibility(parentElement);
+        mainTabClick(parentElement);
+        calculatorTypeTabClick(parentElement);
+
+        parentElement.addEventListener("change", function({target}) {
+            if(target.tagName != "INPUT") return;
+            renderEmiEligibility(parentElement);
+        });
+
+    }
+
+  /* renderCalculatorData(currentSection, calculatorType);
+  firstTabActive(currentSection); */
+
   } catch (error) {
     console.warn(error);
   }

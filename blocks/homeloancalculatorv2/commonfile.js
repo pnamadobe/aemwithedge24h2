@@ -1,4 +1,4 @@
-import { resetCalculator } from "./resetCalculator.js";
+/* import { resetCalculator } from "./resetCalculator.js";
 
 
 /* export function xfShowHideBodyClick(findSectionXFShow) {
@@ -6,7 +6,7 @@ import { resetCalculator } from "./resetCalculator.js";
   body.addEventListener("click", function (e) {
     
   });
-} */
+} *)
 
 export function firstTabActive(cuurentSection) {
   let calculator = cuurentSection.querySelector(".show .homeloancalculator");
@@ -15,3 +15,4 @@ export function firstTabActive(cuurentSection) {
   resetCalculator(firstCalDiv);
   firstTab.click();
 }
+ */

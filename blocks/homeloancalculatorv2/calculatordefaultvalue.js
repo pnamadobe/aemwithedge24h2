@@ -1,4 +1,4 @@
-let calDefaultValueObj = {};
+/* let calDefaultValueObj = {};
 
 window.addEventListener("DOMContentLoaded", function() {
     let calculators = document.querySelectorAll(".homeloancalculator .calctabs .commoncalculator");
@@ -10,4 +10,4 @@ window.addEventListener("DOMContentLoaded", function() {
     });
 
     sessionStorage.setItem("calDefaultValueObj", JSON.stringify(calDefaultValueObj));
-});
+}); */
