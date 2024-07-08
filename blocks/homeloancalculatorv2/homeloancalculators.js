@@ -1,4 +1,5 @@
 import { currenyCommaSeperation } from "../../scripts/scripts.js";
+import { renderCalculatorData } from "./renderhpcal.js";
 import { resetCalculator } from "./resetCalculator.js";
 
 /* document.addEventListener("DOMContentLoaded", function () {
@@ -153,7 +154,6 @@ export function homeLoanCalcFunc(currentSection) {
   if (emiTabs[1]) {
     emiTabs[1].addEventListener("click", function () {
       handleEmiTabClick(1);
-
       // handleSalaryTabClickBlock(1);
     });
   }

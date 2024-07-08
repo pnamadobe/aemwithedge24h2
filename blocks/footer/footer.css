@@ -142,12 +142,17 @@ footer.footer-wrapper .footer {
   font-weight: 800;
 }
 
-.footer-section-second ul > li > ul > li {
+.footer-section-second ul > li > ul > li>a {
   font-size: 16px;
   color: #fff;
   margin-top: 0.5rem;
-  font-family: nunito-regular;
+  font-family: "Nunito-Regular";
   cursor: pointer;
+  display: block;
+}
+
+.footer-section-second ul > li > ul > li>a:hover {
+  text-decoration: none;
 }
 
 .footer-section-second ul > li::marker {
@@ -343,7 +348,7 @@ footer.footer-wrapper .footer {
     font-weight: 700;
     color: #fff;
   }
-  .footer-section-second ul > li > ul > li {
+  .footer-section-second ul > li > ul > li>a {
     font-size: 0.75rem;
     line-height: 1rem;
     color: #fff;
@@ -387,7 +392,7 @@ footer.footer-wrapper .footer {
   .footer-section-third {
     flex-direction: column;
   }
-  .footer-section-second ul > li > ul > li{
+  .footer-section-second ul > li > ul > li>a{
     color: #fff;
     font-family: Nunito-Regular, sans-serif;
     font-size: 12px;
