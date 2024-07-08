@@ -81,7 +81,48 @@
 
 /* offer documents start */
 
-.section.offer-documents-wrapper .default-content-wper ul>li>a::after {
+.section.offer-documents-wrapper .default-content-wrapper ul>li>p {
+    background-color: #f8f8f8;
+    border-radius: 4px;
+    color: #333;
+    cursor: pointer;
+    display: block;
+    display: flex;
+    align-items: center;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 12px;
+    padding: 20px 61px 20px 24px;
+    position: relative;
+}
+
+.section.offer-documents-wrapper .default-content-wrapper ul>li:first-child > p {
+    padding: 0;
+}
+
+.section.offer-documents-wrapper .default-content-wrapper ul>li>p>a{
+    color: #333;
+    margin: 0;
+    border: unset;
+    font-weight: 400;
+    background-color: unset;
+    border-radius: unset;
+    font-family: Nunito-Regular, sans-serif;
+    padding: 20px 61px 20px 24px;
+    text-align: unset;
+    width: 100%;
+}
+
+.section.annual-reports-wrapper .default-content-wrapper ul>li>p:hover,
+.section.annual-reports-wrapper .default-content-wrapper ul>li>p:hover > a {
+    background: var(--orange);
+    color: var(--white);
+    text-decoration: none;
+}
+
+.section.offer-documents-wrapper .default-content-wrapper ul>li>p::after {
     content: "";
     background-image: url('https://publish-p133703-e1305981.adobeaemcloud.com/content/dam/piramalfinance/company/stakeholders/download-icon.png');
     position: absolute;
@@ -94,7 +135,7 @@
     color: #333;
 }
 
-.section.offer-documents-wrapper .default-content-wrapper ul>li>a:hover::after {
+.section.offer-documents-wrapper .default-content-wrapper ul>li>p:hover::after {
     content: "";
     background-image: url('https://publish-p133703-e1305981.adobeaemcloud.com/content/dam/piramalfinance/company/stakeholders/download-icon-white.png');
     position: absolute;
