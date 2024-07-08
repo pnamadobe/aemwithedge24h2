@@ -81,7 +81,48 @@
 
 /* offer documents start */
 
-.section.offer-documents-wrapper .default-content-wper ul>li>a::after {
+.section.offer-documents-wrapper .default-content-wrapper ul>li>p {
+    background-color: #f8f8f8;
+    border-radius: 4px;
+    color: #333;
+    cursor: pointer;
+    display: block;
+    display: flex;
+    align-items: center;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 12px;
+    padding: 20px 61px 20px 24px;
+    position: relative;
+}
+
+.section.offer-documents-wrapper .default-content-wrapper ul>li:first-child > p {
+    padding: 0;
+}
+
+.section.offer-documents-wrapper .default-content-wrapper ul>li>p>a{
+    color: #333;
+    margin: 0;
+    border: unset;
+    font-weight: 400;
+    background-color: unset;
+    border-radius: unset;
+    font-family: Nunito-Regular, sans-serif;
+    padding: 20px 61px 20px 24px;
+    text-align: unset;
+    width: 100%;
+}
+
+.section.annual-reports-wrapper .default-content-wrapper ul>li>p:hover,
+.section.annual-reports-wrapper .default-content-wrapper ul>li>p:hover > a {
+    background: var(--orange);
+    color: var(--white);
+    text-decoration: none;
+}
+
+.section.offer-documents-wrapper .default-content-wrapper ul>li>p::after {
     content: "";
     background-image: url('https://publish-p133703-e1305981.adobeaemcloud.com/content/dam/piramalfinance/company/stakeholders/download-icon.png');
     position: absolute;
@@ -94,7 +135,7 @@
     color: #333;
 }
 
-.section.offer-documents-wrapper .default-content-wrapper ul>li>a:hover::after {
+.section.offer-documents-wrapper .default-content-wrapper ul>li>p:hover::after {
     content: "";
     background-image: url('https://publish-p133703-e1305981.adobeaemcloud.com/content/dam/piramalfinance/company/stakeholders/download-icon-white.png');
     position: absolute;
@@ -108,3 +149,102 @@
 }
 
 /* offer documents end */
+
+/* Modal start */
+
+.section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText {
+    max-width: 60pc;
+    position: relative;
+    background-color: #fff;
+    border-radius: 1pc;
+    box-shadow: 0 11px 15px -7px rgba(0, 0, 0, .2), 0 24px 38px 3px rgba(0, 0, 0, .14), 0 9px 46px 8px rgba(0, 0, 0, .12);
+    color: rgba(0, 0, 0, .87);
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+    max-height: calc(100% - 4pc);
+    max-width: 60pc;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: box-shadow .3s cubic-bezier(.4, 0, .2, 1) 0ms;
+    width: calc(100% - 4pc);
+    z-index: 9999;
+}
+
+.section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text {
+    position: unset;
+    max-width: unset;
+    height: unset;
+    max-height: unset;
+    transform: unset;
+    background-color: unset;
+    box-shadow: unset;
+    transition: unset;
+    width: unset;
+    padding: unset;
+    overflow-y: auto;
+    border-radius: unset;
+    overflow-y: auto;
+    margin: 24px 77px 0 93px;
+}
+
+.section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text .popup-parent-cont {
+    overflow: unset;
+}
+
+.section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text .cpm-sub-text {
+    margin: 0;
+    padding: 0;
+}
+
+.section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text .cpm-sub-text>p>.title {
+    margin: 24px 0;
+    display: block;
+}
+
+.section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text .cpm-sub-text>p:nth-child(2) {
+    color: #333;
+    display: flex;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 1pc;
+    font-weight: 800;
+    line-height: 24px;
+    margin-bottom: 24px;
+}
+
+.section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .cross-container>img {
+    cursor: pointer;
+    height: 20px;
+    margin: 4px 8px;
+    width: 20px;
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div p {
+    text-align: center;
+    margin: 24px auto 3pc;
+}
+
+.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div p a {
+    background-color: #f26841;
+    border-radius: 4px;
+    color: #fff;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 1pc;
+    font-weight: 700;
+    line-height: 24px;
+    padding: 8px 33px;
+    width: fit-content;
+    margin: 0;
+}
+
+@media screen and (max-width:1024px) {
+    .section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text {
+        margin: 24px 1pc 0;
+    }
+}
+
+/* Modal End */

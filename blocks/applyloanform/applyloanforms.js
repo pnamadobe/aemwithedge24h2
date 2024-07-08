@@ -154,7 +154,7 @@ export function applyLoanFormClick() {
         if (checkingFormopen) {
           if (checkingFormopen.querySelector(".homeloancalculator-wrapper .show") || checkingFormopen.querySelector(".eligibilitycalculator-wrapper .show")) {
             loaninnerform.style.visibility = "hidden";
-            // overlay.style.zIndex = "1000";
+            overlay.style.zIndex = "1111";
 
             if (loaninnerform.classList.contains("loan-form-success")) {
               loaninnerform.classList.remove("loan-form-success");
@@ -490,12 +490,19 @@ export function formOpen() {
     document.querySelector(".modal-overlay").classList.add("overlay");
     document.querySelector(".modal-overlay").classList.remove("dp-none");
 
-    if (emiOverlay || elgOverlay) {
+    /* if (emiOverlay || elgOverlay) {
       if (emiOverlay.classList.contains("show") || elgOverlay.classList.contains("show")) {
         overlay.style.zIndex = "1205";
       }
-    }
-
+    } */
+      const checkingFormopen = document.querySelector(".home-page-calculator-call-xf");
+    
+      if (checkingFormopen) {
+        if (checkingFormopen.querySelector(".homeloancalculator-wrapper .show") || checkingFormopen.querySelector(".eligibilitycalculator-wrapper .show")) {
+          overlay.style.zIndex = "1205";
+        }
+      }
+        
     loaninnerform.style.visibility = "visible";
     bodyElement.style.overflowY = "hidden";
   }
