@@ -29,8 +29,8 @@ export function createOverlay(el) {
     },
     show: function () {
       el.append(overlay);
-    }
-  }
+    },
+  };
 }
 
 export let formOverlay = {};
@@ -38,7 +38,7 @@ export let formOverlay = {};
 export function applyLoanFormClick() {
   loaninnerform = document.querySelector(".loan-form-sub-parent");
   loaninnerform = document.querySelector(".loan-form-sub-parent");
-  const homeloancalcontainer = document.querySelector(".homeloancalculator.block");
+  const homeloancalcontainer = document.querySelector(".homeloancalculator.block") || document.createElement("div");
   formOverlay = createOverlay(homeloancalcontainer);
   if (loaninnerform) {
     // checkbox logic
