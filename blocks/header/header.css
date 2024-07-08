@@ -321,8 +321,8 @@ header nav .nav-sections .nav-drop::after{
   max-width: 108px;
   display: inline-block;
   margin-right: 16px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 0;
+  padding-bottom: 20px;
 }
 
 .header-wrapper .nav-wrapper nav .nav-sections .default-content-wrapper {
@@ -560,10 +560,16 @@ header nav .nav-sections .nav-drop::after{
 .default-content-wrapper ul li:last-child.navigation-level-active img{
   opacity: 1;
 }
-.default-content-wrapper.active > ul li p {
+/* .default-content-wrapper.active > ul li p {
   color: #ccc !important;
 }
 .default-content-wrapper.active > ul li.navigation-level-active p {
+  color: #333 !important;
+} */
+.default-content-wrapper.active > ul li p, .default-content-wrapper.active > ul li p a {
+  color: #ccc !important;
+}
+.default-content-wrapper.active > ul li.navigation-level-active p,.default-content-wrapper.active > ul li.navigation-level-active a {
   color: #333 !important;
 }
 
@@ -1021,6 +1027,9 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
   header nav[aria-expanded='false'] .nav-hamburger-icon::after {
     top: 5px;
   }
+  .header-wrapper .nav-wrapper nav .nav-sections .default-content-wrapper {
+    margin-left: 28px;
+  }
 }
 
 /* header custom css */
@@ -1248,19 +1257,19 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
   gap: 62px;
   position: relative;
  }
-.section.mobile-view-header .code-wrapper .code div > div > ul:nth-child(6) > li.active > ul > li:nth-child(5){
-  position: relative;
+.section.mobile-view-header .code-wrapper .code div > div > ul:nth-child(6) > li:nth-child(1) > ul > li:nth-child(5){
+    position: relative;
 }
-.section.mobile-view-header .code-wrapper .code div > div > ul:nth-child(6) > li.active > ul > li:nth-child(5)::after{
-  content: 'New';
-  background-color: #41c66e;
-  border-radius: 4px;
-  color: #fff;
-  font-family: Nunito-Bold, sans-serif;
-  font-size: 12px;
-  line-height: 16px;
-  margin-left: 10px;
-  padding:4px 10px;
+.section.mobile-view-header .code-wrapper .code div > div > ul:nth-child(6) > li:nth-child(1) > ul > li:nth-child(5)::after{
+    content: 'New';
+    background-color: #41c66e;
+    border-radius: 4px;
+    color: #fff;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    margin-left: 10px;
+    padding:4px 10px;
 }
 .section.mobile-view-header .code-wrapper .code div > div > ul:nth-child(6) > li:nth-child(4) > span > img,
 .section.mobile-view-header .code-wrapper .code div > div > ul:nth-child(6) > li:nth-child(3) > span > img,
@@ -1291,7 +1300,6 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
 .section.mobile-view-header .code-wrapper .code div > div > ul:nth-child(4) li:nth-child(1) > a {
   text-decoration: none;
 }
-
 /* playstore img banner */
 .section.mobile-view-header .header-mobile-app-store{
   background: linear-gradient(333.16deg, #fef0ec -4.71%, #ebeef0 116.99%);

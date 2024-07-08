@@ -1,4 +1,4 @@
-import { resetCalculator } from "./resetCalculator.js";
+/* import { resetCalculator } from "./resetCalculator.js";
 
 
 export default function overlayCalculator() {
@@ -72,3 +72,4 @@ export default function overlayCalculator() {
     firstTab.click();
   }
 }
+ */
