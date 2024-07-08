@@ -70,6 +70,10 @@
   line-height: 24px;
 }
 
+.section.choose-us-css.choose-us-2-col .columns-wrapper .columns>div {
+  grid-template-columns: 1fr 1fr;
+}
+
 /* home loan finance start */
 
 .section.home-loan-finance-wrapper .columns-wrapper .columns>div {
@@ -80,13 +84,18 @@
   padding-top: 40px;
 }
 
-.section.home-loan-finance-card-fw .columns-wrapper .columns.block>div:last-child>div {
+.section.choose-us-css.home-loan-finance-card-fw .columns-wrapper .columns.block>div:last-child>div {
   flex: auto;
 }
 
-.section.home-loan-finance-card-fw .columns-wrapper .columns.block>div:last-child {
+.section.choose-us-css.home-loan-finance-card-fw .columns-wrapper .columns.block>div:last-child {
   column-gap: 0;
   padding-top: 40px;
+  grid-template-columns: 1fr;
+}
+
+.section.choose-us-css.home-loan-finance-card-fw .columns-wrapper .columns.block > div:last-child > div:nth-child(2) {
+  display: none;
 }
 
 /* home loan finance end */
@@ -158,8 +167,11 @@
     line-height: 1.25rem;
   }
 
-  .section.home-loan-finance-card-fw .columns-wrapper .columns.block>div:last-child {
+  .section.choose-us-css.home-loan-finance-card-fw .columns-wrapper .columns.block>div:last-child {
     padding-top: 24px;
+  }
+  .section.choose-us-css.choose-us-2-col .columns-wrapper .columns>div {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -188,6 +200,12 @@
   }
   .section.choose-us-css .columns-wrapper .columns>div:nth-child(2) {
     padding-top: unset;
+  }
+  .section.choose-us-css.choose-us-2-col .columns-wrapper .columns>div {
+    grid-template-columns: 1fr;
+  }
+  .section.choose-us-css.home-loan-finance-card-fw .columns-wrapper .columns.block>div:last-child {
+    padding-top: 24px;
   }
 }
 
