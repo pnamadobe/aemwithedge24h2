@@ -94,6 +94,10 @@
   grid-template-columns: 1fr;
 }
 
+.section.choose-us-css.home-loan-finance-card-fw .columns-wrapper .columns.block > div:last-child > div:nth-child(2) {
+  display: none;
+}
+
 /* home loan finance end */
 
 @media screen and (max-width: 767px) {
@@ -169,9 +173,6 @@
   .section.choose-us-css.choose-us-2-col .columns-wrapper .columns>div {
     grid-template-columns: 1fr;
   }
-  .section.choose-us-css.home-loan-finance-card-fw .columns-wrapper .columns.block > div:last-child > div:nth-child(2) {
-    display: none;
-  }  
 }
 
 
