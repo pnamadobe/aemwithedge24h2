@@ -85,6 +85,7 @@ export function fetchAPI(method, url, data) {
         resolve({ responseJson: json });
       }
     } catch (error) {
+      console.warn(error);
       reject(error);
     }
   });
