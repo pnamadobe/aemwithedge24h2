@@ -1,13 +1,13 @@
 export function homeloanCalHTML(callJson) {
-    const salaried = callJson.data[0].salaried.salariedcheck
+    const salaried = callJson.salaried.salariedcheck
       ? `
   <li id="salaryTab" class="firsttab onetab">
       <div class="customecheck">
           <div class="salary-parent">
-              <input type="radio" id="${callJson.data[0].salaried.salariedtabid}" name="${callJson.data[0].salaried.salariedtabname}"
-                  class="input_salary_checkbox" data-cal-foir="salaried" value="${callJson.data[0].salaried.salariedtabvalue}"
+              <input type="radio" id="${callJson.salaried.salariedtabid}" name="${callJson.salaried.salariedtabname}"
+                  class="input_salary_checkbox" data-cal-foir="salaried" value="${callJson.salaried.salariedtabvalue}"
                   checked>
-              <label for="${callJson.data[0].salaried.salariedtabid}">${callJson.data[0].salaried.salariedtabtext}</label>
+              <label for="${callJson.salaried.salariedtabid}">${callJson.salaried.salariedtabtext}</label>
               <div class="blackborder">
                   <div class="black">
   
@@ -15,8 +15,8 @@ export function homeloanCalHTML(callJson) {
               </div>
           </div>
           <div class="customimage">
-              <img data-src="${callJson.data[0].salaried.calculatorsalariedimg}" class="customer lozad"
-                  alt="${callJson.data[0].salaried.calculatorsalariedimgalt}" src="${callJson.data[0].salaried.calculatorsalariedimg}"
+              <img data-src="${callJson.salaried.calculatorsalariedimg}" class="customer lozad"
+                  alt="${callJson.salaried.calculatorsalariedimgalt}" src="${callJson.salaried.calculatorsalariedimg}"
                   data-loaded="true">
           </div>
   
@@ -24,14 +24,14 @@ export function homeloanCalHTML(callJson) {
   </li>`
       : "";
   
-    const business = callJson.data[0].business.businesscheck
+    const business = callJson.business.businesscheck
       ? `
-  <li id="${callJson.data[0].business.businesstabid}" class="firsttab secondtab twotab">
+  <li id="${callJson.business.businesstabid}" class="firsttab secondtab twotab">
       <div class="customecheck">
           <div class="salary-parent business-parent">
-              <input type="radio" id="${callJson.data[0].business.businesstabid}" name="${callJson.data[0].business.businesstabname}"
-                  class="input_business_checkbox" data-cal-foir="biz" value="${callJson.data[0].business.businesstabvalue}">
-              <label for="${callJson.data[0].business.businesstabid}">${callJson.data[0].business.businesstabtext}</label>
+              <input type="radio" id="${callJson.business.businesstabid}" name="${callJson.business.businesstabname}"
+                  class="input_business_checkbox" data-cal-foir="biz" value="${callJson.business.businesstabvalue}">
+              <label for="${callJson.business.businesstabid}">${callJson.business.businesstabtext}</label>
               <div class="blackborder">
                   <div class="black">
   
@@ -40,9 +40,9 @@ export function homeloanCalHTML(callJson) {
   
           </div>
           <div class="customimage">
-              <img data-src="${callJson.data[0].business.calculatorbusinessimg}"
-                  class=" customer lozad" alt="${callJson.data[0].business.calculatorbusinessimgalt}"
-                  src="${callJson.data[0].business.calculatorbusinessimg}"
+              <img data-src="${callJson.business.calculatorbusinessimg}"
+                  class=" customer lozad" alt="${callJson.business.calculatorbusinessimgalt}"
+                  src="${callJson.business.calculatorbusinessimg}"
                   data-loaded="true">
           </div>
       </div>
@@ -51,8 +51,8 @@ export function homeloanCalHTML(callJson) {
       : "";
   
   let emiinputdiv = "";
-    callJson.data[0]["chechboxemiobj"]["chechboxemi"] &&
-      callJson.data[0]["chechboxemiobj"].loanamout.forEach(function (each, index) {
+    callJson["chechboxemiobj"]["chechboxemi"] &&
+      callJson["chechboxemiobj"].loanamout.forEach(function (each, index) {
         emiinputdiv += `<div class="loanamount">
             <div class="data">
                 <label class="description">${each.label}</label>
@@ -81,8 +81,8 @@ export function homeloanCalHTML(callJson) {
       });
   
   let eligibilityinputdiv = "";
-    callJson.data[0]["chechboxelibilityobj"]["chechboxemi"] &&
-      callJson.data[0]["chechboxelibilityobj"].loanamout.forEach(function (each, index) {
+    callJson["chechboxelibilityobj"]["chechboxemi"] &&
+      callJson["chechboxelibilityobj"].loanamout.forEach(function (each, index) {
           eligibilityinputdiv += `<div class="loanamount">
             <div class="data">
                 <label class="description">${each.label}</label>
@@ -110,16 +110,16 @@ export function homeloanCalHTML(callJson) {
         </div>`;
       });
   
-    const rightSideAmount = callJson.data[0].principaltext
+    const rightSideAmount = callJson.principaltext
       ? `<div class="amountdiv">
                         <div class="firstamout">
-                            <p>${callJson.data[0].principaltext}</p>
+                            <p>${callJson.principaltext}</p>
                             <p class="amount"><span>₹</span><span
                                     data-cal-result="principalAmt">25,00,000</span>
                             </p>
                         </div>
                         <div class="secondamount firstamout">
-                            <p>${callJson.data[0].interesttext}</p>
+                            <p>${callJson.interesttext}</p>
                             <p class="amount"><span>₹</span><span
                                     data-cal-result="interestAmt">16,32,560</span>
                             </p>
@@ -127,7 +127,7 @@ export function homeloanCalHTML(callJson) {
     </div>`
       : "";
   
-    const emidiv = callJson.data[0].chechboxemiobj.chechboxemi
+    const emidiv = callJson.chechboxemiobj.chechboxemi
       ? `
   <div class="emicalculator commoncalculator">
       <div class="parent-emi" id="emic">
@@ -137,15 +137,15 @@ export function homeloanCalHTML(callJson) {
           <div class="outputdiv">
               <div class="output-parent">
                   <div class="mainoutput">
-                      <img data-src="${callJson.data[0].calendarbox}"
-                          class="outputimg lozad" alt="calendar" src="${callJson.data[0].calendarboxemi}">
-                      <img data-src="${callJson.data[0].calendarboxemi}"
+                      <img data-src="${callJson.calendarbox}"
+                          class="outputimg lozad" alt="calendar" src="${callJson.calendarboxemi}">
+                      <img data-src="${callJson.calendarboxemi}"
                           class="outputimg2 lozad" alt="calendar"
-                          src="${callJson.data[0].calendarboxemi}"
+                          src="${callJson.calendarboxemi}"
                           data-loaded="true">
   
                       <p class="outputdes">
-                          ${callJson.data[0].outputtext1}
+                          ${callJson.outputtext1}
                       </p>
                       <div class="outputans" data-cal-result="resultAmt">₹34,438/-</div>
   
@@ -160,7 +160,7 @@ export function homeloanCalHTML(callJson) {
       : "";
   
   
-  const eligibilitydiv = callJson.data[0].chechboxelibilityobj.chechboxemi
+  const eligibilitydiv = callJson.chechboxelibilityobj.chechboxemi
       ? `
   <div class="eligibilitycalculator calculator commoncalculator">
       <div class="parent-emi parent-eligibility" id="emic">
@@ -170,15 +170,15 @@ export function homeloanCalHTML(callJson) {
           <div class="outputdiv">
               <div class="output-parent">
                   <div class="mainoutput">
-                      <img data-src="${callJson.data[0].calendarbox}"
-                          class="outputimg lozad" alt="calendar" src="${callJson.data[0].calendarmobileelg}">
-                      <img data-src="${callJson.data[0].calendarmobileelg}"
+                      <img data-src="${callJson.calendarbox}"
+                          class="outputimg lozad" alt="calendar" src="${callJson.calendarmobileelg}">
+                      <img data-src="${callJson.calendarmobileelg}"
                           class="outputimg2 lozad" alt="calendar"
-                          src="${callJson.data[0].calendarmobileelg}"
+                          src="${callJson.calendarmobileelg}"
                           data-loaded="true">
   
                       <p class="outputdes">
-                          ${callJson.data[0].outputtext2}
+                          ${callJson.outputtext2}
                       </p>
                       <div class="outputans" data-cal-result="resultAmt">₹34,438/-</div>
   
@@ -197,11 +197,11 @@ export function homeloanCalHTML(callJson) {
         <div id="container-7dfdb51cd4" class="cmp-container">
             <div class="title home-loan-title">
                 <div id="title-bd2a9ac3b1" class="cmp-title">
-                    <h3 class="cmp-title__text">${callJson.data[0].title}</h3>
+                    <h3 class="cmp-title__text">${callJson.title}</h3>
                 </div>
             </div>
             <div class="homeloancalculator">
-                <div class="home-loan-calculator-parent combined-emi-eligibility ${callJson.data[0].maindivbackground}">
+                <div class="home-loan-calculator-parent combined-emi-eligibility ${callJson.maindivbackground}">
     
                     <div class="hlc-subparent">
                         <ul class="radiotab">
@@ -217,24 +217,24 @@ export function homeloanCalHTML(callJson) {
                 <div class="calculator-parent">
                     <div class="calculator-parent-child">
                         <div class="cp-child">
-                            <div class="mainheading ${callJson.data[0].mainheadingclass}">
-                                <p class="first-head">${callJson.data[0].selectloantype.subheading}</p>
-                                  <p class="second-head">${callJson.data[0].selectloantype.subheadingtow}</p>
+                            <div class="mainheading ${callJson.mainheadingclass}">
+                                <p class="first-head">${callJson.selectloantype.subheading}</p>
+                                  <p class="second-head">${callJson.selectloantype.subheadingtow}</p>
                             </div>
-                            <div class="headingtabs ${callJson.data[0].mainheadingclass}">
+                            <div class="headingtabs ${callJson.mainheadingclass}">
                                 <ul class="headul">
   
   
                                     <li class="tab-emi-calc tab-common active">
-                                        <p>${callJson.data[0].tabname.firsttabbname}</p>
+                                        <p>${callJson.tabname.firsttabbname}</p>
                                     </li>
     
                                     <li class="tab-eligibility-calc tab-common">
-                                        <p>${callJson.data[0].tabname.secondtabbname}</p>
+                                        <p>${callJson.tabname.secondtabbname}</p>
                                     </li>
   
                                     <li class="tab-eligibility-calc tab-common gst-third-tab">
-                                        <p>${callJson.data[0].tabname.thridtabname}</p>
+                                        <p>${callJson.tabname.thridtabname}</p>
                                     </li>
     
     
@@ -250,13 +250,13 @@ export function homeloanCalHTML(callJson) {
     
                             <div class="customerbuttons">
     
-                                <a href="${callJson.data[0].button1link}" target="_self">
+                                <a href="${callJson.button1link}" target="_self">
     
-                                    <button class="expert">${callJson.data[0].button1text}</button>
+                                    <button class="expert">${callJson.button1text}</button>
                                 </a>
-                                <a href="${callJson.data[0].button2link}" target="_self">
+                                <a href="${callJson.button2link}" target="_self">
     
-                                    <button class="expert orangeexpert">${callJson.data[0].button2text}</button>
+                                    <button class="expert orangeexpert">${callJson.button2text}</button>
                                 </a>
     
                             </div>
@@ -265,7 +265,7 @@ export function homeloanCalHTML(callJson) {
                 </div>
     
                 <div class="homepagemobiledesign"></div>
-                <input type="hidden" name="product type" id="calculator-product-type" value="${callJson.data[0].pageproperties}">
+                <input type="hidden" name="product type" id="calculator-product-type" value="${callJson.pageproperties}">
                 <!-- tab-center--calculator -->
             </div>
         </div>

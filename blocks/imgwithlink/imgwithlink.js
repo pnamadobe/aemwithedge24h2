@@ -16,16 +16,16 @@ export default function decorate(block) {
 }
 
 function createImageWithLink(block) {
-  const isMobile = window.matchMedia("(max-width: 768px)").matches;
+  const isMobile = window.matchMedia("(max-width: 767px)").matches;
   const blockDiv = document.createElement("div");
   blockDiv.innerHTML = block.innerHTML.trim();
 
   const pictureIndex = isMobile ? 3 : 0;
   const textIndex = isMobile ? 5 : 2;
   const blockPic = blockDiv.children[pictureIndex]?.querySelector("picture") || blockDiv.children[0]?.querySelector("picture");
-  const hrefElem = blockDiv.children[textIndex]?.innerText.trim() || blockDiv.children[2]?.innerText.trim();
+  const hrefElem = blockDiv.children[textIndex]?.innerText.trim() || blockDiv.children[2]?.innerText.trim() || "";
 
-  if (!blockPic || !hrefElem) {
+  if (!blockPic) {
     console.warn("Required elements not found in the block.");
     return document.createElement("div");
   }
