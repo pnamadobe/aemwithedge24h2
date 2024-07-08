@@ -1,9 +1,17 @@
+import { outboundClick } from "../../dl.js";
+
 export default function decorate(block) {
   const newDiv = createImageWithLink(block);
   if (newDiv) {
     block.innerHTML = "";
     block.appendChild(newDiv);
     aTagPreventDefault();
+    block.addEventListener("click", function (e) {
+      const menu_category = e.target.closest(".section").querySelector(".default-content-wrapper").innerText;
+      // const menu_category = e.target.closest(".section").querySelector(".default-content-wrapper").innerText;
+      block.closest(".footer.block")
+      outboundClick();
+    })
   }
 }
 

@@ -255,6 +255,20 @@
         "name": "href2",
         "value": "#",
         "label": "Link Mobile"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "click_text",
+        "value": "",
+        "label": "click_text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "menu_category",
+        "value": "",
+        "label": "menu_category"
       }
     ]
   },
