@@ -39,3 +39,14 @@ export function outboundClick(click_text, menu_category, cta_position, page_type
         console.warn(error);
     }
 }
+
+export function navlogin(page_type) {
+    try {
+        window.dataLayer.push({
+            'event': 'nav_login',
+            'page_type': page_type
+        });
+    } catch (error) {
+        console.warn(error);
+    }
+}
