@@ -81,7 +81,7 @@
 
 /* offer documents start */
 
-.section.offer-documents-wrapper .default-content-wrapper ul>li>a::after {
+.section.offer-documents-wrapper .default-content-wper ul>li>a::after {
     content: "";
     background-image: url('https://publish-p133703-e1305981.adobeaemcloud.com/content/dam/piramalfinance/company/stakeholders/download-icon.png');
     position: absolute;

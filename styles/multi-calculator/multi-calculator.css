@@ -214,4 +214,10 @@
         line-height: 16px;
     }
 }
+
+/* @media screen and (max-width: 1024px) {
+    .section.home-loan-eligibility-calculator .teaser-wrapper {
+        padding: 0;
+    }
+} */
 /* home loan eligibility calculator end */

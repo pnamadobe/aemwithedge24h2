@@ -1,6 +1,10 @@
+import { fetchPlaceholders } from "../../scripts/aem.js";
 import { generateAccordionDOM } from "../accordion/accordion.js";
 
-export default function decorate(block) {
+export default async function decorate(block) {
+
+  const resp = await fetchPlaceholders();
+  console.log("placeholder resp :: ", resp);
   // each row is an accordion entry
   const accordions = [...block.children];
 
@@ -28,23 +32,23 @@ export default function decorate(block) {
 function openFunctionFAQ(block) {
   const titles = block.querySelectorAll("details summary");
 
-    titles.forEach(function (title) {
-      title.addEventListener("click", function () {
-        if(this.classList.contains('active')){
-          setTimeout(() => {
-            this.closest("details").removeAttribute("open");
-          }, 1000);
-          this.classList.remove("active");
-        }else{
-          titles.forEach(function (title) {
-            title.closest("details").removeAttribute("open");
-            title.classList.remove("active");
-          });
-    
-          this.classList.toggle("active");
-        }
-      });
+  titles.forEach(function (title) {
+    title.addEventListener("click", function () {
+      if (this.classList.contains('active')) {
+        setTimeout(() => {
+          this.closest("details").removeAttribute("open");
+        }, 1000);
+        this.classList.remove("active");
+      } else {
+        titles.forEach(function (title) {
+          title.closest("details").removeAttribute("open");
+          title.classList.remove("active");
+        });
+
+        this.classList.toggle("active");
+      }
     });
+  });
 
 }
 

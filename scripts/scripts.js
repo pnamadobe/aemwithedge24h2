@@ -408,10 +408,10 @@ function loadDelayed() {
 }
 
 async function loadPage() {
+  await loadingCustomCss();
   await loadEager(document);
   await loadLazy(document);
   loadDelayed();
-  await loadingCustomCss();
 }
 
 loadPage();
