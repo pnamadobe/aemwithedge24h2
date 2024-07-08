@@ -96,7 +96,13 @@
     font-weight: 400;
     line-height: 20px;
 }
-
+@media screen and (max-width:900px) {
+.section.tab-with-cards-wrapper .panel-container {
+    grid-template-columns: 1fr;
+    margin-top: 20px;
+    gap: 16px;
+}
+}
 @media screen and (max-width:768px) {
     .section.tab-with-cards-wrapper .default-content-wrapper> h4 {
         font-size: 20px;
@@ -112,12 +118,6 @@
 
     .section.tab-with-cards-wrapper .tab-name-wrapper .tab-name.block .carousel-inner>div {
         padding: 0 12px;
-    }
-
-    .section.tab-with-cards-wrapper .panel-container {
-        grid-template-columns: 1fr;
-        margin-top: 20px;
-        gap: 16px;
     }
 
     .section.tab-with-cards-wrapper .panel-container .teaser.block.card-full-width {
