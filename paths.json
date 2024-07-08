@@ -10,6 +10,7 @@
     "/content/piramalfinance-eds/personal-loan-city:/personal-loan-city.json",
     "/content/piramalfinance-eds/bussiness-loan-city:/bussiness-loan-city.json",
     "/content/piramalfinance-eds/document-required:/document-required.json",
+    "/content/piramalfinance-eds/combined-calculator:/combined-calculator.json",
     "/content/piramalfinance-eds/placeholder:/placeholder.json",
     "/content/piramalfinance-eds/ph:/ph.json",
     "/content/piramalfinance-eds/test:/test.json"

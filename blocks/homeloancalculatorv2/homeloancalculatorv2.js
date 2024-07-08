@@ -96,7 +96,7 @@ export default async function decorate(block) {
           chechboxemi: true,
           loanamout: [
             {
-              label: "Gross Annual Income (Rs.)",
+              label: "Gross Monthly Income (Rs.)",
               labelyearsvalue: "",
               rupeesign: "₹",
               dataslider: "el1",
@@ -157,8 +157,8 @@ export default async function decorate(block) {
         interesttext: "Interest amount",
         button1text: "Talk to loan expert",
         button2text: "Apply loan now",
-        button1link: "#",
-        button2link: "#",
+        button1link: "",
+        button2link: "",
         pageproperties: "hl",
       },
     ],
@@ -178,7 +178,7 @@ export default async function decorate(block) {
     }
 
     let calDefaultValueObj = {};
-    
+
     let calculators = document.querySelectorAll(".homeloancalculator .calctabs .commoncalculator");
     
     calculators.forEach((cal, index) => {
