@@ -172,8 +172,8 @@
         height: 4px;
         width: 4px;
         margin: 0 4px;
-        background: var(--swiper-pagination-bullet-inactive-color, #000);
-        opacity: var(--swiper-pagination-bullet-inactive-opacity, .2);
+        background: #000;
+        opacity: .2;
     }
     .section.carousel-articles-wrapper .carousel .button-container button.selected{
         background-color: #000;
@@ -184,7 +184,7 @@
     }
     .section.carousel-articles-wrapper .carousel-wrapper .carousel .button-container{
         display: flex;
-        padding-top: 42px;
+        padding-top: 45px;
         gap: 0;
     }
     .section.carousel-articles-wrapper .carousel-wrapper .carousel .panel-container .teaser .background .front-picture picture img{
