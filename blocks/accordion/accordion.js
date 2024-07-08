@@ -13,7 +13,6 @@ export function generateAccordionDOM(block) {
     } else {
       const url = element.innerText.trim();
       const isurl = url.includes(".json");
-      debugger;
       const elementText = element.innerHTML.replace(/&lt;/g, "<").replace(/&gt;/g, ">")
       var elementDiv = document.createElement("div");
       if (isurl) {
