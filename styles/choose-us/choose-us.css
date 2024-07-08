@@ -70,6 +70,10 @@
   line-height: 24px;
 }
 
+.section.choose-us-css.choose-us-2-col .columns-wrapper .columns>div {
+  grid-template-columns: 1fr 1fr;
+}
+
 /* home loan finance start */
 
 .section.home-loan-finance-wrapper .columns-wrapper .columns>div {
@@ -87,6 +91,7 @@
 .section.home-loan-finance-card-fw .columns-wrapper .columns.block>div:last-child {
   column-gap: 0;
   padding-top: 40px;
+  grid-template-columns: 1fr;
 }
 
 /* home loan finance end */
