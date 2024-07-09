@@ -1,6 +1,6 @@
 // import { ProductLogics } from "./loadformlogic";
 // import { otpPopupFailureFun, removeLoader } from "../../../../clientlibs/support/otppopup/js/otppopup";
-import { errorPopUp, formInteraction, generateLead, thankYouPopUp, verifyOtp } from "../../dl.js";
+import { errorPopUp, formInteraction, generateLead, resendOtp, thankYouPopUp, verifyOtp } from "../../dl.js";
 import { fetchAPI, targetObject } from "../../scripts/scripts.js";
 import { accessTokenURL, generateOTPURL, leadAPIURL, otpTokenURL, resendOTPUrl, smsURL, verifyOTPURL } from "./loanformapiurls.js";
 import { cutomerEmployment, cutomerNo, loanFromBtn, loanOtpInput, loanProduct } from "./loanformdom.js";
@@ -374,7 +374,12 @@ function resendOtpBtnClick() {
         return;
     }
 
-    resendOtpBtn.addEventListener("click", function () {
+    resendOtpBtn.addEventListener("click", function (e) {
+        try {
+            resendOtp(e.target.innerText, targetObject.pageName);
+        } catch (error) {
+            console.warn(error);
+        }
         resendOtpAPI(loanProduct().dataset.loanType)
             .then(function ({ responseJson }) {
                 let otpAuthId = responseJson.authUniqueId;

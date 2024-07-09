@@ -232,7 +232,6 @@ export function applyLoanFormClick() {
     }
 
     otparrow.addEventListener("click", function (e) {
-      resendOtp(e.target.innerText, targetObject.pageName);
       loaninnerform.classList.remove("loan-form-sub-otp");
       clearInterval(intervalTime);
       loanOtpInput().value = "";
