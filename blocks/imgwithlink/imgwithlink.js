@@ -1,4 +1,4 @@
-import { outboundClick } from "../../dl.js";
+import { ctaClick, outboundClick } from "../../dl.js";
 import { targetObject } from "../../scripts/scripts.js";
 
 export default function decorate(block) {
@@ -39,11 +39,15 @@ function createImageWithLink(block) {
   createDiv.classList.add(isMobile ? "image-href-mobile" : "image-href-desktop");
   createDiv.appendChild(createHref);
 
-  createDiv.addEventListener("click", function (e) {
-    debugger;
-    const click_text = click_textel.innerText.trim();
-    const menu_category = menu_categoryel.innerText.trim();
-    if (block.closest(".footer") && click_text && menu_category) outboundClick(click_text, menu_category, "footer", targetObject.pageName);
+  createDiv?.addEventListener("click", function (e) {
+    try {
+      const click_text = click_textel.innerText.trim();
+      const menu_category = menu_categoryel.innerText.trim();
+      if (block.closest(".footer") && click_text && menu_category) outboundClick(click_text, menu_category, "footer", targetObject.pageName);
+      else if (block.closest(".download-piramal-wrapper") && click_text && menu_category) ctaClick(click_text, menu_category, menu_category, targetObject.pageName);
+    } catch (error) {
+      console.warn(error);
+    }
   })
   return createDiv;
 }

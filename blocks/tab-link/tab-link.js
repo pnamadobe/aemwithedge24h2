@@ -1,7 +1,7 @@
 import { createButton, createCarousle, getProps,targetObject } from "../../scripts/scripts.js";
 
 export default function decorate(block) {
-    console.log("tab link block");
+    //console.log("tab link block");
     const [, classes, prev, next] = getProps(block, {
         picture: true
     })

@@ -20,7 +20,7 @@ function stateMasterProcessData(statemasterRaw) {
         Object.assign(statemasterObj, stateObj);
         return statemasterObj;
     }, {});
-    console.log(statemaster);
+    //console.log(statemaster);
     return statemaster;    
 }
 
@@ -188,7 +188,7 @@ function stateLoanFilter(loanType) {
         }
     }
 
-    console.log(newStates);
+    //console.log(newStates);
     
     let states = Object.keys(newStates).sort();
     let fragment = states.length > 0 ? renderHelper(states, "form-state", "States") : renderHelper(states, "form-state", "No options");

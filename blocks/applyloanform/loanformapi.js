@@ -174,7 +174,7 @@ function leadAPI(accessToken) {
     return new Promise(function (resolve, reject) {
         fetchAPI("POST", leadAPIURL, requestObj)
             .then(function (response) {
-                console.log("Data inserted successfully.");
+                //console.log("Data inserted successfully.");
                 resolve("Data inserted successfully.");
             });
     });
@@ -231,7 +231,7 @@ export function workFlow() {
             return generateOTPAPI(accesstoken, cutomerNo().value, loanProduct().dataset.loanType)
         })
         .then(function () {
-            console.log("Data inserted successfully");
+            //console.log("Data inserted successfully");
             verifyOtpBtnClick();
             resendOtpBtnClick();
         })
@@ -336,7 +336,7 @@ function resendOtpBtnClick() {
             .then(function ({ responseJson }) {
                 let otpAuthId = responseJson.authUniqueId;
                 sessionStorage.setItem("otpAuthId", otpAuthId);
-                console.log(responseJson.returnResponse.message);
+                //console.log(responseJson.returnResponse.message);
             })
             .catch(function (error) {
                 console.warn("resendOtpErr: " + error);
@@ -351,7 +351,7 @@ function isTimePassed(timestamp) {
     if (!timestamp || timestamp == "undefined") return true;
     const currentTime = new Date();
     const givenTime = new Date(timestamp);
-    console.log(givenTime, givenTime < currentTime);
+    //console.log(givenTime, givenTime < currentTime);
     return givenTime < currentTime;
 }
 

@@ -1,4 +1,4 @@
-import { headerInteraction, navlogin } from '../../dl.js';
+import { headerInteraction, loignClick, navlogin } from '../../dl.js';
 import { getMetadata } from '../../scripts/aem.js';
 import { targetObject } from '../../scripts/scripts.js';
 import { loadFragment } from '../fragment/fragment.js';
@@ -196,12 +196,12 @@ export default async function decorate(block) {
   try {
     clickToBlurHeader()
   } catch (error) {
-    console.log(error)
+    //console.log(error)
   }
   try {
     clickToShowMobileNavDropDown()
   } catch (error) {
-    console.log(error)
+    //console.log(error)
   }
 
   // Last element with Image
@@ -212,6 +212,7 @@ export default async function decorate(block) {
   }
   try {
     block.querySelector(".nav-tools").addEventListener("click", function (e) {
+      loignClick(e.target.innerText, targetObject.pageName);
       navlogin(targetObject.pageName);
     })
   } catch (error) {

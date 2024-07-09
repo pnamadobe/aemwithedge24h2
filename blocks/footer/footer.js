@@ -19,16 +19,20 @@ export default async function decorate(block) {
   while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
 
   block.append(footer);
-  block.querySelectorAll("li,p").forEach(function (el) {
-    el.addEventListener("click", function (e) {
-      e.stopPropagation();
-      if (e.target.closest(".footer-section-first") || e.target.closest(".footer-section-second")) {
-        console.log("click_text :: ", e.target.innerText);
-        console.log("menu_category :: ", e.target.closest("ul")?.closest("li")?.querySelector("p")?.innerText);
-        const click_text = e.target.innerText
-        const menu_category = e.target.closest("ul")?.closest("li")?.querySelector("p")?.innerText
-        footerInteraction(click_text, menu_category, null, targetObject.pageName);
-      }
+  try {
+    block.querySelectorAll("li,p").forEach(function (el) {
+      el.addEventListener("click", function (e) {
+        e.stopPropagation();
+        if (e.target.closest(".footer-section-first") || e.target.closest(".footer-section-second")) {
+          //console.log("click_text :: ", e.target.innerText);
+          //console.log("menu_category :: ", e.target.closest("ul")?.closest("li")?.querySelector("p")?.innerText);
+          const click_text = e.target.innerText
+          const menu_category = e.target.closest("ul")?.closest("li")?.querySelector("p")?.innerText
+          footerInteraction(click_text, menu_category, null, targetObject.pageName);
+        }
+      })
     })
-  })
+  } catch (error) {
+    console.warn(error);
+  }
 }

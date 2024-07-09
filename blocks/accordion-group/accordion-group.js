@@ -4,7 +4,7 @@ import { generateAccordionDOM } from "../accordion/accordion.js";
 export default async function decorate(block) {
 
   const resp = await fetchPlaceholders();
-  console.log("placeholder resp :: ", resp);
+  //console.log("placeholder resp :: ", resp);
   // each row is an accordion entry
   const accordions = [...block.children];
 
