@@ -1,3 +1,4 @@
+import { fetchAPI } from "../../scripts/scripts.js";
 import { firstTabActive } from "../emiandeligiblitycalc/commonfile.js";
 import { homeLoanCalcFunc } from "../emiandeligiblitycalc/homeloancalculators.js";
 import { renderCalculatorData } from "../emiandeligiblitycalc/renderhpcal.js";
