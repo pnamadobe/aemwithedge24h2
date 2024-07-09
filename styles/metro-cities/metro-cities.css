@@ -5,7 +5,7 @@
 }
 
 .section.metro-cities-wrapper .default-content-wrapper {
-    padding: 80px 0;
+    padding: 80px 0 0;
 }
 
 .section.metro-cities-wrapper .default-content-wrapper>h2 {
@@ -69,11 +69,11 @@
 
 @media screen and (max-width:767px) {
     .section.metro-cities-wrapper .default-content-wrapper {
-        padding: 40px 0;
+        padding: 40px 16px 0;
     }
 
     .section.metro-cities-wrapper .city-list-wrapper {
-        padding: 0 0 40px 0;
+        padding: 0 16px 40px 16px;
     }
 
     .section.metro-cities-wrapper .default-content-wrapper>h2 {
@@ -92,6 +92,15 @@
     .section.metro-cities-wrapper .default-content-wrapper>ul,
     .section.metro-cities-wrapper .city-list-wrapper .city-list > ul {
         grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}
+
+@media (min-width:767px) and (max-width:1024px) {
+    .section.metro-cities-wrapper .default-content-wrapper {
+        padding: 80px 16px 0;
+    }
+    .section.metro-cities-wrapper .city-list-wrapper {
+        padding: 0 16px 80px 16px;
     }
 }
 
