@@ -63,3 +63,51 @@ export function applyLoanNow(cta_category, loan_type, cta_position, page_type) {
         console.warn(error);
     }
 }
+export function ctaClick(click_text, cta_category, cta_position, page_type) {
+    try {
+        window.dataLayer.push({
+            'event': 'cta_click',
+            'click_text': click_text,
+            'cta_category': cta_category,
+            'cta_position': cta_position,
+            'page_type': page_type,
+        });
+    } catch (error) {
+        console.warn(error);
+    }
+}
+export function loignClick(click_text, page_type) {
+    try {
+        window.dataLayer.push({
+            'event': 'login',
+            'click_text': click_text,
+            'page_type': page_type
+        });
+    } catch (error) {
+        console.warn(error);
+    }
+}
+export function talkToExpert(cta_category, loan_type, cta_position, page_type) {
+    try {
+        window.dataLayer.push({
+            'event': 'talk_to_expert',
+            'cta_category': cta_category,
+            'loan_type': loan_type,
+            'cta_position': cta_position,
+            'page_type': page_type,
+        });
+    } catch (error) {
+        console.warn(error);
+    }
+}
+export function bannerClick(click_text, page_type) {
+    try {
+        window.dataLayer.push({
+            'event': 'banner_click',
+            'click_text': click_text,
+            'page_type': page_type
+        });
+    } catch (error) {
+        console.warn(error);
+    }
+}

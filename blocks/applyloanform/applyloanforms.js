@@ -1,4 +1,4 @@
-import { applyLoanNow } from "../../dl.js";
+import { applyLoanNow, talkToExpert } from "../../dl.js";
 import { targetObject } from "../../scripts/scripts.js";
 import {
   branchInput,
@@ -92,13 +92,17 @@ export function applyLoanFormClick() {
           }
         } else {
           formOpen();
-
           resetLoanForm();
           firstformbtn.classList.remove("loader-initialized");
           loaninnerform.classList.remove("loan-form-sub-otp", "loan-form-success", "loan-form-request-fail", "loan-form-something-wrong");
           try {
-            applyLoanNow("calculator", "", targetObject.calculatorType, targetObject.pageName);
-            console.log("calculator type :  ", targetObject.calculatorType);
+            console.log(e.target.innerText);
+            if (e.target.innerText.trim() === "Talk to loan expert") {
+              talkToExpert("calculator", "", targetObject.calculatorType, targetObject.pageName);
+            } else if (e.target.innerText.trim() === "Apply loan now") {
+              applyLoanNow("calculator", "", targetObject.calculatorType, targetObject.pageName);
+            }
+            //console.log("calculator type :  ", targetObject.calculatorType);
           } catch (error) {
             console.warn(error);
           }

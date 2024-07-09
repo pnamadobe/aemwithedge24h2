@@ -4,7 +4,7 @@ import { getCalculatorInput } from "../emiandeligiblitycalc/getcalculatordata.js
 
 export function workflowHomeLoanCalculation(currentCalculator, calType) {
     let resultObj = getCalculationResult(currentCalculator, calType);
-    console.log(resultObj);
+    //console.log(resultObj);
 
     if(resultObj != null) {
         renderData(currentCalculator, resultObj);
@@ -22,7 +22,7 @@ export function renderData(parentElement, resultObj) {
     let resultAmtElement = parentElement.querySelector("[data-cal-result=resultAmt]") || nullDom;
     let principalAmtElement = parentElement.querySelector("[data-cal-result=principalAmt]") || nullDom;
     let interestAmtElement = parentElement.querySelector("[data-cal-result=interestAmt]") || nullDom;
-    console.log(JSON.stringify(resultObj));
+    //console.log(JSON.stringify(resultObj));
     resultAmtElement.textContent = "₹" + currenyCommaSeperation(resultObj.result ? resultObj.result : 0) + "/-";
     principalAmtElement.textContent = currenyCommaSeperation(resultObj.principalAmt ? resultObj.principalAmt : 0);
     interestAmtElement.textContent = currenyCommaSeperation(resultObj.interestAmt ? resultObj.interestAmt : 0);   

@@ -481,7 +481,7 @@ body?.addEventListener("click", function (e) {
     document.querySelector(".modal-overlay").classList.add("dp-none");
     document.querySelector(".modal-overlay").style.zIndex = 0;
   } else if (!e.target.closest('.nav-drop')) {
-    console.log("don't close nav");
+    //console.log("don't close nav");
 
     const navSections = nav.querySelector('.nav-sections');
     navSections.children[0].classList.remove("active");
