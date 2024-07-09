@@ -1,5 +1,5 @@
 export function homeloanCalHTML(callJson) {
-    const salaried = callJson.salaried.salariedcheck
+    const salaried = callJson.salaried?.salariedcheck
       ? `
   <li id="salaryTab" class="firsttab onetab">
       <div class="customecheck">
@@ -24,7 +24,7 @@ export function homeloanCalHTML(callJson) {
   </li>`
       : "";
   
-    const business = callJson.business.businesscheck
+    const business = callJson.business?.businesscheck
       ? `
   <li id="${callJson.business.businesstabid}" class="firsttab secondtab twotab">
       <div class="customecheck">
@@ -200,8 +200,8 @@ export function homeloanCalHTML(callJson) {
                     <h3 class="cmp-title__text">${callJson.title}</h3>
                 </div>
             </div>
-            <div class="homeloancalculator">
-                <div class="home-loan-calculator-parent combined-emi-eligibility ${callJson.maindivbackground}">
+            <div class="homeloancalculator ${callJson.tabcenterclass || ""} ">
+                <div class="home-loan-calculator-parent combined-emi-eligibility ${callJson.mainheadingclass || ""}">
     
                     <div class="hlc-subparent">
                         <ul class="radiotab">
@@ -217,11 +217,11 @@ export function homeloanCalHTML(callJson) {
                 <div class="calculator-parent">
                     <div class="calculator-parent-child">
                         <div class="cp-child">
-                            <div class="mainheading ${callJson.mainheadingclass}">
+                            <div class="mainheading">
                                 <p class="first-head">${callJson.selectloantype.subheading}</p>
                                   <p class="second-head">${callJson.selectloantype.subheadingtow}</p>
                             </div>
-                            <div class="headingtabs ${callJson.mainheadingclass}">
+                            <div class="headingtabs">
                                 <ul class="headul">
   
   
