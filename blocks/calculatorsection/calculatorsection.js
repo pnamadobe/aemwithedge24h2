@@ -2,6 +2,7 @@ import { fetchAPI } from "../../scripts/scripts.js";
 import { firstTabActive } from "../emiandeligiblitycalc/commonfile.js";
 import { homeLoanCalcFunc } from "../emiandeligiblitycalc/homeloancalculators.js";
 import { renderCalculatorData } from "../emiandeligiblitycalc/renderhpcal.js";
+import { CalcHTM } from "../emiandeligiblitycalc/templatehtml1.js";
 
 export default async function decorate(block) {
   let cfURL = block.textContent.trim();
