@@ -702,7 +702,9 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
   background-color: #f26841;
   transition: all ease 0.3s;
 }
-
+.header-wrapper .nav-wrapper div.section.nav-sections > div > ul > li.nav-drop.navigation-level-active > ul li a{
+  text-decoration: none;
+}
 @media screen and (max-width: 767.99px) {
   .header-wrapper .nav-wrapper nav{
     min-height: unset !important;
