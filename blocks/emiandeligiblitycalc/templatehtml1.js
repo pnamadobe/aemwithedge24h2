@@ -1,5 +1,5 @@
 export function CalcHTM(callJson) {
-  const salaried = callJson.salaried.salariedcheck
+  const salaried = callJson.salaried?.salariedcheck
     ? `
 <li id="salaryTab" class="firsttab onetab" style="display: block; background: rgb(255, 255, 255);">
     <div class="customecheck">
@@ -24,7 +24,7 @@ export function CalcHTM(callJson) {
 </li>`
     : "";
 
-  const business = callJson.business.businesscheck
+  const business = callJson.business?.businesscheck
     ? `
 <li id="${callJson.business.businesstabid}" class="firsttab secondtab twotab">
     <div class="customecheck">
