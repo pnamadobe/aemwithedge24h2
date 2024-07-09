@@ -1,6 +1,7 @@
 // import { ProductLogics } from "./loadformlogic";
 // import { otpPopupFailureFun, removeLoader } from "../../../../clientlibs/support/otppopup/js/otppopup";
-import { fetchAPI } from "../../scripts/scripts.js";
+import { errorPopUp, formInteraction, generateLead, thankYouPopUp } from "../../dl.js";
+import { fetchAPI, targetObject } from "../../scripts/scripts.js";
 import { accessTokenURL, generateOTPURL, leadAPIURL, otpTokenURL, resendOTPUrl, smsURL, verifyOTPURL } from "./loanformapiurls.js";
 import { cutomerEmployment, cutomerNo, loanFromBtn, loanOtpInput, loanProduct } from "./loanformdom.js";
 import { ProductLogics } from "./loanformlogic.js";
@@ -8,13 +9,36 @@ import { ProductLogics } from "./loanformlogic.js";
 
 let loanStatus = "Rejected";
 
+let formLoanType;
+let formName;
+let formLoanAmount;
+let formCustomerName;
+let formCustomerNo;
+let Occupation;
+let formIncome;
+let formDOB;
+let formState;
+let formBranchCity;
+
 export function buttonCLick() {
 
+    try {
+        updateFormValuve();
+        formInteraction(formLoanType, "Form Open", targetObject.pageName);
+    } catch (error) {
+        console.warn(error);
+    }
     loanFromBtn().addEventListener("click", function ({ currentTarget }) {
         // debugger;
         currentTarget.closest(".loan-form-button-container").classList.add("loader-initialized");
         loanOtpInput().value = "";
         workFlow();
+        try {
+            updateFormValuve();
+            formInteraction(formLoanType, "Form Submit", targetObject.pageName);
+        } catch (error) {
+            console.warn(error);
+        }
     });
 }
 
@@ -244,17 +268,20 @@ export function workFlow() {
         });
 }
 
+function updateFormValuve() {
+    formLoanType = document.querySelector('#form-loan-type')?.value;
+    formName = document.querySelector('.loan-form-heading-parent').innerText;
+    formLoanAmount = document.querySelector('#form-loan-amount')?.value;
+    formCustomerName = document.querySelector('#form-customer-name')?.value;
+    formCustomerNo = document.querySelector('#form-customer-no')?.value;
+    Occupation = document.querySelector('[name=emplyoment]:checked').id == "radio-salary" ? "Salaried" : "Business";
+    formIncome = document.querySelector('#form-income')?.value;
+    formDOB = document.querySelector('#loan-form-dob')?.value;
+    formState = document.querySelector('#form-state')?.value;
+    formBranchCity = document.querySelector('#form-branch-city')?.value;
+}
 function getLeadFormData(loanStatus) {
-    const formLoanType = document.querySelector('#form-loan-type')?.value;
-    const formLoanAmount = document.querySelector('#form-loan-amount')?.value;
-    const formCustomerName = document.querySelector('#form-customer-name')?.value;
-    const formCustomerNo = document.querySelector('#form-customer-no')?.value;
-    const Occupation = document.querySelector('[name=emplyoment]:checked').id == "radio-salary" ? "Salaried" : "Business";
-    const formIncome = document.querySelector('#form-income')?.value;
-    const formDOB = document.querySelector('#loan-form-dob')?.value;
-    const formState = document.querySelector('#form-state')?.value;
-    const formBranchCity = document.querySelector('#form-branch-city')?.value;
-
+    updateFormValuve();
     const leadDataObj = {
         "Name": formCustomerName,
         "MobileNumber": formCustomerNo,
@@ -281,9 +308,10 @@ function verifyOtpBtnClick() {
         return;
     }
     verifyOtpBtn.addEventListener("click", function () {
+        updateFormValuve();
         let otpValue = document.querySelector("#loan-form-otp-input").value;
         verifyOtpBtn.closest(".loan-form-button-container").classList.add("loader-initialized");
-
+        formInteraction(formLoanType, "verify", targetObject.pageName);
         if (otpValue) {
             verfyOtpAPI(otpValue)
                 .then(function ({ returnResponse }) {
@@ -302,9 +330,24 @@ function verifyOtpBtnClick() {
                     if (ProductLogics(loanFormCriteria())) {
                         loaninnerform.classList.add("loan-form-success");
                         loanStatus = "Approved";
+                        try {
+                            generateLead(formName, formLoanType, formLoanAmount, formState, formBranchCity, targetObject.pageName);
+                        } catch (error) {
+                            console.warn(error);
+                        }
+                        try {
+                            thankYouPopUp(formName, formLoanType, targetObject.pageName);
+                        } catch (error) {
+                            console.warn(error);
+                        }
                     } else {
                         loaninnerform.classList.add("loan-form-request-fail");
                         loanStatus = "Rejected";
+                        try {
+                            errorPopUp(formName, formLoanType, loaninnerform.querySelector(".redbox")?.innerText, targetObject.pageName);
+                        } catch (error) {
+                            console.warn(error);
+                        }
                     }
 
                     leadAPI(sessionStorage.getItem("accesstoken"))
