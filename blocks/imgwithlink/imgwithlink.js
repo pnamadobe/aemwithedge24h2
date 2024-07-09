@@ -1,3 +1,6 @@
+import { outboundClick } from "../../dl.js";
+import { targetObject } from "../../scripts/scripts.js";
+
 export default function decorate(block) {
   const newDiv = createImageWithLink(block);
   if (newDiv) {
@@ -10,8 +13,12 @@ export default function decorate(block) {
 function createImageWithLink(block) {
   const isMobile = window.matchMedia("(max-width: 767px)").matches;
   const blockDiv = document.createElement("div");
+  const len = block.children.length;
+  const click_textel = block.children[len - 2];
+  const menu_categoryel = block.children[len - 1];
+  click_textel.remove();
+  menu_categoryel.remove();
   blockDiv.innerHTML = block.innerHTML.trim();
-
   const pictureIndex = isMobile ? 3 : 0;
   const textIndex = isMobile ? 5 : 2;
   const blockPic = blockDiv.children[pictureIndex]?.querySelector("picture") || blockDiv.children[0]?.querySelector("picture");
@@ -32,6 +39,12 @@ function createImageWithLink(block) {
   createDiv.classList.add(isMobile ? "image-href-mobile" : "image-href-desktop");
   createDiv.appendChild(createHref);
 
+  createDiv.addEventListener("click", function (e) {
+    debugger;
+    const click_text = click_textel.innerText.trim();
+    const menu_category = menu_categoryel.innerText.trim();
+    if (block.closest(".footer") && click_text && menu_category) outboundClick(click_text, menu_category, "footer", targetObject.pageName);
+  })
   return createDiv;
 }
 
