@@ -66,6 +66,9 @@ footer.footer-wrapper .footer {
   position: relative;
   cursor: pointer;
 }
+.footer-section-first .columns-wrapper p a{
+  color: #fff;
+}
 .footer-section-first .columns-wrapper p sup{
   background-color: #41C672;
   color: #fff;
