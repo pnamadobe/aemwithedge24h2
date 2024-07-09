@@ -305,6 +305,7 @@ ol .accordion ul {
 }
 
 .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block details h3,
+.faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block details p,
 .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block summary {
     margin-top: unset;
     color: #333;
@@ -334,6 +335,7 @@ ol .accordion ul {
 }
 
 .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block summary.active h3,
+.faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block summary.active p,
 .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block summary.active {
     color: #f26841;
     font-weight: 700;
@@ -342,7 +344,7 @@ ol .accordion ul {
     border-bottom: none !important;
     opacity: .3;
 }
-.faq-section-wrapper .default-content-wrapper {
+/* .faq-section-wrapper .default-content-wrapper {
     text-align: center;
     align-items: center;
     display: flex;
@@ -358,11 +360,31 @@ ol .accordion ul {
     padding: 1pc 24px;
     font-family: nunito-bold;
     font-size: 18px;
-}
+} */
 
 .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block summary>div,
 .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block summary>div>p {
     margin: 0;
+}
+
+.faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block > details ul {
+    margin: unset;
+    list-style: disc;
+    margin-left: 18px;
+}
+
+.faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block > details ul>li {
+    color: #666;
+    font-size: 20px;
+    line-height: 28px;
+    font-family: "Nunito-Regular";
+    margin: unset;
+    padding-left: 10px;
+}
+
+.faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block > details ul>li::marker{
+    font-size: 1.25rem;
+    line-height: 1.75rem;
 }
 
 /* .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block details>div>article>div,
@@ -376,10 +398,10 @@ ol .accordion ul {
 
 /* End */
 @media screen and (max-width:767px) {
-    .faq-section-wrapper .default-content-wrapper .button-container{
+    /* .faq-section-wrapper .default-content-wrapper .button-container{
         width: 100%;
         font-size: 16px;
-    }
+    } */
     .faq-section-wrapper.faq-accordion-css-with-orange-heading {
         padding-top: 40px;
         padding-bottom: 40px;
@@ -426,19 +448,19 @@ ol .accordion ul {
     }
 
     .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block details h3,
+    .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block details p,
     .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block summary {
         font-size: 16px;
         line-height: 24px;
         align-items: flex-start;
-        /* width: 83%; */
     }
-
 
     .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block details h3 {
         width: 83%;
     }
 
     .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block summary.active h3,
+    .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block summary.active p,
     .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block summary.active {
         color: #f26841;
         font-size: 16px;
@@ -448,7 +470,22 @@ ol .accordion ul {
         font-size: 20px;
         line-height: 28px;
     }
-    .section.faq-section-wrapper .default-content-wrapper{
-        padding-top: 10px;
+
+    .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block > details ul {
+        margin-left: 16px;
     }
+ 
+
+    .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block > details ul>li {
+        font-size: 16px;
+        line-height: 24px;
+        padding-left: 5px;
+    }
+    .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block > details ul>li::marker {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+    /* .section.faq-section-wrapper .default-content-wrapper{
+        padding-top: 10px;
+    } */
 }
