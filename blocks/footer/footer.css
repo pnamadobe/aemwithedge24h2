@@ -68,6 +68,7 @@ footer.footer-wrapper .footer {
 }
 .footer-section-first .columns-wrapper p a{
   color: #fff;
+  text-decoration: none;
 }
 .footer-section-first .columns-wrapper p sup{
   background-color: #41C672;
