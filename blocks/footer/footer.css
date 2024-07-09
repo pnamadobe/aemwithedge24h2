@@ -62,9 +62,10 @@ footer.footer-wrapper .footer {
   font-weight: 700;
   color: #fff;
   text-align: right;
-  margin-right: 20%;
+  margin-right: 25%;
   position: relative;
   cursor: pointer;
+  margin-bottom: 40px;
 }
 .footer-section-first .columns-wrapper p a{
   color: #fff;
@@ -84,7 +85,7 @@ footer.footer-wrapper .footer {
   position: absolute;
   bottom: 0px;
   margin-right: 6px;
-  right: 23%;
+  right: 22.5%;
   text-align: center;
   justify-content: center;
 }
