@@ -41,7 +41,7 @@ footer.footer-wrapper .footer {
   padding: 1.5rem 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: start;
 }
 .footer-section-second {
   border-bottom: 1px solid rgb(94 115 119);
@@ -62,9 +62,14 @@ footer.footer-wrapper .footer {
   font-weight: 700;
   color: #fff;
   text-align: right;
-  margin-right: 20%;
+  margin-right: 25%;
   position: relative;
   cursor: pointer;
+  margin-bottom: 40px;
+}
+.footer-section-first .columns-wrapper p a{
+  color: #fff;
+  text-decoration: none;
 }
 .footer-section-first .columns-wrapper p sup{
   background-color: #41C672;
@@ -80,7 +85,7 @@ footer.footer-wrapper .footer {
   position: absolute;
   bottom: 0px;
   margin-right: 6px;
-  right: 23%;
+  right: 22.5%;
   text-align: center;
   justify-content: center;
 }
@@ -198,9 +203,12 @@ footer.footer-wrapper .footer {
 .footer-section-four.columns-container  .columns > div > div {
   flex: unset;
 }
-.footer-section-third{
+/* .footer-section-third{
   display: grid;
   grid-template-columns: 13% 13% 40% 1fr;
+} */
+.section.footer-section-third .wrappercreation-wrapper {
+  margin-left: auto;
 }
 .footer-section-third .default-content-wrapper p a{
   color: #f58667;
@@ -297,10 +305,10 @@ footer.footer-wrapper .footer {
   .footer-section-first .columns-wrapper p sup {
     right: 102px;
   }
-  .footer-section-third {
-    /* display: block; */
+  /* .footer-section-third {
+    display: block;
     grid-template-columns: 15% 14% 30% 1fr;
-  }
+  } */
   /* .header-wrapper .nav-wrapper .nav-hamburger button .nav-hamburger-icon::before, 
   .header-wrapper .nav-wrapper .nav-hamburger button .nav-hamburger-icon::after {
     height: 1px;
