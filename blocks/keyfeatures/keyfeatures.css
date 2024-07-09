@@ -197,7 +197,7 @@
     font-weight: 400;
     line-height: 24px;
 }
-@media screen and (max-width: 767.99px) {
+@media screen and (max-width: 767px) {
     .section.home-loans-products-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container{
         grid-template-columns: 1fr;
         margin-top: 16px;
@@ -257,7 +257,7 @@
     }
 }
 
-@media screen and (max-width: 1023.99px) {
+@media screen and (max-width: 1024px) {
     .section.home-loans-products-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .keyfeatures-wrapper .keyfeatures .homeloanteaser .cmp-teaser .cmp-teaser__link{
         height: 268px;
         row-gap: 12px;
