@@ -12,8 +12,8 @@
 .accordion-group>.accordion details div {
     font-size: var(--exlm-font-size-content);
     line-height: var(--exlm-line-height-h4);
-    margin-left: 14px;
-    margin-top: 14px;
+    /* margin-left: 14px;
+    margin-top: 14px; */
 }
 
 /* override /docs font size */
