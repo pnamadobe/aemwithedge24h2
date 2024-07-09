@@ -186,7 +186,9 @@
     width: calc(100% - 4pc);
     z-index: 9999;
 }
-
+.section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text .cpm-sub-text>p{
+    text-align: start;
+}
 .section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text {
     position: unset;
     max-width: unset;
@@ -201,7 +203,8 @@
     overflow-y: auto;
     border-radius: unset;
     overflow-y: auto;
-    margin: 24px 77px 0 93px;
+    padding: 24px 77px 0 93px;
+    margin-top: 24px;
 }
 
 .section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text .popup-parent-cont {
@@ -235,15 +238,19 @@
     width: 20px;
     position: absolute;
     top: 0;
-    right: 10px;
+    right: 0;
 }
 
-.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div p {
+.section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer >p .popupbutton {
     text-align: center;
     margin: 24px auto 3pc;
+    display: block;
+}
+.section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer >p .popupbutton a:hover {
+    text-decoration: none;
 }
 
-.section.partnership-image-popup .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div p a {
+.section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer >p .popupbutton a {
     background-color: #f26841;
     border-radius: 4px;
     color: #fff;
@@ -255,10 +262,26 @@
     width: fit-content;
     margin: 0;
 }
+.section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div ul{
+    margin-left: 16px;
+    list-style-type: disc;
+    color: rgba(0, 0, 0, .871);
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1pc;
+    font-weight: 400;
+    line-height: 24px;
+}
+.section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div ul li{
+    padding: 5px 0;
+}
+.section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .text.popupText .cmp-text .popup-parent-cont .popupContainer div ul li::marker{
+    font-size: 16px;
+}
+
 
 @media screen and (max-width:1024px) {
     .section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text {
-        margin: 24px 1pc 0;
+        padding: 24px 1pc 0;
     }
 }
 
