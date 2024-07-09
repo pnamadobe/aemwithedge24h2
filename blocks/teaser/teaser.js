@@ -1,3 +1,4 @@
+import { applyLoanNow } from "../../dl.js";
 import { targetObject } from "../../scripts/scripts.js";
 
 export function decorateButtons(...buttons) {
@@ -90,6 +91,15 @@ export function generateTeaserDOM(props, classes) {
     teaserDOM.querySelector(".foreground").style.setProperty("--teaser-background-color", `var(--${backgroundColor.substr(3)})`);
   }
 
+  teaserDOM?.querySelector(".button-container")?.addEventListener("click", function (e) {
+    try {
+      e.preventDefault();
+      applyLoanNow(eyebrow.textContent.trim() + " " + title.textContent.trim(), '', "banner", targetObject.pageName)
+    } catch (error) {
+      console.warn(error);
+    }
+
+  })
   // add final teaser DOM and classes if used as child component
   return teaserDOM;
 }

@@ -1,9 +1,9 @@
 import { renderCalculatorData } from "../emiandeligiblitycalc/renderhpcal.js";
 import { homeLoanCalcFunc } from "../emiandeligiblitycalc/homeloancalculators.js";
 import { CalcHTM } from "../emiandeligiblitycalc/templatehtml1.js";
-import {firstTabActive } from "../emiandeligiblitycalc/commonfile.js";
+import { firstTabActive } from "../emiandeligiblitycalc/commonfile.js";
 import { fetchAPI, targetObject } from "../../scripts/scripts.js";
- 
+
 let calculatorType, emiCalDiv, emiOverlay, overlay;
 
 export default async function decorate(block) {
@@ -13,7 +13,7 @@ export default async function decorate(block) {
   const cfRepsonse = await CFApiCall(cfURL);
   const repsonseData = cfRepsonse.data[0].data;
   const jsonResponseData = JSON.parse(repsonseData)
-  
+
   /* const callJson = {
     total: 1,
     offset: 0,
@@ -182,6 +182,7 @@ export function homeLoancalculatorCallXf() {
         const currentSection = document.querySelector(".home-page-calculator-call-xf .homeloancalculator-wrapper");
         findSectionXFShow.querySelector(".overlayDiv").classList.add("show");
         if (xfGetAttr == "home-page-calculator-call-xf") {
+          targetObject.calculatorType = "EMI Calculator";
           findSectionXFShow.classList.remove("dp-none"); // look
           calculatorType = "emi";
           emiOverlay.classList.add("show");

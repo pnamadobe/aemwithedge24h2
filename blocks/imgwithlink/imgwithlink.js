@@ -39,11 +39,14 @@ function createImageWithLink(block) {
   createDiv.classList.add(isMobile ? "image-href-mobile" : "image-href-desktop");
   createDiv.appendChild(createHref);
 
-  createDiv.addEventListener("click", function (e) {
-    debugger;
-    const click_text = click_textel.innerText.trim();
-    const menu_category = menu_categoryel.innerText.trim();
-    if (block.closest(".footer") && click_text && menu_category) outboundClick(click_text, menu_category, "footer", targetObject.pageName);
+  createDiv?.addEventListener("click", function (e) {
+    try {
+      const click_text = click_textel.innerText.trim();
+      const menu_category = menu_categoryel.innerText.trim();
+      if (block.closest(".footer") && click_text && menu_category) outboundClick(click_text, menu_category, "footer", targetObject.pageName);
+    } catch (error) {
+      console.warn(error);
+    }
   })
   return createDiv;
 }

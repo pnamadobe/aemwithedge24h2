@@ -50,3 +50,16 @@ export function navlogin(page_type) {
         console.warn(error);
     }
 }
+export function applyLoanNow(cta_category, loan_type, cta_position, page_type) {
+    try {
+        window.dataLayer.push({
+            'event': 'apply_loan_now',
+            'cta_category': cta_category,
+            'loan_type': loan_type,
+            'cta_position': cta_position,
+            'page_type': page_type,
+        });
+    } catch (error) {
+        console.warn(error);
+    }
+}

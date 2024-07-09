@@ -1,3 +1,5 @@
+import { applyLoanNow } from "../../dl.js";
+import { targetObject } from "../../scripts/scripts.js";
 import {
   branchInput,
   cutomerEmployment,
@@ -94,6 +96,12 @@ export function applyLoanFormClick() {
           resetLoanForm();
           firstformbtn.classList.remove("loader-initialized");
           loaninnerform.classList.remove("loan-form-sub-otp", "loan-form-success", "loan-form-request-fail", "loan-form-something-wrong");
+          try {
+            applyLoanNow("calculator", "", targetObject.calculatorType, targetObject.pageName);
+            console.log("calculator type :  ", targetObject.calculatorType);
+          } catch (error) {
+            console.warn(error);
+          }
         }
       });
     });
@@ -413,6 +421,7 @@ export function applyLoanFormClick() {
     });
 
     function resetLoanForm() {
+
       let applyloanform = document.querySelector(".applyloanform");
       let errorMessages = applyloanform.querySelectorAll(".loan-form-err");
 
@@ -495,14 +504,14 @@ export function formOpen() {
         overlay.style.zIndex = "1205";
       }
     } */
-      const checkingFormopen = document.querySelector(".home-page-calculator-call-xf");
-    
-      if (checkingFormopen) {
-        if (checkingFormopen.querySelector(".homeloancalculator-wrapper .show") || checkingFormopen.querySelector(".eligibilitycalculator-wrapper .show")) {
-          overlay.style.zIndex = "1205";
-        }
+    const checkingFormopen = document.querySelector(".home-page-calculator-call-xf");
+
+    if (checkingFormopen) {
+      if (checkingFormopen.querySelector(".homeloancalculator-wrapper .show") || checkingFormopen.querySelector(".eligibilitycalculator-wrapper .show")) {
+        overlay.style.zIndex = "1205";
       }
-        
+    }
+
     loaninnerform.style.visibility = "visible";
     bodyElement.style.overflowY = "hidden";
   }
