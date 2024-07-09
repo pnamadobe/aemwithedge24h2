@@ -384,6 +384,9 @@ ol .accordion ul {
         padding-top: 40px;
         padding-bottom: 40px;
     }
+    .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block summary>div {
+        width: 95%;
+    }
 }
 @media screen and (max-width:1024px) {
     .faq-accordion-css .accordion-group-wrapper {
