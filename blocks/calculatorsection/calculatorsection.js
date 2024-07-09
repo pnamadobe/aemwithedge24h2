@@ -1,6 +1,6 @@
-import { firstTabActive } from "../emiandeligiblitycalc/commonfile";
-import { homeLoanCalcFunc } from "../emiandeligiblitycalc/homeloancalculators";
-import { renderCalculatorData } from "../emiandeligiblitycalc/renderhpcal";
+import { firstTabActive } from "../emiandeligiblitycalc/commonfile.js";
+import { homeLoanCalcFunc } from "../emiandeligiblitycalc/homeloancalculators.js";
+import { renderCalculatorData } from "../emiandeligiblitycalc/renderhpcal.js";
 
 export default async function decorate(block) {
   let cfURL = block.textContent.trim();
