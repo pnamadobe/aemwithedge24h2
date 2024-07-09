@@ -1,4 +1,4 @@
-import { headerInteraction } from '../../dl.js';
+import { headerInteraction, navlogin } from '../../dl.js';
 import { getMetadata } from '../../scripts/aem.js';
 import { targetObject } from '../../scripts/scripts.js';
 import { loadFragment } from '../fragment/fragment.js';
@@ -129,16 +129,18 @@ export default async function decorate(block) {
           const expanded = navSection.getAttribute('aria-expanded') === 'true';
           toggleAllNavSections(navSections);
           navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-
-
-          const click_text = e.target.innerText;
-          const menu_category = e.target.closest("ul").closest("li")?.querySelector("p")?.innerText;
-          // console.log("click_text :: ", e.target.innerText);
-          // console.log("menu_category :: ", e.target.closest("ul").closest("li")?.querySelector("p")?.innerText);
-          // console.log("menu_category :: ", e.target.closest(".navigation-level-active")?.querySelector("p")?.innerText);
-          console.log(targetObject.ctaPosition);
-          console.log(targetObject.pageName);
-          headerInteraction(click_text, menu_category, targetObject.ctaPosition, targetObject.pageName);
+          try {
+            const click_text = e.target.innerText;
+            const menu_category = e.target.closest("ul").closest("li")?.querySelector("p")?.innerText;
+            // console.log("click_text :: ", e.target.innerText);
+            // console.log("menu_category :: ", e.target.closest("ul").closest("li")?.querySelector("p")?.innerText);
+            // console.log("menu_category :: ", e.target.closest(".navigation-level-active")?.querySelector("p")?.innerText);
+            // console.log(targetObject.ctaPosition);
+            // console.log(targetObject.pageName);
+            headerInteraction(click_text, menu_category, targetObject.ctaPosition, targetObject.pageName);
+          } catch (error) {
+            console.warn(error);
+          }
         } else if (isMobile.matches) {
           // Custom Event Function 
           const expanded = navSection.getAttribute('aria-expanded') === 'true';
@@ -205,6 +207,13 @@ export default async function decorate(block) {
   // Last element with Image
   try {
     block.querySelector('.nav-sections').querySelector('ul').lastElementChild.querySelector('p').innerHTML = `<img src="https://publish-p133703-e1305981.adobeaemcloud.com/content/dam/piramalfinance/header-images/language-black.svg" alt="language" class="leveloneimg">`
+  } catch (error) {
+    console.warn(error);
+  }
+  try {
+    block.querySelector(".nav-tools").addEventListener("click", function (e) {
+      navlogin(targetObject.pageName);
+    })
   } catch (error) {
     console.warn(error);
   }

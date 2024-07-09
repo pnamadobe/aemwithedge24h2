@@ -360,6 +360,11 @@ ol .accordion ul {
     font-size: 18px;
 }
 
+.faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block summary>div,
+.faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block summary>div>p {
+    margin: 0;
+}
+
 /* .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block details>div>article>div,
 .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block details>div>article>div>article>div {
     margin: 0;
@@ -370,10 +375,17 @@ ol .accordion ul {
 } */
 
 /* End */
-@media screen and (max-width:768px) {
+@media screen and (max-width:767px) {
     .faq-section-wrapper .default-content-wrapper .button-container{
         width: 100%;
         font-size: 16px;
+    }
+    .faq-section-wrapper.faq-accordion-css-with-orange-heading {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .faq-accordion-css-with-orange-heading .accordion-group-wrapper .accordion-group.block.shade-box .accordion.block summary>div {
+        width: 95%;
     }
 }
 @media screen and (max-width:1024px) {

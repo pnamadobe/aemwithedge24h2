@@ -461,6 +461,7 @@ async function loadingCustomCss() {
     `${window.hlx.codeBasePath}/styles/available-facilities/available-facilities.css`,
     `${window.hlx.codeBasePath}/styles/nearest-branches/nearest-branches.css`,
     `${window.hlx.codeBasePath}/styles/steps-for-apply/steps-for-apply.css`,
+    `${window.hlx.codeBasePath}/styles/csr-committee/csr-committee.css`,
     `${window.hlx.codeBasePath}/styles/grievance-redressal/grievance-redressal.css`,
   ]
 
@@ -478,6 +479,7 @@ body?.addEventListener("click", function (e) {
     document.body.style.overflow = "scroll";
     document.querySelector(".modal-overlay").classList.remove("overlay");
     document.querySelector(".modal-overlay").classList.add("dp-none");
+    document.querySelector(".modal-overlay").style.zIndex = 0;
   } else if (!e.target.closest('.nav-drop')) {
     console.log("don't close nav");
 
@@ -488,7 +490,7 @@ body?.addEventListener("click", function (e) {
       navSection.setAttribute('aria-expanded', 'false');
     });
   }
-   if (!e.target.closest(".stake-pop-up")) {
+  if (!e.target.closest(".stake-pop-up")) {
     document.querySelectorAll(".stake-pop-up").forEach((ele) => {
       ele.classList.remove("dp-block");
       ele.classList.add("dp-none");

@@ -81,7 +81,62 @@
 
 /* offer documents start */
 
-.section.offer-documents-wrapper .default-content-wper ul>li>a::after {
+.section.offer-documents-wrapper .default-content-wrapper ul>li>p ,
+.section.offer-documents-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .offer-documents-wrapper .offer-documents .richtext .cmp-text >p{
+    background-color: #f8f8f8;
+    border-radius: 4px;
+    color: #333;
+    cursor: pointer;
+    display: block;
+    display: flex;
+    align-items: center;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 12px;
+    padding: 20px 61px 20px 24px;
+    position: relative;
+    width: 100%;
+}
+
+.section.offer-documents-wrapper .default-content-wrapper ul>li:first-child > p {
+    padding: 0;
+}
+
+.section.offer-documents-wrapper .default-content-wrapper ul>li>p>a{
+    color: #333;
+    margin: 0;
+    border: unset;
+    font-weight: 400;
+    background-color: unset;
+    border-radius: unset;
+    font-family: Nunito-Regular, sans-serif;
+    padding: 20px 61px 20px 24px;
+    text-align: unset;
+    width: 100%;
+}
+
+.section.offer-documents-wrapper .default-content-wrapper ul>li>p:hover,
+.section.offer-documents-wrapper .default-content-wrapper ul>li>p:hover > a,
+.section.offer-documents-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .offer-documents-wrapper .offer-documents .richtext .cmp-text:hover >p {
+    background: var(--orange);
+    color: var(--white);
+    text-decoration: none;
+}
+
+.section.offer-documents-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container {
+    display: unset;
+    margin: 0;
+}
+
+.section.offer-documents-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .offer-documents-wrapper .offer-documents .richtext .cmp-text{
+   padding: 0;
+   box-shadow: unset;
+}
+
+.section.offer-documents-wrapper .default-content-wrapper ul>li>a::after,
+.section.offer-documents-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .offer-documents-wrapper .offer-documents .richtext .cmp-text >p::after {
     content: "";
     background-image: url('https://publish-p133703-e1305981.adobeaemcloud.com/content/dam/piramalfinance/company/stakeholders/download-icon.png');
     position: absolute;
@@ -94,7 +149,8 @@
     color: #333;
 }
 
-.section.offer-documents-wrapper .default-content-wrapper ul>li>a:hover::after {
+.section.offer-documents-wrapper .default-content-wrapper ul>li>a:hover::after,
+.section.offer-documents-wrapper .wrappercreation-wrapper .wrappercreation .wrapper-creation-container .offer-documents-wrapper .offer-documents .richtext .cmp-text:hover >p::after {
     content: "";
     background-image: url('https://publish-p133703-e1305981.adobeaemcloud.com/content/dam/piramalfinance/company/stakeholders/download-icon-white.png');
     position: absolute;
@@ -145,7 +201,7 @@
     overflow-y: auto;
     border-radius: unset;
     overflow-y: auto;
-    padding: 24px 77px 0 93px;
+    margin: 24px 77px 0 93px;
 }
 
 .section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text .popup-parent-cont {
@@ -202,7 +258,7 @@
 
 @media screen and (max-width:1024px) {
     .section.offer-documents-wrapper .wrappercreation-wrapper .offer-documents-wrapper .offer-documents.block .richtext.text .stake-pop-up .popup .popupText .cmp-text {
-        padding: 24px 1pc 0;
+        margin: 24px 1pc 0;
     }
 }
 
