@@ -143,6 +143,12 @@
     }
 }
 
+@media only screen and (max-width: 425px) {
+    .section.tab-with-cards-wrapper .panel-container .teaser.block .background >.foreground .text .long-description > p>br {
+        display: none;
+    }
+}
+
 @media screen and (min-width:900px) and (max-width:1024px) {
     .section.tab-with-cards-wrapper .panel-container .teaser.block.card-full-width {
         grid-column: span 1;
