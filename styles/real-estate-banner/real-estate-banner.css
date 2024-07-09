@@ -6,7 +6,7 @@
     object-fit: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
     width: 100%;
     /* height: 540px; */
 }
@@ -21,7 +21,7 @@
     width: 80%;
 }
 
-.section.corporate-financing-banner-wrapper .teaserv2-wrapper .teaserv2>a .bg-image .description .containerimage>.cmp-container>.text>.cmp-text>h2 .title strong {
+.section.corporate-financing-banner-wrapper .teaserv2-wrapper .teaserv2>a .bg-image .description .containerimage>.cmp-container>.text>.cmp-text>h1 .title strong {
     color: #fff;
     display: block;
     font-family: 'Nunito-Extrabold', sans-serif;
@@ -64,7 +64,7 @@
 
 @media screen and (max-width:767px) {
 
-    .section.corporate-financing-banner-wrapper .teaserv2-wrapper .teaserv2>a .bg-image .description .containerimage>.cmp-container>.text>.cmp-text>h2 .title strong {
+    .section.corporate-financing-banner-wrapper .teaserv2-wrapper .teaserv2>a .bg-image .description .containerimage>.cmp-container>.text>.cmp-text>h1 .title strong {
         font-size: 24px;
         line-height: 32px;
     }
@@ -72,5 +72,11 @@
     .section.corporate-financing-banner-wrapper .teaserv2-wrapper .teaserv2>a .bg-image .description .containerimage>.cmp-container>.text>.cmp-text>p .title {
         font-size: 14px;
         line-height: 20px;
+    }
+}
+
+@media screen and (max-width:1366px) {
+    .section.corporate-financing-banner-wrapper .teaserv2-wrapper .teaserv2>a .bg-image .description .containerimage>.cmp-container>.text>.cmp-text>p .title {
+        width: 85%;
     }
 }
