@@ -1,5 +1,5 @@
 export function CalcHTM(callJson) {
-  const salaried = callJson.salaried.salariedcheck
+  const salaried = callJson.salaried?.salariedcheck
     ? `
 <li id="salaryTab" class="firsttab onetab" style="display: block; background: rgb(255, 255, 255);">
     <div class="customecheck">
@@ -24,7 +24,7 @@ export function CalcHTM(callJson) {
 </li>`
     : "";
 
-  const business = callJson.business.businesscheck
+  const business = callJson.business?.businesscheck
     ? `
 <li id="${callJson.business.businesstabid}" class="firsttab secondtab twotab">
     <div class="customecheck">
@@ -218,19 +218,19 @@ const eligibilitydiv = callJson.chechboxelibilityobj.chechboxemi
                   <div class="calculator-parent-child">
                       <div class="cp-child">
                           <div class="mainheading ${callJson.mainheadingclass}">
-                              <p class="first-head">${callJson.selectloantype.subheading}</p>
-                                <p class="second-head">${callJson.selectloantype.subheadingtow}</p>
+                              <p class="first-head">${callJson.selectloantype.subheading || ""}</p>
+                                <p class="second-head">${callJson.selectloantype.subheadingtow || ""}</p>
                           </div>
                           <div class="headingtabs ${callJson.mainheadingclass}">
                               <ul class="headul">
 
 
                                   <li class="tab-emi-calc tab-common active">
-                                      <p>${callJson.tabname.firsttabbname}</p>
+                                      <p>${callJson.tabname.firsttabbname || ""}</p>
                                   </li>
   
                                   <li class="tab-eligibility-calc tab-common">
-                                      <p>${callJson.tabname.secondtabbname}</p>
+                                      <p>${callJson.tabname.secondtabbname || ""}</p>
                                   </li>
 
                                   <li class="tab-eligibility-calc tab-common gst-third-tab">
