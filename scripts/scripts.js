@@ -127,7 +127,9 @@ export function createCarousle(block, prevButton, nextButton) {
   block.parentElement ? block.parentElement.append(prevButton) : block.append(prevButton);
   block.parentElement ? block.parentElement.append(nextButton) : block.append(nextButton);
   prevButton.addEventListener("click", prevSlide);
-  nextButton.addEventListener("click", nextSlide);
+  nextButton.addEventListener("click", function (e) {
+    nextSlide(e);
+  });
   if (block.querySelectorAll(".carousel-item").length < 4 && !targetObject.isMobile) {
     prevButton.classList.add("dp-none");
     nextButton.classList.add("dp-none");
@@ -222,9 +224,11 @@ export function createCarousle(block, prevButton, nextButton) {
     carouselInner.style.transform = `translateX(${currentTranslate}px)`;
   }
 
-  function nextSlide() {
-    showSlide(currentSlide + 1);
-    checkLastChildVisibility();
+  function nextSlide(e) {
+    if (!e.target.closest('.slide-next').classList.contains('light')) {
+      showSlide(currentSlide + 1);
+      checkLastChildVisibility();
+    }
   }
 
   function prevSlide() {
@@ -483,7 +487,7 @@ body?.addEventListener("click", function (e) {
     document.querySelector(".modal-overlay").style.zIndex = 0;
   } else if (!e.target.closest('.nav-drop')) {
     //console.log("don't close nav");
-    
+
     const nav = document.getElementById('nav');
     const navSections = nav.querySelector('.nav-sections');
     navSections.children[0].classList.remove("active");

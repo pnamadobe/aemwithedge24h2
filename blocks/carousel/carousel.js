@@ -1,4 +1,4 @@
-import { createCarousle } from '../../scripts/scripts.js';
+import { createCarousle, targetObject } from '../../scripts/scripts.js';
 import { applyLoanFormClick, formOpen } from '../applyloanform/applyloanforms.js';
 import { buttonCLick } from '../applyloanform/loanformapi.js';
 import { loanutmForm } from '../applyloanform/loanutm.js';
@@ -56,9 +56,10 @@ export default function decorate(block) {
   const carouselshowtype = block.children[2].innerText.trim() || "primary";
   const rotatetype = block.children[3].innerText.trim() || "rotate-off";
   const version = block.children[4].innerText.trim() || "One";
-  const isOldversion = version === "One";
+  const isOldversion = targetObject.isMobile || version === "One";
+  // const isOldversion = false;
   const isrotate = rotatetype === "rotate-on";
-  block.classList.add(carouselshowtype);
+  block.classList.add(carouselshowtype, version);
 
   // get all children elements
   // const panels = [...block.children];
@@ -169,6 +170,9 @@ export default function decorate(block) {
       }, 7000);
     };
   } else {
-    createCarousle(block, slidePrev, slideNext)
+    if (buttonContainer.children.length) {
+      block.append(buttonContainer)
+      createCarousle(block, slidePrev, slideNext)
+    };
   }
 }
