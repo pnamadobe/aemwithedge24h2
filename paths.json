@@ -1,7 +1,7 @@
 {
   "mappings": [
     "/content/piramalfinance-eds/:/",
-    "/content/piramalfinance-eds/in/en:/in/en",
+    "/content/piramalfinance-eds/in/en/:/",
     "/content/piramalfinance-eds/redirects:/redirects.json",
     "/content/piramalfinance-eds/cust-testimonial:/cust-testimonial.json",
     "/content/piramalfinance-eds/home-emi-calc:/home-emi-calc.json",

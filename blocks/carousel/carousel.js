@@ -1,3 +1,4 @@
+import { createCarousle, targetObject } from '../../scripts/scripts.js';
 import { applyLoanFormClick, formOpen } from '../applyloanform/applyloanforms.js';
 import { buttonCLick } from '../applyloanform/loanformapi.js';
 import { loanutmForm } from '../applyloanform/loanutm.js';
@@ -34,7 +35,8 @@ const observer = new IntersectionObserver(updateButtons, { threshold: 0.6, rootM
 export default function decorate(block) {
   // the panels container
   const panelContainer = document.createElement('div');
-  panelContainer.classList.add('panel-container');
+  panelContainer.classList.add('panel-container', 'carousel-inner');
+  panelContainer.id = 'carouselInner';
 
   // the buttons container
   const buttonContainer = document.createElement('div');
@@ -53,11 +55,15 @@ export default function decorate(block) {
 
   const carouselshowtype = block.children[2].innerText.trim() || "primary";
   const rotatetype = block.children[3].innerText.trim() || "rotate-off";
+  const version = block.children[4].innerText.trim() || "One";
+  const isOldversion = targetObject.isMobile || version === "One";
+  // const isOldversion = false;
   const isrotate = rotatetype === "rotate-on";
-  block.classList.add(carouselshowtype);
+  block.classList.add(carouselshowtype, version);
+
   // get all children elements
   // const panels = [...block.children];
-  const panels = Array.from(block.children).slice(4);
+  const panels = Array.from(block.children).slice(5);
 
   // loop through all children blocks
   [...panels].forEach((panel, i) => {
@@ -81,7 +87,7 @@ export default function decorate(block) {
     })
     generateOtherComponent = generateOtherComponent ? generateOtherComponent([imagebg, image, ...rest], classes) : generateTeaserDOM([imagebg, image, ...rest], classes);
     panel.textContent = '';
-    panel.classList.add(blockType, 'block');
+    panel.classList.add(blockType, 'block', 'carousel-item');
     classes.forEach((c) => panel.classList.add(c.trim()));
     panel.dataset.panel = `panel_${i}`;
     panel.append(generateOtherComponent);
@@ -98,7 +104,7 @@ export default function decorate(block) {
       })
       if (!i) button.classList.add('selected');
 
-      observer.observe(panel);
+      isOldversion && observer.observe(panel);
 
       // add event listener to button
       button.addEventListener('click', () => {
@@ -113,51 +119,60 @@ export default function decorate(block) {
   const slidePrev = block.querySelector(".slide-prev");
   const slideNext = block.querySelector(".slide-next")
 
-  function activePanelContainer(panel) {
-    panelContainer.scrollTo({ top: 0, left: panel.offsetLeft - panel.parentNode.offsetLeft, behavior: 'smooth' });
-  }
-  function slidePrevEventHandler() {
-    const actviveBtn = buttonContainer.querySelector(".selected");
-    const activePanel = block.querySelector('[data-panel=' + actviveBtn.dataset.panel + ']');
-    const panel = activePanel.previousElementSibling;
-    if (panel) activePanelContainer(panel)
-  }
-  function slideNextEventHandler() {
-    const actviveBtn = buttonContainer.querySelector(".selected");
-    const activePanel = block.querySelector('[data-panel=' + actviveBtn.dataset.panel + ']');
-    if (isrotate) {
-      const panel = activePanel.nextElementSibling ? activePanel.nextElementSibling : block.querySelector('[data-panel');
-      if (panel) activePanelContainer(panel);
-    } else {
-      const panel = activePanel.nextElementSibling;
-      if (panel) {
-        activePanelContainer(panel)
-      } else {
-        slideNext.classList.add("disabled")
-      };
+  // /*
+  if (isOldversion) {
+
+    function activePanelContainer(panel) {
+      panelContainer.scrollTo({ top: 0, left: panel.offsetLeft - panel.parentNode.offsetLeft, behavior: 'smooth' });
     }
-  }
-  slidePrev?.addEventListener("click", function (e) {
-    slidePrevEventHandler();
-  })
-  slideNext.addEventListener("click", function (e) {
-    slideNextEventHandler();
-  })
-
-  try {
-    block.querySelector('.open-form-on-click') && block.querySelector('.open-form-on-click .button-container').addEventListener('click', async (e) => {
-      statemasterGetStatesApi();
-      validationJSFunc();
-      formOpen();
-    });
-  } catch (error) {
-    console.warn(error);
-  }
-
-  if (buttonContainer.children.length) {
-    block.append(buttonContainer)
-    isrotate && setInterval(function () {
+    function slidePrevEventHandler() {
+      const actviveBtn = buttonContainer.querySelector(".selected");
+      const activePanel = block.querySelector('[data-panel=' + actviveBtn.dataset.panel + ']');
+      const panel = activePanel.previousElementSibling;
+      if (panel) activePanelContainer(panel)
+    }
+    function slideNextEventHandler() {
+      const actviveBtn = buttonContainer.querySelector(".selected");
+      const activePanel = block.querySelector('[data-panel=' + actviveBtn.dataset.panel + ']');
+      if (isrotate) {
+        const panel = activePanel.nextElementSibling ? activePanel.nextElementSibling : block.querySelector('[data-panel');
+        if (panel) activePanelContainer(panel);
+      } else {
+        const panel = activePanel.nextElementSibling;
+        if (panel) {
+          activePanelContainer(panel)
+        } else {
+          slideNext.classList.add("disabled")
+        };
+      }
+    }
+    slidePrev?.addEventListener("click", function (e) {
+      slidePrevEventHandler();
+    })
+    slideNext.addEventListener("click", function (e) {
       slideNextEventHandler();
-    }, 7000);
-  };
+    })
+
+    try {
+      block.querySelector('.open-form-on-click') && block.querySelector('.open-form-on-click .button-container').addEventListener('click', async (e) => {
+        statemasterGetStatesApi();
+        validationJSFunc();
+        formOpen();
+      });
+    } catch (error) {
+      console.warn(error);
+    }
+
+    if (buttonContainer.children.length) {
+      block.append(buttonContainer)
+      isrotate && setInterval(function () {
+        slideNextEventHandler();
+      }, 7000);
+    };
+  } else {
+    if (buttonContainer.children.length) {
+      block.append(buttonContainer)
+      createCarousle(block, slidePrev, slideNext)
+    };
+  }
 }
