@@ -163,3 +163,26 @@ export function formInteraction(loan_type, action, page_type) {
         console.warn(error);
     }
 }
+export function resendOtp(click_text, page_type) {
+    try {
+        window.dataLayer.push({
+            'event': 'resend_otp',
+            'click_text': click_text,
+            'page_type': page_type
+        });
+    } catch (error) {
+        console.warn(error);
+    }
+}
+export function verifyOtp(click_text, page_type, user_id) {
+    try {
+        window.dataLayer.push({
+            'event': 'verify_otp',
+            'click_text': click_text,
+            'page_type': page_type,
+            'user_id': user_id,
+        });
+    } catch (error) {
+        console.warn(error);
+    }
+}
