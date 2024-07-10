@@ -1,6 +1,5 @@
 {
   "mappings": [
-    "/content/piramalfinance-eds/:/",
     "/content/piramalfinance-eds/in/en/:/",
     "/content/piramalfinance-eds/redirects:/redirects.json",
     "/content/piramalfinance-eds/cust-testimonial:/cust-testimonial.json",
