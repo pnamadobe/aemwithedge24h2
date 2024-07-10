@@ -501,6 +501,23 @@
             "value": "rotate-off"
           }
         ]
+      },
+      {
+        "component": "select",
+        "name": "carouselversion",
+        "value": "1",
+        "label": "Version",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "1",
+            "value": "1"
+          },
+          {
+            "name": "2",
+            "value": "2"
+          }
+        ]
       }
     ]
   },
