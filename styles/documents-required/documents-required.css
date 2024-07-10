@@ -20,6 +20,7 @@
 }
 .section.documents-required-brown .default-content-wrapper{
     position: relative;
+    padding-top: 21px;
 }
 .section.documents-required-brown .default-content-wrapper p{
     color: #666;
@@ -49,7 +50,7 @@
     max-width: 265px;
     position: absolute;
     right: 0;
-    top: -7px;
+    top: 8px;
     width: 100%;
     align-items: center;
     background-color: #fff;
@@ -327,7 +328,40 @@ table {
 .section.documents-required-brown .default-content-wrapper:last-child ul li a{
     display: none;
 }
-
+.section.documents-required-brown .accordion-group-wrapper{
+    padding-bottom: 72px;
+}
+.section.documents-required-brown .accordion.block > details > div > ul > li > p strong{
+    color: #f26841;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+}
+.section.documents-required-brown .accordion.block > details > div > ul > li > ul{
+    margin: unset;
+}
+.section.documents-required-brown .accordion.block > details > div > ul > li > ul > li {
+    color: #000;
+    display: block;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    padding-top: 24px;
+    margin-bottom: unset;
+}
+.section.documents-required-brown .accordion.block details > div > ul:nth-child(2){
+    display: none;
+}
+.section.documents-required-brown .accordion.block details > div > ul:nth-child(1){
+    margin-top: unset;
+ }
+@media screen and (max-width:1400px) {
+    .section.documents-required-brown{
+        /* padding-bottom: 72px; */
+    }
+}
 @media screen and (max-width:1024px) {
     .section.documents-required-brown .default-content-wrapper ul li a{
         right: 17px;
@@ -349,6 +383,9 @@ table {
     .section.documents-required-brown table:nth-child(8) > tbody > tr > td:nth-child(4) > img,
     .section.documents-required-brown table:nth-child(9) > tbody > tr > td:nth-child(4) > img{
         margin-right: 8px;
+    }
+    .section.documents-required-brown .accordion-group-wrapper{
+        padding-bottom: unset;
     }
 }
 @media screen and (max-width:360px) {
@@ -496,10 +533,5 @@ table {
 @media screen and (max-width:768px) {
     .section.documents-required-brown .accordion-group-wrapper{
         margin-bottom: unset;
-    }
-}
-@media screen and (max-width:1400px) {
-    .section.documents-required-brown{
-        padding-bottom: 72px;
     }
 }

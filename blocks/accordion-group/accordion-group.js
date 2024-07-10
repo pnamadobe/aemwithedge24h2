@@ -1,5 +1,5 @@
 import { fetchPlaceholders } from "../../scripts/aem.js";
-import { generateAccordionDOM } from "../accordion/accordion.js";
+import { documentRequired, generateAccordionDOM } from "../accordion/accordion.js";
 
 export default async function decorate(block) {
 
@@ -24,6 +24,9 @@ export default async function decorate(block) {
   try {
     openFunctionFAQ(block);
     block.closest(".faq-view-more-logic") ? viewMoreLogicFAQ() : "";
+    if(document.querySelector('.documents-required-brown').length > 0){
+      documentRequired();
+    }
   } catch (error) {
     console.error(error);
   }
