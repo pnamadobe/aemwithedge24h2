@@ -1,8 +1,11 @@
+import { loanProductsAnalytics } from "./teaserv2-analytics.js";
+
 export default function decorate(block) {
   const props = Array.from(block.children, (row) => row.firstElementChild);
   const renderTeaserHTML = renderTeaserHTMLFactory(props);
   block.innerHTML = "";
   block.append(renderTeaserHTML);
+  loanProductsAnalytics(block);
 }
 
 function renderTeaserHTMLFactory(props) {
@@ -43,7 +46,7 @@ function renderTeaserHTMLFactory(props) {
 
   const textwithDiv = document.createElement("div");
   textwithDiv.innerHTML = textwithinnerhtml?.innerHTML || "";
-  
+
   bgImageDiv.append(frontImageDiv, titleDiv, descriptionDiv, newButtonTag, textwithDiv);
 
   const teaserv2AttrGet = teaserv2Attr?.textContent?.trim() || "";

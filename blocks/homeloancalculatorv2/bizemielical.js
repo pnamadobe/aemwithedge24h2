@@ -69,7 +69,7 @@ const calculateLoanEmi = (calculatorObj) => {
 
 function getResult(calculatorObj) {
     let calType = calculatorObj.loanDetails.calType;
-    console.log(calculatorObj);
+    //console.log(calculatorObj);
     if(calType) {
         if(calType == "emi"){
             return  calculateLoanEmi(calculatorObj);

@@ -1,5 +1,4 @@
 /* fees and charges start */
-
 .section.fees-charges-wrapper .default-content-wrapper h2 {
     color: var(--black);
     display: block;
@@ -31,7 +30,7 @@
 }
 
 .section.fees-charges-wrapper .code-wrapper .code>div>table {
-    border: 1px solid #d7dce1;
+    border: 1px solid var(--pattensblue);
     border-collapse: unset;
     border-radius: 10px;
     margin-top: 24px;
@@ -40,8 +39,8 @@
 
 .section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>th {
     background-color: var(--rosewhite);
-    border-bottom: 1px solid #d7dce1;
-    border-left: 1px solid #d7dce1;
+    border-bottom: 1px solid var(--pattensblue);
+    border-left: 1px solid var(--pattensblue);
     color: #4d4d4d;
     font-family: Nunito-Bold, sans-serif;
     font-size: 16px;
@@ -66,8 +65,8 @@
 }
 
 .section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>td {
-    border-bottom: 1px solid #d7dce1;
-    border-left: 1px solid #d7dce1;
+    border-bottom: 1px solid var(--pattensblue);
+    border-left: 1px solid var(--pattensblue);
     color: #20303f;
     font-family: Nunito-Regular, sans-serif;
     font-size: 16px;
@@ -146,12 +145,10 @@
         min-width: 166px;
     }
 }
-
 /* fees and charges end */
 
 
 /* microfinance loans table start */
-
 .section.microfinance-loan-wrapper .default-content-wrapper h2 {
     font-size: 24px;
     margin-bottom: 8px;
@@ -210,7 +207,6 @@
 
 
 /* csr committee table start */
-
 .section.csr-commitee-wrapper .default-content-wrapper h2 {
     font-family: Nunito-Extrabold, sans-serif;
     font-size: 20px;
@@ -245,27 +241,87 @@
 
 
 /* offer document table start */
-.section.offer-document-wrapper .default-content-wrapper h2 {
+.section.offer-document-table-wrapper .default-content-wrapper h2 {
     color: #333;
     margin-bottom: 40px;
 }
 
-.section.offer-document-wrapper .code-wrapper .code>div>table>tbody>tr>td>u>a {
+.section.offer-document-table-wrapper .code-wrapper .code>div>table>tbody>tr>td>u {
+    text-decoration: none;
+}
+
+.section.offer-document-table-wrapper .code-wrapper .code>div>table>tbody>tr>td>u>a,
+.section.offer-document-table-wrapper .code-wrapper .code>div>table>tbody>tr:nth-child(3)>td:nth-child(3) {
     color: var(--orange);
     text-decoration: underline;
     text-decoration-color: var(--orange);
+    word-break: break-all;
 }
 
-.section.offer-document-wrapper .code-wrapper .code>div>table>tbody>tr>td>ul>li>a {
+.section.offer-document-table-wrapper .code-wrapper .code>div>table>tbody>tr>td>ul>li>a {
+    word-break: break-all;
+}
+
+.section.offer-document-table-wrapper .code-wrapper .code>div>table>tbody>tr:nth-child(3)>td:nth-child(3) {
+    text-decoration: none;
+}
+
+.section.offer-document-table-wrapper .code-wrapper .code>div>table>tbody>tr>td>ul>li>a {
     color: var(--orange);
     text-decoration: underline;
     text-decoration-color: var(--orange);
 }
 
 @media screen and (max-width: 767px) {
-    .section.offer-document-wrapper .default-content-wrapper h2 {
+    .section.offer-document-table-wrapper .default-content-wrapper h2 {
         font-size: 16px;
         line-height: 24px;
     }
 }
 /* offer document table end */
+
+
+/* statutory committees table start */
+.section.statutory-committees-wrapper .default-content-wrapper h2 {
+    color: var(--orange);
+    font-family: Nunito-Extrabold, sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 42px;
+    margin: 24px 0;
+} 
+
+.section.statutory-committees-wrapper .code-wrapper .code>div>table>tbody>tr>th {
+    vertical-align: baseline;
+}
+
+.section.statutory-committees-wrapper .code-wrapper .code>div>table>tbody>tr>td:nth-child(2) {
+   word-break: break-all;
+}
+
+.section.statutory-committees-wrapper .code-wrapper .code>div>table>tbody>tr>td:nth-child(3) {
+    padding: 8px 8px 8px 2in;
+    text-align: start;
+    word-break: break-all;
+}
+
+.section.statutory-committees-wrapper .code-wrapper .code>div>table>tbody>tr>td:nth-child(3)> p {
+    color: var(--black);
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+}
+
+@media screen and (max-width: 767px) {
+    .section.statutory-committees-wrapper .default-content-wrapper h2 {
+        font-size: 18px;
+        line-height: 27px;
+        margin: 40px 0 14px;
+    } 
+
+    .section.statutory-committees-wrapper .code-wrapper .code>div>table>tbody>tr>td:nth-child(3) {
+        padding: 8px;
+    }
+}
+/* statutory committees table end */
