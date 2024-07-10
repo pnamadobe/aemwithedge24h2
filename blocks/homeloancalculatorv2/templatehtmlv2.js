@@ -201,7 +201,7 @@ export function homeloanCalHTML(callJson) {
                 </div>
             </div>
             <div class="homeloancalculator ${callJson.tabcenterclass || ""} ">
-                <div class="home-loan-calculator-parent combined-emi-eligibility ${callJson.mainheadingclass || ""}">
+                <div class="home-loan-calculator-parent combined-emi-eligibility ${callJson.mainheadingclass || ""} ${callJson.emiclass || ""}">
     
                     <div class="hlc-subparent">
                         <ul class="radiotab">
@@ -217,11 +217,11 @@ export function homeloanCalHTML(callJson) {
                 <div class="calculator-parent">
                     <div class="calculator-parent-child">
                         <div class="cp-child">
-                            <div class="mainheading">
+                            <div class="mainheading ${callJson.dpnoneclass || ""}">
                                 <p class="first-head">${callJson.selectloantype.subheading}</p>
                                   <p class="second-head">${callJson.selectloantype.subheadingtow}</p>
                             </div>
-                            <div class="headingtabs">
+                            <div class="headingtabs ${callJson.dpnoneclass || ""}">
                                 <ul class="headul">
   
   

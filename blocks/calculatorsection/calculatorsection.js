@@ -1,8 +1,7 @@
 import { fetchAPI } from "../../scripts/scripts.js";
-import { firstTabActive } from "../emiandeligiblitycalc/commonfile.js";
 import { homeLoanCalcFunc } from "../emiandeligiblitycalc/homeloancalculators.js";
-import { renderCalculatorData } from "../emiandeligiblitycalc/renderhpcal.js";
-import { CalcHTM } from "../emiandeligiblitycalc/templatehtml1.js";
+import { renderCalculatorData } from "./renderdatafunc.js";
+import { homeloanCalHTML } from "../homeloancalculatorv2/templatehtmlv2.js";
 
 export default async function decorate(block) {
   let cfURL = block.textContent.trim();
@@ -11,18 +10,27 @@ export default async function decorate(block) {
   const repsonseData = cfRepsonse.data[0].data;
   const jsonResponseData = JSON.parse(repsonseData);
 
-  block.innerHTML = CalcHTM(jsonResponseData);
+  block.innerHTML = homeloanCalHTML(jsonResponseData);
 
-  let elgCalDiv, elgOverlay, calculatorType; 
+  let elgCalDiv, elgOverlay;
 
   try {
     elgCalDiv = document.querySelector(".home-page-calculator-call-xf");
     elgOverlay = elgCalDiv.querySelector(".cmp-container--caloverlay");
+
     const currentSection = document.querySelector(".home-page-calculator-call-xf");
-    calculatorType = currentSection.querySelector(".home-loan-calculator-parent.emi") ? "emi" : "eligibility"
+
+    if (document.querySelector(".home-loan-calculator-parent").classList.contains("combined-emi-eligibility")) {
+      document.querySelector(".home-loan-calculator-parent").classList.remove("combined-emi-eligibility");
+      document.querySelector(".homeloancalculator").querySelector(".eligibilitycalculator").style.display = "block";
+    }
+
     homeLoanCalcFunc(currentSection);
-    renderCalculatorData(currentSection, calculatorType);
-    firstTabActive(currentSection);
+
+    let calculators = document.querySelectorAll(".homeloancalculator");
+    calculators.forEach((cal) => {
+      renderCalculatorData(cal);
+    });
   } catch (error) {
     console.warn(error);
   }
