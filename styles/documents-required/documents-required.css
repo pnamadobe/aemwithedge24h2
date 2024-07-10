@@ -1,0 +1,505 @@
+.section.documents-required-brown{
+    background-color: rgb(255, 247, 244);
+}
+.section.documents-required-brown .accordion-group{
+    background-color: #fff;
+    border-radius: 24px;
+    box-shadow: 0 4px 12px rgba(51, 51, 51, .08);
+    padding: 0 32px;
+    margin-bottom: 0;
+}
+.section.documents-required-brown .default-content-wrapper #documents-required{
+    color: #333;
+    display: block;
+    font-family: Nunito-Extrabold, sans-serif;
+    font-size: 2pc;
+    font-weight: 800;
+    line-height: 28px;
+    padding-bottom: 8px;
+    width: 70%;
+}
+.section.documents-required-brown .default-content-wrapper{
+    position: relative;
+}
+.section.documents-required-brown .default-content-wrapper p{
+    color: #666;
+    display: block;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 18px;
+    line-height: 28px;
+    padding-bottom: 8px;
+    margin-bottom: 24px;
+    margin-top: 24px;
+}
+.section.documents-required-brown .default-content-wrapper ul li a::before{
+    content: '';
+    position: absolute;
+    background-image: url('https://publish-p133703-e1380816.adobeaemcloud.com/content/dam/piramalfinance/product-page/home-loan/whatsapp.svg');
+    top: 13px;
+    height: 20px;
+    width: 20px;
+    left: 28px;
+}
+.section.documents-required-brown .default-content-wrapper ul li a{
+    color: #365069;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    border: 1px solid #365069;
+    max-width: 265px;
+    position: absolute;
+    right: 0;
+    top: -7px;
+    width: 100%;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row-reverse;
+    min-height: 48px;
+    padding: 0 24px;
+    text-decoration: none;
+}
+.section.documents-required-brown .default-content-wrapper ul li{
+    
+}   
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details summary div h3{
+    color: #333;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 20px;
+    line-height: 28px;
+    padding-bottom: 4px;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion.block details summary div p{
+    color: #666;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: unset;
+    padding-top: 0;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion.block:last-child{
+    pointer-events: none;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details summary div {
+    position: relative;
+    padding-left: 55px;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details summary div::before{
+    content:'';
+    position: absolute;
+    background-image: url('https://publish-p133703-e1380816.adobeaemcloud.com/content/dam/piramalfinance/product-page/home-loan/down-arrow.png');
+    height: 24px;
+    right: 0;
+    top: 13px;
+    width: 24px;
+    object-fit: contain;
+    background-size: 100%;
+}
+
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(4) details summary div{
+    position: relative;
+    padding-left: 55px;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(4) details summary div::before{
+    content:'';
+    position: absolute;
+    background-image: url('https://publish-p133703-e1380816.adobeaemcloud.com/content/dam/piramalfinance/product-page/home-loan/down-arrow.png');
+    height: 24px;
+    right: 0;
+    top: 2px;
+    width: 24px;
+    object-fit: contain;
+    background-size: 100%;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:last-child details summary div::before{
+    content: none;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details summary::before{
+    content: none;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(1) details{
+    position: relative;
+    padding-left: unset;
+    padding-right: 0;
+    padding-bottom: unset;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(1) details::before{
+    position: absolute;
+    background-image: url('https://publish-p133703-e1380816.adobeaemcloud.com/content/dam/piramalfinance/product-page/home-loan/kyc.svg');
+    left: 0;
+    top: 40px;
+    object-fit: contain;
+    content:'';
+    height: 32px;
+    margin-right: 24px;
+    width: 32px;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(2) details{
+    position: relative;
+    padding-left: unset;
+    padding-right: 0;
+    padding-bottom: unset;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(2) details::before{
+    position: absolute;
+    background-image: url('https://publish-p133703-e1380816.adobeaemcloud.com/content/dam/piramalfinance/product-page/home-loan/income.svg');
+    left: 0;
+    top: 40px;
+    object-fit: contain;
+    content:'';
+    height: 32px;
+    margin-right: 24px;
+    width: 32px;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(3) details{
+    position: relative;
+    padding-left: unset;
+    padding-right: 0;
+    padding-bottom: unset;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(3) details::before{
+    position: absolute;
+    background-image: url('https://publish-p133703-e1380816.adobeaemcloud.com/content/dam/piramalfinance/product-page/home-loan/property.svg');
+    left: 0;
+    top: 40px;
+    object-fit: contain;
+    content:'';
+    height: 32px;
+    margin-right: 24px;
+    width: 32px;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(4) details{
+    position: relative;
+    padding-left: unset;
+    padding-right: 0;
+    padding-bottom: unset;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(4) details::before{
+    position: absolute;
+    background-image: url('https://publish-p133703-e1380816.adobeaemcloud.com/content/dam/piramalfinance/product-page/home-loan/co-applicants.svg');
+    left: 0;
+    top: 30px;
+    object-fit: contain;
+    content:'';
+    height: 32px;
+    margin-right: 24px;
+    width: 32px;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(5) details{
+    position: relative;
+    padding-left: unset;
+    padding-right: 0;
+    padding-bottom: unset;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(5) details::before{
+    position: absolute;
+    background-image: url('https://publish-p133703-e1380816.adobeaemcloud.com/content/dam/piramalfinance/product-page/home-loan/photo.svg');
+    left: 0;
+    top: 30px;
+    object-fit: contain;
+    content:'';
+    height: 32px;
+    margin-right: 24px;
+    width: 32px;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion.block{
+    border-bottom: 1px dashed #ccc;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion.block:last-child{
+    border-bottom:unset
+}
+.section.documents-required-brown .accordion-group>.accordion details summary{
+    padding: 32px 0 32px 0px;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion.block details[open]
+summary div::before{
+    transform: rotate(180deg);
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details .active div p{
+    color: #000;
+    display: block;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: unset;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details div p:first-child{
+   padding-top: unset;
+   margin-top: unset;
+}
+
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details div p{
+    color: #000;
+    display: block;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: unset;
+    padding-top: 24px;
+}
+.section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details>div{
+    padding-bottom: 44px;
+    padding-left: 20px;
+}
+.section.documents-required-brown  > div.accordion-group-wrapper > div > div > details > div > p:nth-child(1) > strong{
+    color: #f26841;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 1pc;
+    font-weight: 700;
+    line-height: 24px;
+    padding-bottom: 24px;
+}
+table {
+    width: 100%;
+}
+.accordion.block >details> div> table:nth-child(1)> tbody> tr> th:nth-child(1){
+    color: #f26841;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    padding-top: unset;
+}
+.accordion.block >details> div> table:nth-child(1)> tbody> tr> th:nth-child(3){
+    color: #000;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    padding-top: unset;
+}
+
+.section.documents-required-brown table:nth-child(2) > tbody > tr > th:nth-child(1) > span{
+    color: #666;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-left: 10px;
+}
+.section.documents-required-brown table:nth-child(2) > tbody > tr> th:nth-child(3),
+.section.documents-required-brown table:nth-child(2) > tbody > tr> th:nth-child(2),
+.section.documents-required-brown table:nth-child(2) > tbody > tr> th:nth-child(1){
+    color: #f26841;
+    font-family: Nunito-Bold, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    padding-top: 32px;
+}
+.section.documents-required-brown th,.section.documents-required-brown td{
+    padding-top: 32px;
+    color: #000;
+    font-family: Nunito-Regular, sans-serif;
+    font-size: 1pc;
+    font-weight: 400;
+    line-height: 24px;
+    padding-top: 24px;
+}
+.section.documents-required-brown table:nth-child(4) tbody tr th:nth-child(1),
+.section.documents-required-brown table:nth-child(5) tbody tr th:nth-child(1),
+.section.documents-required-brown table:nth-child(6) tbody tr th:nth-child(1),
+.section.documents-required-brown table:nth-child(7) tbody tr th:nth-child(1),
+.section.documents-required-brown table:nth-child(8) tbody tr th:nth-child(1),
+.section.documents-required-brown table:nth-child(9) tbody tr th:nth-child(1){
+    width: 63.3%;
+}
+.section.documents-required-brown table:nth-child(3) > tbody > tr > td:last-child > img,
+.section.documents-required-brown table:nth-child(4) > tbody > tr > td:last-child > img,
+.section.documents-required-brown table:nth-child(5) > tbody > tr > td:last-child > img,
+.section.documents-required-brown table:nth-child(6) > tbody > tr > td:last-child > img,
+.section.documents-required-brown table:nth-child(7) > tbody > tr > td:last-child > img,
+.section.documents-required-brown table:nth-child(8) > tbody > tr > td:last-child > img,
+.section.documents-required-brown table:nth-child(9) > tbody > tr > td:last-child > img{
+    margin-right: 20px;
+    height: 18px;
+    width: 18px;
+}
+.section.documents-required-brown table:nth-child(3) > tbody > tr > td:last-child,
+.section.documents-required-brown table:nth-child(4) > tbody > tr > td:last-child,
+.section.documents-required-brown table:nth-child(5) > tbody > tr > td:last-child,
+.section.documents-required-brown table:nth-child(6) > tbody > tr > td:last-child,
+.section.documents-required-brown table:nth-child(7) > tbody > tr > td:last-child,
+.section.documents-required-brown table:nth-child(8) > tbody > tr > td:last-child,
+.section.documents-required-brown table:nth-child(9) > tbody > tr > td:last-child{
+   width: 19%;
+}
+.section.documents-required-brown .default-content-wrapper:last-child ul li a{
+    display: none;
+}
+
+@media screen and (max-width:1024px) {
+    .section.documents-required-brown .default-content-wrapper ul li a{
+        right: 17px;
+    }
+    .section.documents-required-brown .default-content-wrapper:last-child ul li a{
+        display: none;
+    }
+    .section.documents-required-brown .accordion-group-wrapper{
+        margin-bottom: 72px;
+    }
+    .section.documents-required-brown{
+        padding-bottom: 72px;
+    }
+    .section.documents-required-brown table:nth-child(3) > tbody > tr > td:nth-child(4) > img,
+    .section.documents-required-brown table:nth-child(4) > tbody > tr > td:nth-child(4) > img,
+    .section.documents-required-brown table:nth-child(5) > tbody > tr > td:nth-child(4) > img,
+    .section.documents-required-brown table:nth-child(6) > tbody > tr > td:nth-child(4) > img,
+    .section.documents-required-brown table:nth-child(7) > tbody > tr > td:nth-child(4) > img,
+    .section.documents-required-brown table:nth-child(8) > tbody > tr > td:nth-child(4) > img,
+    .section.documents-required-brown table:nth-child(9) > tbody > tr > td:nth-child(4) > img{
+        margin-right: 8px;
+    }
+}
+@media screen and (max-width:360px) {
+    .section.documents-required-brown .default-content-wrapper ul li a{
+        /* right: 17px; */
+        display: none;
+    }
+    .section.documents-required-brown .default-content-wrapper:last-child{
+        position: relative;
+    }
+    .section.documents-required-brown{
+        padding-bottom: 92px;
+    }
+    .section.documents-required-brown .accordion-group-wrapper{
+        margin-bottom: unset;
+    }
+    .section.documents-required-brown .default-content-wrapper:last-child ul li a{
+        right: 19px;
+        display: inline-flex;
+        position: absolute;
+        top: 20px;
+        padding: 0 15px 0 25px;
+        min-width: 280px;
+        width: 100%;
+        justify-content: center;
+    }
+    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(1) details::before,
+    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(2) details::before,
+    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(3) details::before,
+    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(4) details::before,
+    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(5) details::before{
+        height: 24px;
+        width: 24px;
+        margin-right: 16px;
+        background-size: 100%;
+        top: 26px;
+        margin-left: 12px;
+    }
+    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details summary div h3{
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion.block details summary div p{
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .section.documents-required-brown .accordion-group>.accordion details summary{
+        padding: 16px 0;
+    }
+    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details summary div{
+        padding-left: 51px;
+    }
+    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(4) details summary div{
+        padding-left: 51px;
+    }
+    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(4) details::before,
+    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion:nth-child(5) details::before{
+        top: 15px;
+        margin-left: 12px;
+    }
+    .section.documents-required-brown .accordion-group{
+        border-radius: 12px;
+        padding: 12px 16px;
+    }
+    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details summary div::before{
+        top: 10px;
+    }
+    .section.documents-required-brown .default-content-wrapper p{
+        font-size: 14px;
+        line-height: 20px;
+        padding-bottom: 4px;
+        margin-bottom: 20px;
+        margin-top: 12px;
+    }
+    .section.documents-required-brown .default-content-wrapper #documents-required{
+        font-size: 18px;
+        line-height: 26px;
+        padding-bottom: 4px;
+    }
+    .accordion.block >details> div> table:nth-child(1)> tbody> tr> th:nth-child(1){
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .accordion.block >details> div> table:nth-child(1)> tbody> tr> th:nth-child(3){
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details>div{
+        padding-left: 0;
+    }
+    .section.documents-required-brown table:nth-child(2) > tbody > tr> th:nth-child(3), .section.documents-required-brown table:nth-child(2) > tbody > tr> th:nth-child(2), .section.documents-required-brown table:nth-child(2) > tbody > tr> th:nth-child(1){
+        font-size: 12px;
+        line-height: 16px;
+        padding-top: 24px;
+    }
+    .section.documents-required-brown table:nth-child(2) > tbody > tr> th:nth-child(1){
+        width: 36%;
+    }
+    .section.documents-required-brown table:nth-child(2) > tbody > tr > th:nth-child(1) > span{
+        font-size: 10px;
+        line-height: 14px;
+        margin-left: unset;
+    }
+    .section.documents-required-brown th, .section.documents-required-brown td{
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .section.documents-required-brown table:nth-child(4) tbody tr th:nth-child(1), .section.documents-required-brown table:nth-child(5) tbody tr th:nth-child(1), .section.documents-required-brown table:nth-child(6) tbody tr th:nth-child(1), .section.documents-required-brown table:nth-child(7) tbody tr th:nth-child(1), .section.documents-required-brown table:nth-child(8) tbody tr th:nth-child(1), .section.documents-required-brown table:nth-child(9) tbody tr th:nth-child(1){
+        width: 60.3%;
+    }
+    .section.documents-required-brown table:nth-child(2) > tbody > tr> th:nth-child(2),
+    .section.documents-required-brown table:nth-child(2) > tbody > tr> th:nth-child(1){
+        width: 39.9%;
+    }
+    .section.documents-required-brown table:nth-child(3) > tbody > tr > td:last-child > img, .section.documents-required-brown table:nth-child(4) > tbody > tr > td:last-child > img, .section.documents-required-brown table:nth-child(5) > tbody > tr > td:last-child > img, .section.documents-required-brown table:nth-child(6) > tbody > tr > td:last-child > img, .section.documents-required-brown table:nth-child(7) > tbody > tr > td:last-child > img, .section.documents-required-brown table:nth-child(8) > tbody > tr > td:last-child > img, .section.documents-required-brown table:nth-child(9) > tbody > tr > td:last-child > img{
+        height: 12px;
+        width: 12px;
+    }
+    .section.documents-required-brown table:nth-child(3) > tbody > tr > td:nth-child(4) > img,
+    .section.documents-required-brown table:nth-child(4) > tbody > tr > td:nth-child(4) > img,
+    .section.documents-required-brown table:nth-child(5) > tbody > tr > td:nth-child(4) > img,
+    .section.documents-required-brown table:nth-child(6) > tbody > tr > td:nth-child(4) > img,
+    .section.documents-required-brown table:nth-child(7) > tbody > tr > td:nth-child(4) > img,
+    .section.documents-required-brown table:nth-child(8) > tbody > tr > td:nth-child(4) > img,
+    .section.documents-required-brown table:nth-child(9) > tbody > tr > td:nth-child(4) > img{
+        margin-right: 19px;
+        height: 12px;
+        width: 12px;
+    }
+    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details>div{
+        padding-bottom: 32px;
+    }
+    .section.documents-required-brown .default-content-wrapper ul li a::before{
+        left: 18px;
+    }
+    .section.documents-required-brown > div.accordion-group-wrapper > div > div > details > div > p:nth-child(1) > strong{
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .section.documents-required-brown .accordion-group-wrapper .accordion-group .accordion details div p{
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+@media screen and (max-width:768px) {
+    .section.documents-required-brown .accordion-group-wrapper{
+        margin-bottom: unset;
+    }
+}
+@media screen and (max-width:1400px) {
+    .section.documents-required-brown{
+        padding-bottom: 72px;
+    }
+}
