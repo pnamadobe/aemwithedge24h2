@@ -1,11 +1,6 @@
-/* import { workflowHomeLoanCalculation } from "./calhelpers.js";
+import { workflowHomeLoanCalculation } from "../emiandeligiblitycalc/calhelpers.js";
 
-window.addEventListener("DOMContentLoaded", function(){
-    let calculators = document.querySelectorAll(".homeloancalculator");
-    calculators.forEach(cal => {renderCalculatorData(cal)});
-});
-
-function renderCalculatorData(calculator) {
+export function renderCalculatorData(calculator) {
     let calType = getCalType(calculator);
 
     workflowHomeLoanCalculation(calculator, calType);
@@ -25,6 +20,6 @@ function renderCalculatorData(calculator) {
     }
 }
 
-function getCalType(calculator) {
+export function getCalType(calculator) {
     return calculator.querySelector(".home-loan-calculator-parent.emi") ? "emi" : "eligibility"
-} */
+}

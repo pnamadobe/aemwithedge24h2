@@ -484,6 +484,23 @@
             "value": "secondary"
           }
         ]
+      },
+      {
+        "component": "select",
+        "name": "autorotate",
+        "value": "rotate-off",
+        "label": "Type",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "rotate-on",
+            "value": "rotate-on"
+          },
+          {
+            "name": "rotate-off",
+            "value": "rotate-off"
+          }
+        ]
       }
     ]
   },
@@ -2124,6 +2141,17 @@
   },
   {
     "id": "homeloancalculatorv2",
+    "fields": [
+      {
+        "component": "text-input",
+        "label": "URL of Content Fragment",
+        "name": "text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "calculatorsection",
     "fields": [
       {
         "component": "text-input",

@@ -52,10 +52,12 @@ export default function decorate(block) {
   // block.appendChild(slideNavButtons);
 
   const carouselshowtype = block.children[2].innerText.trim() || "primary";
+  const rotatetype = block.children[3].innerText.trim() || "rotate-off";
+  const isrotate = rotatetype === "rotate-on";
   block.classList.add(carouselshowtype);
   // get all children elements
   // const panels = [...block.children];
-  const panels = Array.from(block.children).slice(3);
+  const panels = Array.from(block.children).slice(4);
 
   // loop through all children blocks
   [...panels].forEach((panel, i) => {
@@ -108,6 +110,8 @@ export default function decorate(block) {
   block.textContent = '';
   block.append(panelContainer);
   block.append(slideNavButtons);
+  const slidePrev = block.querySelector(".slide-prev");
+  const slideNext = block.querySelector(".slide-next")
 
   function activePanelContainer(panel) {
     panelContainer.scrollTo({ top: 0, left: panel.offsetLeft - panel.parentNode.offsetLeft, behavior: 'smooth' });
@@ -121,13 +125,22 @@ export default function decorate(block) {
   function slideNextEventHandler() {
     const actviveBtn = buttonContainer.querySelector(".selected");
     const activePanel = block.querySelector('[data-panel=' + actviveBtn.dataset.panel + ']');
-    const panel = activePanel.nextElementSibling ? activePanel.nextElementSibling : block.querySelector('[data-panel');
-    if (panel) activePanelContainer(panel);
+    if (isrotate) {
+      const panel = activePanel.nextElementSibling ? activePanel.nextElementSibling : block.querySelector('[data-panel');
+      if (panel) activePanelContainer(panel);
+    } else {
+      const panel = activePanel.nextElementSibling;
+      if (panel) {
+        activePanelContainer(panel)
+      } else {
+        slideNext.classList.add("disabled")
+      };
+    }
   }
-  block.querySelector(".slide-prev").addEventListener("click", function (e) {
+  slidePrev?.addEventListener("click", function (e) {
     slidePrevEventHandler();
   })
-  block.querySelector(".slide-next").addEventListener("click", function (e) {
+  slideNext.addEventListener("click", function (e) {
     slideNextEventHandler();
   })
 
@@ -143,8 +156,7 @@ export default function decorate(block) {
 
   if (buttonContainer.children.length) {
     block.append(buttonContainer)
-    setInterval(function () {
-      // slidePrevEventHandler(true);
+    isrotate && setInterval(function () {
       slideNextEventHandler();
     }, 7000);
   };
