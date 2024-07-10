@@ -30,9 +30,9 @@ export function homeLoanCalcFunc(currentSection) {
     var backgroundDiv = tabDiv.closest(".home-loan-calculator-parent");
     var calculatorDiv = tabDiv.parentElement.closest(".home-loan-calculator-parent ").nextElementSibling;
     var radioInput = isSalaried ? salariedRadios[index] : businessRadios[index];
-    var docRequiredBackground = currentSection.querySelector("#document-required-container");
-    var docSalaries = currentSection.querySelectorAll(".cmp-text--doc-salary");
-    var docBusinesses = currentSection.querySelectorAll(".cmp-text--doc-business");
+    var docRequiredBackground = document.querySelector(".documents-required-brown");
+    var docSalaries = document.querySelectorAll(".cmp-text--doc-salary");
+    var docBusinesses = document.querySelectorAll(".cmp-text--doc-business");
 
     radioInput.checked = true;
     tabDiv.style.background = isSalaried ? "#fff7f4" : "#eef3ff";

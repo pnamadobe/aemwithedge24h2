@@ -22,9 +22,12 @@ export function generateAccordionDOM(block) {
       } else {
         elementDiv.innerHTML = elementText;
       }
+
+      
       details.append(elementDiv);
     }
   });
+  
   return details;
 }
 
@@ -66,4 +69,18 @@ function KYCDocuments(data) {
       </table>`;
   });
   return html;
+}
+
+export function documentRequired(){
+  // var accordionDiv = document.querySelector('.documents-required-brown').querySelectorAll('.accordion.block');
+  debugger;
+  var ulDiv = document.querySelector('.documents-required-brown').querySelectorAll('.accordion.block')[1].querySelectorAll('div > ul');
+
+   if(ulDiv.length > 0){
+    var firstUl = ulDiv[0];
+    firstUl.classList.add('cmp-text--doc-salary');
+    var secondUl = ulDiv[1]
+    secondUl.classList.add('cmp-text--doc-business');
+  }
+
 }
