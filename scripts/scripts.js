@@ -463,6 +463,7 @@ async function loadingCustomCss() {
     `${window.hlx.codeBasePath}/styles/steps-for-apply/steps-for-apply.css`,
     `${window.hlx.codeBasePath}/styles/csr-committee/csr-committee.css`,
     `${window.hlx.codeBasePath}/styles/grievance-redressal/grievance-redressal.css`,
+    `${window.hlx.codeBasePath}/styles/documents-required/documents-required.css`,
   ]
 
   loadCssArray.forEach(async (eachCss) => {

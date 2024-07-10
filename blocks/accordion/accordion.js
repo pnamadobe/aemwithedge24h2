@@ -17,7 +17,8 @@ export function generateAccordionDOM(block) {
       var elementDiv = document.createElement("div");
       if (isurl) {
         let data = await renderDataFromAPI(url);
-        elementDiv.innerHTML += JSON.stringify(data);
+        const documentHTMl = KYCDocuments(data);
+        elementDiv.innerHTML = documentHTMl;
       } else {
         elementDiv.innerHTML = elementText;
       }
@@ -40,3 +41,29 @@ async function renderDataFromAPI(url) {
 }
 
 
+function KYCDocuments(data) {
+  const dataList = data.data;
+  let html = "";
+  dataList.forEach(function (each) {
+    const spanDiv = each?.subtitle ? `<span class="description">${each.subtitle}</span>` : "";
+    const imgDiv =
+      each?.rowoneimg && each?.rowtwoimg
+        ? `<td style="  text-align: right;"><img src="${each.rowoneimg}" alt=""></td>
+    <td style=" text-align: right;"><img src="${each.rowtwoimg}" alt=""></td>`
+        : "";
+    html +=
+    `<table class="${each.class} " cellpadding="1" cellspacing="0" border="1">
+        <tbody>
+            <tr>
+                <th style="text-align: left;">${each.title}
+                    ${spanDiv}
+                </th>
+                <th style=" text-align: right;">${each.rowoneheading}</th>
+                <th style=" text-align: right;">${each.rowtwoheading}</th>
+                ${imgDiv}
+            </tr>
+        </tbody>
+      </table>`;
+  });
+  return html;
+}
