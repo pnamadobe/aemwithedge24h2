@@ -12,7 +12,7 @@ export function loanProductsAnalytics(block) {
       ctaClick(e.target.innerText, title, title, targetObject.pageName);
     })
     calculatorTryNowBtn && calculatorTryNowBtn.addEventListener("click", function (e) {
-      e.stopImmediatePropagation();
+      // e.stopImmediatePropagation();
       console.log(e.target.innerText);
       const title = calculatorSectionWrapper.querySelector(".default-content-wrapper h2")?.innerText;
       const blockTitle = block.querySelector(".title")?.innerText;
