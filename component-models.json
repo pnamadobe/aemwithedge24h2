@@ -510,12 +510,12 @@
         "valueType": "string",
         "options": [
           {
-            "name": "1",
-            "value": "1"
+            "name": "One",
+            "value": "One"
           },
           {
-            "name": "2",
-            "value": "2"
+            "name": "Two",
+            "value": "Two"
           }
         ]
       }
