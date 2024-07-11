@@ -508,11 +508,8 @@ async function loadingCustomCss() {
     `${window.hlx.codeBasePath}/styles/grievance-redressal/grievance-redressal.css`,
     `${window.hlx.codeBasePath}/styles/documents-required/documents-required.css`,
     `${window.hlx.codeBasePath}/styles/mobile-sticky-button/mobile-sticky-button.css`,
-<<<<<<< HEAD
     `${window.hlx.codeBasePath}/styles/breadcrumb/breadcrumb.css`,
-=======
     `${window.hlx.codeBasePath}/styles/disclaimer/disclaimer.css`,
->>>>>>> 3ec4c581bc80730f9b44b6a83f511fa9b777ba3e
   ]
 
   loadCssArray.forEach(async (eachCss) => {
