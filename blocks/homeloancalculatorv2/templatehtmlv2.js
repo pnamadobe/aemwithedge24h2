@@ -274,7 +274,7 @@ export function homeloanCalHTML(callJson) {
                             </div>
                         </div>
                         </div>
-                            <div class="discalimer-details">
+                            <div class="discalimer-details dp-none">
                                     ${discalimerDiv}
                             </div>
                 </div>

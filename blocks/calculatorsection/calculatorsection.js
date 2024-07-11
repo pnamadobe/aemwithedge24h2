@@ -45,6 +45,7 @@ export async function CFApiCall(cfurl) {
 }
 
 export function readMoreFucn(block) {
+  document.querySelector('.discalimer-details').classList.remove('dp-none');
   if (block.querySelector(".discalimer-calc")) {
     const readMoreBtn = block.querySelector(".read-more-discalimer-calc");
     const discalimerContainer = block.querySelector(".disclaimer-container");
