@@ -154,10 +154,12 @@ export default function decorate(block) {
     })
 
     try {
-      block.querySelector('.open-form-on-click') && block.querySelector('.open-form-on-click .button-container').addEventListener('click', async (e) => {
-        statemasterGetStatesApi();
-        validationJSFunc();
-        formOpen();
+      document.querySelectorAll('.open-form-on-click') && document.querySelectorAll('.open-form-on-click .button-container').forEach(function (eachApplyFormClick) {
+        eachApplyFormClick.addEventListener('click', async (e) => {
+          statemasterGetStatesApi();
+          validationJSFunc();
+          formOpen();
+        });
       });
     } catch (error) {
       console.warn(error);
