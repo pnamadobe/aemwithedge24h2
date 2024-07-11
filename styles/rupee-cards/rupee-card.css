@@ -1,7 +1,8 @@
 .section.rupee-cards-wrapper{
     background-color: #FFF7F4;
-    padding: 32px 0 40px;
+    padding: 64px 0 80px;
 }
+
 .section.rupee-cards-wrapper .default-content-wrapper #personal-loan-by-amount{
     color: #333;
     display: block;
@@ -148,7 +149,10 @@
         bottom: 17px;
     }
 }
-@media screen and (max-width:768px) {
+@media screen and (max-width:767px) {
+    .section.rupee-cards-wrapper{
+        padding: 32px 0 40px;
+    }
     .section.rupee-cards-wrapper .wrapper-creation-container{
         grid-template-columns: 1fr;
     }
