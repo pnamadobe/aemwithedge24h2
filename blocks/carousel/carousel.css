@@ -324,7 +324,7 @@
   }
 }
 
-@media screen and (max-width:767.99px) {
+@media screen and (max-width:767px) {
   .section.banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser {
     height: 450px;
   }
@@ -458,6 +458,9 @@
   }
   .banner-carousel-wrapper .carousel-wrapper .carousel .panel-container .teaser.teaser-block-two .foreground {
     width: 100%;
+  }
+  .section.banner-carousel-wrapper.rm-apply-btn-in-mob .carousel-wrapper .teaser.teaser-block-six > .background .foreground .text .short-description>ul>li>p {
+    display: none;
   }
 }
 

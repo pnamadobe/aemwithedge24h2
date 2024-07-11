@@ -73,7 +73,7 @@ function KYCDocuments(data) {
 
 export function documentRequired(){
   // var accordionDiv = document.querySelector('.documents-required-brown').querySelectorAll('.accordion.block');
-  debugger;
+  // debugger;
   var ulDiv = document.querySelector('.documents-required-brown').querySelectorAll('.accordion.block')[1].querySelectorAll('div > ul');
 
    if(ulDiv.length > 0){
