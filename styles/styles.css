@@ -848,7 +848,7 @@ main .section.highlight {
 .carousel .carousel-item {
   /* min-width: 100%; */
   box-sizing: border-box;
-  padding: 20px;
+  /* padding: 20px; */
   /* text-align: center; */
   /* background-color: #f0f0f0; */
 }
