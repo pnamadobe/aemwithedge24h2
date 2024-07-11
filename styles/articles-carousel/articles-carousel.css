@@ -147,7 +147,7 @@
     display: flex;
     align-items: center;
     margin-top: 24px;
-    overflow: visible;
+    overflow: unset;
 }
 .section.carousel-articles-wrapper .foreground .text .long-description ul{
     display: grid;
