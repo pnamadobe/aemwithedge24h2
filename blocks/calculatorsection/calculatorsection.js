@@ -49,7 +49,13 @@ export function readMoreFucn(block) {
     const readMoreBtn = block.querySelector(".read-more-discalimer-calc");
     const discalimerContainer = block.querySelector(".disclaimer-container");
     readMoreBtn.addEventListener("click", (e) => {
-      debugger;
+      if(e.target.textContent.trim() == "Read more"){
+        discalimerContainer.classList.remove('dp-none');
+        readMoreBtn.textContent = "Read less"
+      }else if(e.target.textContent.trim() == "Read less"){
+        discalimerContainer.classList.add('dp-none');
+        readMoreBtn.textContent = "Read more";
+      }
     });
   }
 }
