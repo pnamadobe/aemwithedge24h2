@@ -137,11 +137,11 @@ export function homeloanCalHTML(callJson) {
           <div class="outputdiv">
               <div class="output-parent">
                   <div class="mainoutput">
-                      <img data-src="${callJson.calendarbox}"
-                          class="outputimg lozad" alt="calendar" src="${callJson.calendarboxemi}">
                       <img data-src="${callJson.calendarboxemi}"
+                          class="outputimg lozad" alt="calendar" src="${callJson.calendarboxemi}">
+                      <img data-src="${callJson.calendarboxemimobile}"
                           class="outputimg2 lozad" alt="calendar"
-                          src="${callJson.calendarboxemi}"
+                          src="${callJson.calendarboxemimobile}"
                           data-loaded="true">
   
                       <p class="outputdes">
@@ -169,11 +169,11 @@ export function homeloanCalHTML(callJson) {
           <div class="outputdiv">
               <div class="output-parent">
                   <div class="mainoutput">
-                      <img data-src="${callJson.calendarbox}"
-                          class="outputimg lozad" alt="calendar" src="${callJson.calendarmobileelg}">
                       <img data-src="${callJson.calendarmobileelg}"
+                          class="outputimg lozad" alt="calendar" src="${callJson.calendarmobileelg}">
+                      <img data-src="${callJson.calendarmobileelgmobile}"
                           class="outputimg2 lozad" alt="calendar"
-                          src="${callJson.calendarmobileelg}"
+                          src="${callJson.calendarmobileelgmobile}"
                           data-loaded="true">
   
                       <p class="outputdes">
