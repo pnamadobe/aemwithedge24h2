@@ -409,6 +409,10 @@
     padding-top: 40px;
   }
 
+  .section.banner-carousel-wrapper.breadcrumb-container .carousel-wrapper .panel-container .teaser.block>.background .foreground .text  {
+    padding-top: 64px;
+  }
+
   .section.banner-carousel-wrapper .carousel-wrapper .carousel.block .button-container {
     left: 12px;
     bottom: 40px;
@@ -547,6 +551,10 @@
 
   .section.banner-carousel-wrapper .carousel-wrapper .panel-container .teaser.block>.background .foreground .text {
     padding-top: 40px;
+  }
+
+  .section.banner-carousel-wrapper.breadcrumb-container .carousel-wrapper .panel-container .teaser.block>.background .foreground .text  {
+    padding-top: 64px;
   }
 
   .section.banner-carousel-wrapper .carousel-wrapper .carousel.block .button-container {
