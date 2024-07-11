@@ -21,7 +21,6 @@ export function moveAttributes(from, to, attributes) {
   });
 }
 
-
 /**
  * create an element.
  * @param {string} tagName the tag for the element
@@ -33,7 +32,7 @@ export function moveAttributes(from, to, attributes) {
 export function createElement(tagName, classes, props, html) {
   const elem = document.createElement(tagName);
   if (classes) {
-    const classesArr = typeof classes === 'string' ? [classes] : classes;
+    const classesArr = typeof classes === "string" ? [classes] : classes;
     elem.classList.add(...classesArr);
   }
   if (props) {
@@ -47,7 +46,7 @@ export function createElement(tagName, classes, props, html) {
       if (el instanceof HTMLElement || el instanceof SVGElement) {
         elem.append(el);
       } else {
-        elem.insertAdjacentHTML('beforeend', el);
+        elem.insertAdjacentHTML("beforeend", el);
       }
     };
 
@@ -68,7 +67,7 @@ export let targetObject = {
   ctaPosition: "Top Menu Bar",
   ctaPosition: "Top Menu Bar",
   pageName: pathname[pathname.length - 1],
-  isTab: window.matchMedia("(max-width: 1024px)").matches
+  isTab: window.matchMedia("(max-width: 1024px)").matches,
 };
 
 export function renderHelper(data, template, callBack) {
@@ -116,12 +115,12 @@ export function fetchAPI(method, url, data) {
       } else if (method === "POST") {
         data.headerJson = data.headerJson || {
           "Content-Type": "application/json",
-        }
+        };
         data.headerJson["Content-Type"] = data.headerJson["Content-Type"] ? data.headerJson["Content-Type"] : "application/json";
         const request = new Request(url, {
           method: "POST",
           body: JSON.stringify(data.requestJson),
-          headers: data.headerJson
+          headers: data.headerJson,
         });
         const response = await fetch(request);
         const json = await response.json();
@@ -238,9 +237,9 @@ export function createCarousle(block, prevButton, nextButton) {
 
   function getVisibleSlides() {
     if (targetObject.isMobile) {
-      return 2
+      return 2;
     } else if (targetObject.isTab) {
-      return 3
+      return 3;
     }
     return 4;
   }
@@ -264,7 +263,7 @@ export function createCarousle(block, prevButton, nextButton) {
   }
 
   function nextSlide(e) {
-    if (!e.target.closest('.slide-next').classList.contains('light')) {
+    if (!e.target.closest(".slide-next").classList.contains("light")) {
       showSlide(currentSlide + 1);
       checkLastChildVisibility();
     }
@@ -294,9 +293,9 @@ export function createCarousle(block, prevButton, nextButton) {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            nextButton.classList.add("light")
+            nextButton.classList.add("light");
           } else {
-            nextButton.classList.remove("light")
+            nextButton.classList.remove("light");
           }
         });
       },
@@ -315,9 +314,9 @@ export function createCarousle(block, prevButton, nextButton) {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            prevButton.classList.add("light")
+            prevButton.classList.add("light");
           } else {
-            prevButton.classList.remove("light")
+            prevButton.classList.remove("light");
           }
         });
       },
@@ -340,7 +339,7 @@ window.addEventListener("resize", () => {
 export function createButton(text, picture) {
   const button = document.createElement("button");
   button.classList.add("carousel-control", text);
-  button.innerHTML = (picture)
+  button.innerHTML = picture;
   return button;
 }
 /* helper script end */
@@ -389,6 +388,11 @@ function buildAutoBlocks() {
  */
 // eslint-disable-next-line import/prefer-default-export
 export function decorateMain(main) {
+  main.querySelectorAll("a").forEach(function (anchor) {
+    if (anchor.innerHTML.includes("<sub>")) {
+      anchor.target = "_blank";
+    }
+  });
   // hopefully forward compatible button decoration
   decorateButtons(main);
   decorateIcons(main);
@@ -510,7 +514,7 @@ async function loadingCustomCss() {
     `${window.hlx.codeBasePath}/styles/mobile-sticky-button/mobile-sticky-button.css`,
     `${window.hlx.codeBasePath}/styles/breadcrumb/breadcrumb.css`,
     `${window.hlx.codeBasePath}/styles/disclaimer/disclaimer.css`,
-  ]
+  ];
 
   loadCssArray.forEach(async (eachCss) => {
     await loadCSS(eachCss);
@@ -527,15 +531,15 @@ body?.addEventListener("click", function (e) {
     document.querySelector(".modal-overlay").classList.remove("overlay");
     document.querySelector(".modal-overlay").classList.add("dp-none");
     document.querySelector(".modal-overlay").style.zIndex = 0;
-  } else if (!e.target.closest('.nav-drop')) {
+  } else if (!e.target.closest(".nav-drop")) {
     //console.log("don't close nav");
 
-    const nav = document.getElementById('nav');
-    const navSections = nav.querySelector('.nav-sections');
+    const nav = document.getElementById("nav");
+    const navSections = nav.querySelector(".nav-sections");
     navSections.children[0].classList.remove("active");
-    navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
+    navSections.querySelectorAll(":scope .default-content-wrapper > ul > li").forEach((navSection) => {
       toggleAllNavSections(navSections);
-      navSection.setAttribute('aria-expanded', 'false');
+      navSection.setAttribute("aria-expanded", "false");
     });
   }
   if (!e.target.closest(".stake-pop-up")) {
@@ -543,10 +547,9 @@ body?.addEventListener("click", function (e) {
       ele.classList.remove("dp-block");
       ele.classList.add("dp-none");
       document.body.style.overflow = "auto";
-      document.querySelector(".modal-overlay").classList.remove("overlay")
-      document.querySelector(".modal-overlay").classList.add("dp-none")
+      document.querySelector(".modal-overlay").classList.remove("overlay");
+      document.querySelector(".modal-overlay").classList.add("dp-none");
     });
-
 
     e.currentTarget.querySelector(".stake-pop-up.dp-block")?.classList.remove("dp-block");
   }
