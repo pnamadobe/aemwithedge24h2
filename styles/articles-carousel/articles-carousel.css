@@ -231,6 +231,9 @@
     .section.carousel-articles-wrapper .carousel.block .panel-container{
         margin-top: 0;
     }
+    .section.carousel-articles-wrapper .carousel.block .panel-container {
+        overflow: auto;
+    }
 }
 @media (min-width: 768px) and (max-width: 1024px) {
     .section.carousel-articles-wrapper .carousel.block .panel-container .teaser.block{
