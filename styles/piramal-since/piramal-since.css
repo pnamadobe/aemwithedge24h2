@@ -105,3 +105,31 @@
     line-height: 24px;
   }
 }
+
+
+/* our journey so far start */
+
+.section.our-journey-wrapper {
+  background-color: #FFF7F4;
+}
+
+.section.our-journey-wrapper .default-content-wrapper h4 {
+  padding-top: 80px;
+  padding-bottom: 48px;
+}
+
+.section.piramal-since-wrapper .columns-wrapper .columns div div>p:nth-child(2){
+  text-align: center;
+}
+
+.section.piramal-since-wrapper .columns-wrapper .columns div div>p:nth-child(3){
+  padding-bottom: 58px;
+}
+
+@media screen and (max-width:767px) {
+  .section.our-journey-wrapper .default-content-wrapper h4 {
+    padding-top: 52px;
+    padding-bottom: 44px;
+  }
+}
+/* our journey so far end */

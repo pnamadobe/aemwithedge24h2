@@ -1115,6 +1115,10 @@
               {
                 "name": "redgradient",
                 "value": "bg--linear-red"
+              },
+              {
+                "name": "lightshadegray",
+                "value": "--light-gray"
               }
             ]
           },

@@ -15,8 +15,6 @@
         width: 100%;
         z-index: 900;
     }
-    .section.mobile-sticky-button .default-content-wrapper {}
-
     .section.mobile-sticky-button .default-content-wrapper>p {
         background-color: transparent;
         border: 0;
