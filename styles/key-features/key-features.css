@@ -92,12 +92,15 @@
 
 .section.key-feature-wrapper :nth-child(3)>p a {
     color: #f58667;
+    text-decoration: underline;
+}
+
+.section.key-feature-wrapper :nth-child(3)>p a>sub {
     cursor: pointer;
     font-family: 'Nunito-Bold', sans-serif;
     font-size: 16px;
     font-weight: 700;
     line-height: 24px;
-    text-decoration: underline;
 }
 
 @media screen and (max-width: 767px) {
@@ -162,7 +165,7 @@
         font-size: 12px;
         padding: 0;
     }
-    .section.key-feature-wrapper :nth-child(3)>p a {
+    .section.key-feature-wrapper :nth-child(3)>p a>sub {
         font-size: 12px;
     }
 }
