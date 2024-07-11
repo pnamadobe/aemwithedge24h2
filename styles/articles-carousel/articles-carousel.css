@@ -138,8 +138,8 @@
 }
 .section.carousel-articles-wrapper .carousel.block .panel-container .teaser.block{
     width: 27%;
-    padding: 8px;
-    margin-right: 10px;
+    padding: 0;
+    margin-right: 20px;
     background-color: #fff;
 }
 .section.carousel-articles-wrapper .carousel.block .panel-container{
@@ -173,6 +173,7 @@
 @media screen and (max-width: 767px) {
     .section.carousel-articles-wrapper .carousel.block .panel-container .teaser.block{
         width: 100%;
+        margin-right: 10px;
     }
     .section.carousel-articles-wrapper .carousel-wrapper .slide-prev,
     .section.carousel-articles-wrapper .carousel-wrapper .slide-next{
@@ -234,12 +235,13 @@
 @media (min-width: 768px) and (max-width: 1024px) {
     .section.carousel-articles-wrapper .carousel.block .panel-container .teaser.block{
         width: 50%;
+        margin-right: 10px;
     }
     .section.carousel-articles-wrapper .carousel-wrapper .slide-prev {
-        left: 0;
+        left: 5px;
     }
     .section.carousel-articles-wrapper .carousel-wrapper .slide-next {
-        right: 0;
+        right: 5px;
     }
     .section.carousel-articles-wrapper .carousel.block .panel-container{
         margin-top: 24px;
