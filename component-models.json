@@ -187,6 +187,30 @@
     ]
   },
   {
+    "id": "breadcrumb",
+    "fields": [
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "label": "Hide Breadcrumb",
+        "name": "hideBreadcrumb"
+      },
+      {
+        "component": "text-input",
+        "valueType": "number",
+        "label": "Navigation Start Level",
+        "name": "navigationStartLevel",
+        "value": ""
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "label": "Hide Current Page",
+        "name": "hideCurrentPage"
+      }
+    ]
+  },
+  {
     "id": "rte",
     "fields": [
       {
@@ -1091,6 +1115,10 @@
               {
                 "name": "redgradient",
                 "value": "bg--linear-red"
+              },
+              {
+                "name": "lightshadegray",
+                "value": "--light-gray"
               }
             ]
           },

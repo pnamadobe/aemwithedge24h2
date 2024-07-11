@@ -273,7 +273,10 @@ export function homeloanCalHTML(callJson) {
     
                             </div>
                         </div>
-                    </div>
+                        </div>
+                            <div class="discalimer-details">
+                                    ${discalimerDiv}
+                            </div>
                 </div>
     
                 <div class="homepagemobiledesign"></div>
@@ -281,10 +284,6 @@ export function homeloanCalHTML(callJson) {
                 <!-- tab-center--calculator -->
             </div>
         </div>
-    </div>
-    
-    <div class="discalimer-details">
-        ${discalimerDiv}
     </div>
     `;
 }

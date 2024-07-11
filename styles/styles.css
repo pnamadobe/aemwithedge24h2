@@ -84,6 +84,7 @@ textarea:focus {
   --pearl: #F0F0F0;
   --submidorange: #fce6e5;
   --skyblue: #DEF3FD;
+  --light-gray: #F8FAFF;
   /* fonts */
   --body-font-family: roboto, roboto-fallback;
   --heading-font-family: var(--body-font-family);
@@ -439,6 +440,9 @@ main img {
 
 .teaser.block.--skyblue>.background {
   background-color: var(--skyblue);
+}
+.teaser.block.--light-gray>.background {
+  background-color: var(--light-gray);
 }
 .gradient-blue-gray .background .foreground {
   border-radius: 10px;
