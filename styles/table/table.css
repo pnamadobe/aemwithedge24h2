@@ -77,6 +77,10 @@
     vertical-align: middle;
 }
 
+.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>td>p>strong>span {
+    font-family: 'Nunito-Bold',sans-serif;
+}
+
 /* table with image  */
 .section.fees-charges-wrapper.three-col-table .code-wrapper .code > div > table > tbody > tr>th,
 .section.fees-charges-wrapper.three-col-table .code-wrapper .code > div > table > tbody > tr>td {
