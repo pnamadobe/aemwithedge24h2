@@ -33,6 +33,7 @@
   grid-auto-rows: 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   row-gap: 40px;
+  align-items: start;
 }
 
 .section.choose-us-css .columns-wrapper .columns>div:nth-child(2) {
