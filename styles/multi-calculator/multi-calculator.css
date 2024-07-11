@@ -1,5 +1,6 @@
-.section.multi-calculator-wrapper {
-    padding: 0;
+/* calculator start */
+.section.multi-calculator-wrapper.teaser-container {
+    padding: 0  ;
     background-color: var(--lilen);
 }
 
@@ -74,8 +75,7 @@
         display: none;
     }
 }
-
-
+/* calculator end */
 
 
 /* calculator teaser container start */
@@ -92,12 +92,12 @@
 
 .section.multi-calc-teaser-wrapper .teaser-wrapper .teaser {
     max-width: 595px;
-    min-height: 2in;
+    min-height: 192px;
 }
 
 .section.multi-calc-teaser-wrapper .teaser-wrapper .teaser .background {
     max-width: 595px;
-    min-height: 2in;
+    min-height: 192px;
     background-repeat: no-repeat;
     background-size: contain;
     background-size: 100% 100%;
@@ -156,7 +156,6 @@
 /* calculator teaser container end */
 
 
-
 /* home loan eligibility calculator start */
 .section.home-loan-eligibility-calculator {
     padding: 0;
@@ -199,7 +198,6 @@
         margin-top: 32px;
         min-height: 112px;
         padding: 20px;
-        /* border-radius: 16px; */
     }
 
     .section.home-loan-eligibility-calculator .teaser-wrapper .teaser .background .foreground .text .title h2 {
