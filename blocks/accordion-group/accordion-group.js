@@ -24,7 +24,7 @@ export default async function decorate(block) {
   try {
     openFunctionFAQ(block);
     block.closest(".faq-view-more-logic") ? viewMoreLogicFAQ() : "";
-    if(document.querySelector('.documents-required-brown').length > 0){
+    if(document.querySelector('.documents-required-brown')){
       documentRequired();
     }
   } catch (error) {
