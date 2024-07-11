@@ -31,6 +31,8 @@ export default async function decorate(block) {
     calculators.forEach((cal) => {
       renderCalculatorData(cal);
     });
+
+    readMoreFucn(block);
   } catch (error) {
     console.warn(error);
   }
@@ -40,4 +42,14 @@ export async function CFApiCall(cfurl) {
   const response = await fetchAPI("GET", cfurl);
   const responseJson = await response.json();
   return responseJson;
+}
+
+export function readMoreFucn(block) {
+  if (block.querySelector(".discalimer-calc")) {
+    const readMoreBtn = block.querySelector(".read-more-discalimer-calc");
+    const discalimerContainer = block.querySelector(".disclaimer-container");
+    readMoreBtn.addEventListener("click", (e) => {
+      debugger;
+    });
+  }
 }

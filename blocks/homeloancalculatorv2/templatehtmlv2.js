@@ -1,6 +1,6 @@
 export function homeloanCalHTML(callJson) {
-    const salaried = callJson.salaried?.salariedcheck
-      ? `
+  const salaried = callJson.salaried?.salariedcheck
+    ? `
   <li id="salaryTab" class="firsttab onetab">
       <div class="customecheck">
           <div class="salary-parent">
@@ -22,10 +22,10 @@ export function homeloanCalHTML(callJson) {
   
       </div>
   </li>`
-      : "";
-  
-    const business = callJson.business?.businesscheck
-      ? `
+    : "";
+
+  const business = callJson.business?.businesscheck
+    ? `
   <li id="${callJson.business.businesstabid}" class="firsttab secondtab twotab">
       <div class="customecheck">
           <div class="salary-parent business-parent">
@@ -48,16 +48,16 @@ export function homeloanCalHTML(callJson) {
       </div>
   
   </li> `
-      : "";
-  
+    : "";
+
   let emiinputdiv = "";
-    callJson["chechboxemiobj"]["chechboxemi"] &&
-      callJson["chechboxemiobj"].loanamout.forEach(function (each, index) {
-        emiinputdiv += `<div class="loanamount">
+  callJson["chechboxemiobj"]["chechboxemi"] &&
+    callJson["chechboxemiobj"].loanamout.forEach(function (each, index) {
+      emiinputdiv += `<div class="loanamount">
             <div class="data">
                 <label class="description">${each.label}</label>
                 <!-- add class yearstext for displaying textvalue -->
-                <div class="inputdivs ${each.labelyearsvalue ? "yearstext" : ''} ">
+                <div class="inputdivs ${each.labelyearsvalue ? "yearstext" : ""} ">
         
                     <span class="rupee">${each.rupeesign}</span>
         
@@ -78,16 +78,16 @@ export function homeloanCalHTML(callJson) {
                 </div>
             </div>
         </div>`;
-      });
-  
+    });
+
   let eligibilityinputdiv = "";
-    callJson["chechboxelibilityobj"]["chechboxemi"] &&
-      callJson["chechboxelibilityobj"].loanamout.forEach(function (each, index) {
-          eligibilityinputdiv += `<div class="loanamount">
+  callJson["chechboxelibilityobj"]["chechboxemi"] &&
+    callJson["chechboxelibilityobj"].loanamout.forEach(function (each, index) {
+      eligibilityinputdiv += `<div class="loanamount">
             <div class="data">
                 <label class="description">${each.label}</label>
                 <!-- add class yearstext for displaying textvalue -->
-                <div class="inputdivs ${each.labelyearsvalue ? "yearstext" : ''} ">
+                <div class="inputdivs ${each.labelyearsvalue ? "yearstext" : ""} ">
         
                     <span class="rupee">${each.rupeesign}</span>
         
@@ -108,10 +108,10 @@ export function homeloanCalHTML(callJson) {
                 </div>
             </div>
         </div>`;
-      });
-  
-    const rightSideAmount = callJson.principaltext
-      ? `<div class="amountdiv">
+    });
+
+  const rightSideAmount = callJson.principaltext
+    ? `<div class="amountdiv">
                         <div class="firstamout">
                             <p>${callJson.principaltext}</p>
                             <p class="amount"><span>₹</span><span
@@ -125,10 +125,10 @@ export function homeloanCalHTML(callJson) {
                             </p>
                         </div>
     </div>`
-      : "";
-  
-    const emidiv = callJson.chechboxemiobj.chechboxemi
-      ? `
+    : "";
+
+  const emidiv = callJson.chechboxemiobj.chechboxemi
+    ? `
   <div class="emicalculator commoncalculator">
       <div class="parent-emi" id="emic">
           <div class="inputDiv">
@@ -157,11 +157,10 @@ export function homeloanCalHTML(callJson) {
           </div>
       </div>
   </div>`
-      : "";
-  
-  
+    : "";
+
   const eligibilitydiv = callJson.chechboxelibilityobj.chechboxemi
-      ? `
+    ? `
   <div class="eligibilitycalculator calculator commoncalculator">
       <div class="parent-emi parent-eligibility" id="emic">
           <div class="inputDiv">
@@ -190,9 +189,22 @@ export function homeloanCalHTML(callJson) {
           </div>
       </div>
   </div>`
-      : "";
-  
-    return `
+    : "";
+
+  const discalimerDiv = callJson.disclaimertitle
+  ? `<div class='discalimer-calc'> 
+        <span class='title'>${callJson.disclaimertitle}</span>
+        <p class='discalimer-first-para'>${callJson.discalimerpara1}</p>
+        <div class="disclaimer-container dp-none">
+            <p class='discalimer-second-para'>${callJson.discalimerpara2}</p>
+            <p class='discalimer-thrid-para'>${callJson.discalimerpara3}</p> 
+        </div>
+        <button class='read-more-discalimer-calc'>Read more</button>
+    </div>`
+    : "";
+
+
+  return `
    <div class="container responsivegrid show">
         <div id="container-7dfdb51cd4" class="cmp-container">
             <div class="title home-loan-title">
@@ -270,6 +282,9 @@ export function homeloanCalHTML(callJson) {
             </div>
         </div>
     </div>
+    
+    <div class="discalimer-details">
+        ${discalimerDiv}
+    </div>
     `;
-  }
-  
+}
