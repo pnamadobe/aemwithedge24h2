@@ -80,7 +80,7 @@ export function documentRequired(){
     var firstUl = ulDiv[0];
     firstUl.classList.add('cmp-text--doc-salary');
     var secondUl = ulDiv[1]
-    secondUl.classList.add('cmp-text--doc-business');
+    secondUl?.classList.add('cmp-text--doc-business');
   }
 
 }
