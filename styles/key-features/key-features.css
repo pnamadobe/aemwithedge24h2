@@ -102,7 +102,7 @@
 
 @media screen and (max-width: 767px) {
     .section.key-feature-wrapper {
-        padding: 16px 16px !important;
+        padding: 16px 0 !important;
     }
 
     .section.key-feature-wrapper .default-content-wrapper h2 {
@@ -161,6 +161,9 @@
     .section.key-feature-wrapper :nth-child(3)>p {
         font-size: 12px;
         padding: 0;
+    }
+    .section.key-feature-wrapper :nth-child(3)>p a {
+        font-size: 12px;
     }
 }
 
