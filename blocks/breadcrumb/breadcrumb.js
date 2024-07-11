@@ -86,8 +86,10 @@ export default async function decorate(block) {
         const paths = await getAllPathsExceptCurrent(path, startLevel);
         paths.forEach((pathPart) => breadcrumbLinks.push(createLink(pathPart).outerHTML));
         if (hideCurrentPage === 'false') {
-            const currentPath = document.createElement('span');
-            const currentTitle = document.querySelector('title').innerText;
+            const currentPath = document.createElement('a');
+            currentPath.href = window.location.href;
+            // const currentTitle = document.querySelector('title').innerText;
+            const currentTitle = getMetadata("og:title")
             currentPath.innerText = currentTitle.replace(' | Pricefx', '');
             breadcrumbLinks.push(currentPath.outerHTML);
         }
