@@ -94,7 +94,6 @@ export function generateTeaserDOM(props, classes) {
   teaserDOM?.querySelectorAll("a").forEach(function (el, index) {
     el.addEventListener("click", function (e) {
       try {
-        e.preventDefault();
         if (index || e.target.closest(".cta")) {
           bannerClick(e.target.innerText, targetObject.pageName);
         } else {
