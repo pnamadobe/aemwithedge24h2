@@ -21,6 +21,45 @@ export function moveAttributes(from, to, attributes) {
   });
 }
 
+
+/**
+ * create an element.
+ * @param {string} tagName the tag for the element
+ * @param {string|Array<string>} classes classes to apply
+ * @param {object} props properties to apply
+ * @param {string|Element} html content to add
+ * @returns the element
+ */
+export function createElement(tagName, classes, props, html) {
+  const elem = document.createElement(tagName);
+  if (classes) {
+    const classesArr = typeof classes === 'string' ? [classes] : classes;
+    elem.classList.add(...classesArr);
+  }
+  if (props) {
+    Object.keys(props).forEach((propName) => {
+      elem.setAttribute(propName, props[propName]);
+    });
+  }
+
+  if (html) {
+    const appendEl = (el) => {
+      if (el instanceof HTMLElement || el instanceof SVGElement) {
+        elem.append(el);
+      } else {
+        elem.insertAdjacentHTML('beforeend', el);
+      }
+    };
+
+    if (Array.isArray(html)) {
+      html.forEach(appendEl);
+    } else {
+      appendEl(html);
+    }
+  }
+
+  return elem;
+}
 /* helper script start */
 const pathname = location.pathname.replace(".html", "").split("/");
 export let targetObject = {
@@ -469,7 +508,11 @@ async function loadingCustomCss() {
     `${window.hlx.codeBasePath}/styles/grievance-redressal/grievance-redressal.css`,
     `${window.hlx.codeBasePath}/styles/documents-required/documents-required.css`,
     `${window.hlx.codeBasePath}/styles/mobile-sticky-button/mobile-sticky-button.css`,
+<<<<<<< HEAD
+    `${window.hlx.codeBasePath}/styles/breadcrumb/breadcrumb.css`,
+=======
     `${window.hlx.codeBasePath}/styles/disclaimer/disclaimer.css`,
+>>>>>>> 3ec4c581bc80730f9b44b6a83f511fa9b777ba3e
   ]
 
   loadCssArray.forEach(async (eachCss) => {
