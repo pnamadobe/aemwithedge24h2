@@ -67,15 +67,19 @@
 .section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>td {
     border-bottom: 1px solid var(--pattensblue);
     border-left: 1px solid var(--pattensblue);
-    color: #20303f;
-    font-family: Nunito-Regular, sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
     padding: 24px;
     text-align: left;
     vertical-align: middle;
 }
+
+.section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>td>p {
+    color: #20303f;
+    font-family: 'Nunito-Regular', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
 
 .section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>td>p>strong>span {
     font-family: 'Nunito-Bold',sans-serif;
@@ -125,6 +129,11 @@
         font-size: 12px;
         line-height: 16px;
         padding: 24px 16px;
+    }
+
+    .section.fees-charges-wrapper .code-wrapper .code>div>table>tbody>tr>td>p {
+        font-size: 12px;
+        line-height: 16px;
     }
 
     .section.fees-charges-wrapper .default-content-wrapper p>strong {
