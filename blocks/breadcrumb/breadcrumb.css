@@ -33,6 +33,10 @@
 .section.breadcrumb-handle .breadcrumb-wrapper .breadcrumb{
     padding-top: 10px;
 }
+.section.breadcrumb-handle .breadcrumb-wrapper .breadcrumb>nav{
+    display: flex;
+    align-items: center;
+}
 @media screen and (min-width:1024px) and (max-width:1366px){
     .section.breadcrumb-handle .breadcrumb-wrapper{
         padding: 0 160px;
